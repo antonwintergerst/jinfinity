@@ -1,0 +1,476 @@
+/**
+ * @version     $Id: jimediamanager.css 066 2014-11-20 12:15:00Z Anton Wintergerst $
+ * @package     JiCustomFields 2.1 Framework
+ * @copyright   Copyright (C) 2014 Jinfinity. All rights reserved.
+ * @license     GNU/GPLv3 http://www.gnu.org/licenses/gpl-3.0.html
+ * @website     www.jinfinity.com
+ * @email       support@jinfinity.com
+ */
+#jimmoverlay {
+    position: absolute;
+    left: 0;
+    top: 0;
+    background-color: #000;
+}
+#jimediamanager {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    width: 100%;
+    z-index: 2000;
+}
+#jimediamanager .jimmouter {
+    background: #FFF;
+    border-radius: 10px;
+    margin: 50px auto 0 auto;
+    max-width: 800px;
+    position: relative;
+}
+#jimediamanager .jimminner {
+    padding: 25px;
+    max-height: 500px;
+    overflow-y: scroll;
+}
+#jimediamanager ul, #jimediamanager ul li {
+    margin: 0;
+    min-height: 0;
+}
+#jimediamanager .jimmclosebtn {
+    background: url("../images/closebox.png") no-repeat scroll center center transparent;
+    border: medium none;
+    height: 30px;
+    position: absolute;
+    right: -15px;
+    top: -15px;
+    width: 30px;
+    text-indent: -9000px;
+}
+.jitrow, .jitd {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+.ffhead .titlebar {
+    display: none;
+}
+.ffbox {
+    list-style: none;
+    margin: 0;
+    background: #F4F4F4;
+    border: 1px solid #CCC;
+    border-radius: 10px;
+    padding: 0;
+    color: #666;
+}
+.ffbox .ffrow {
+    list-style: none;
+    margin: 0;
+    padding: 5px;
+}
+.ffbox .ffrow>li {
+    display: inline-block;
+    vertical-align: top;
+    float: none;
+    margin: 0;
+}
+.ffbox .ffrow>li>span {
+    padding: 5px;
+    display: inline-block;
+}
+/* Responsive Widths */
+#jimediamanager .span1 {width:8.33%}
+#jimediamanager .span2 {width:16.66%}
+#jimediamanager .span3 {width:25%}
+#jimediamanager .span4 {width:33.33%}
+#jimediamanager .span8 {width:66.66%}
+#jimediamanager .span9 {width:75%}
+#jimediamanager .span12 {width:100%}
+.ffbox .ffhead {
+    border-bottom: 1px solid #AAA;
+}
+.ffrow.titlebar {
+    border-radius: 5px 5px 0 0;
+    border: 1px solid #CCC;
+    padding: 5px 10px;
+    background: #ffffff; /* Old browsers */
+    background: -moz-linear-gradient(top,  #ffffff 0%, #f0f0f0 5%, #e5e5e5 95%, #cccccc 100%); /* FF3.6+ */
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#ffffff), color-stop(5%,#f0f0f0), color-stop(95%,#e5e5e5), color-stop(100%,#cccccc)); /* Chrome,Safari4+ */
+    background: -webkit-linear-gradient(top,  #ffffff 0%,#f0f0f0 5%,#e5e5e5 95%,#cccccc 100%); /* Chrome10+,Safari5.1+ */
+    background: -o-linear-gradient(top,  #ffffff 0%,#f0f0f0 5%,#e5e5e5 95%,#cccccc 100%); /* Opera 11.10+ */
+    background: -ms-linear-gradient(top,  #ffffff 0%,#f0f0f0 5%,#e5e5e5 95%,#cccccc 100%); /* IE10+ */
+    background: linear-gradient(to bottom,  #ffffff 0%,#f0f0f0 5%,#e5e5e5 95%,#cccccc 100%); /* W3C */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#cccccc',GradientType=0 ); /* IE6-9 */
+}
+.ffrow .icontainer {
+    position: relative;
+}
+.ffrow .path .icontainer {
+    margin-right: 15px;
+}
+.ffrow .icontainer .jibtn {
+    position: absolute;
+    right: 0;
+    top: 0;
+}
+
+.ffrow.columnnames {
+    background: #f6f8f9; /* Old browsers */
+    background: -moz-linear-gradient(top,  #f6f8f9 0%, #e5ebee 50%, #d7dee3 51%, #f5f7f9 100%); /* FF3.6+ */
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#f6f8f9), color-stop(50%,#e5ebee), color-stop(51%,#d7dee3), color-stop(100%,#f5f7f9)); /* Chrome,Safari4+ */
+    background: -webkit-linear-gradient(top,  #f6f8f9 0%,#e5ebee 50%,#d7dee3 51%,#f5f7f9 100%); /* Chrome10+,Safari5.1+ */
+    background: -o-linear-gradient(top,  #f6f8f9 0%,#e5ebee 50%,#d7dee3 51%,#f5f7f9 100%); /* Opera 11.10+ */
+    background: -ms-linear-gradient(top,  #f6f8f9 0%,#e5ebee 50%,#d7dee3 51%,#f5f7f9 100%); /* IE10+ */
+    background: linear-gradient(to bottom,  #f6f8f9 0%,#e5ebee 50%,#d7dee3 51%,#f5f7f9 100%); /* W3C */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f6f8f9', endColorstr='#f5f7f9',GradientType=0 ); /* IE6-9 */
+}
+.ffrow.columnnames li {
+    padding: 5px;
+}
+.ffbody .col3.size {
+    text-align: right;
+}
+.col4.actions {
+    text-align: center;
+}
+.ffbox .ffbody {
+    padding: 5px 0;
+}
+.ffbox .inputbox {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    width: 100%;
+    height: 24px;
+    padding: 2px 20px 2px 2px;
+    margin: 0;
+    float: none;
+}
+.ffbox .ffbody .ffrow {
+    border-bottom: 1px solid #E0E0E0;
+    padding: 0 5px;
+    position: relative;
+}
+.ffbox .ffbody .ffrow.k0 {
+    background: #FFF;
+}
+.ffbox .ffbody .ffrow.k1 {
+    background: #F0F0F0;
+}
+/* Row Text Colors */
+.ffbox .ffbody .ffrow.active {
+    background: #3875D7;
+    color: #E0E0E0;
+}
+.ffbox .ffbody .ffrow:hover {
+    background: #E8F6FE;
+    border: 1px solid #0AF;
+    color: #666;
+}
+.ffbox .ffbody .ffrow.active a {
+    color: #E0E0E0;
+}
+.ffbox .ffbody .ffrow a, .ffbox .ffbody .ffrow:hover a {
+    color: #666;
+    padding: 5px;
+    display: block;
+}
+.ffbox .ffbody .ffrow .col2 a {
+    display: block;
+    padding: 5px 0;
+}
+.ffbox .ffbody .ffrow.active .col2 a .name {
+    color: #FFF;
+}
+.ffbox .ffbody .ffrow .col2 a .name, .ffbox .ffbody .ffrow:hover .col2 a .name {
+    color: #025A8D;
+}
+.ffbox .ffbody .ffrow .col2 a .childoverrides {
+    margin-left: 10px;
+}
+/* Grid Styles */
+.ffbody.grid .ffrow {
+    background: #ffffff; /* Old browsers */
+    background: -moz-linear-gradient(top,  #ffffff 0%, #f0f0f0 5%, #ffffff 95%, #cccccc 100%); /* FF3.6+ */
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#ffffff), color-stop(5%,#f0f0f0), color-stop(95%,#ffffff), color-stop(100%,#cccccc)); /* Chrome,Safari4+ */
+    background: -webkit-linear-gradient(top,  #ffffff 0%,#f0f0f0 5%,#ffffff 95%,#cccccc 100%); /* Chrome10+,Safari5.1+ */
+    background: -o-linear-gradient(top,  #ffffff 0%,#f0f0f0 5%,#ffffff 95%,#cccccc 100%); /* Opera 11.10+ */
+    background: -ms-linear-gradient(top,  #ffffff 0%,#f0f0f0 5%,#ffffff 95%,#cccccc 100%); /* IE10+ */
+    background: linear-gradient(to bottom,  #ffffff 0%,#f0f0f0 5%,#ffffff 95%,#cccccc 100%); /* W3C */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#cccccc',GradientType=0 ); /* IE6-9 */
+    padding-bottom: 40px;
+}
+.ffbody.grid .ffrow>li>span {
+    display: inline-block;
+}
+.ffbody.grid > .ffrowouter {
+    display: inline-block;
+    vertical-align: top;
+}
+.ffbody.cols4 > .ffrowouter {
+    width: 25%;
+}
+.ffbody.cols6 > .ffrowouter {
+    width: 16.66%;
+}
+#jimediamanager .ffbody.grid .ffrow li {
+    width: 100%;
+}
+.ffbody.grid .ffrow a {
+    display: block;
+    position: relative;
+}
+.ffbody.grid .jibtn.icon16 .jiicon {
+    display: block;
+    height: auto;
+    margin: 0 auto;
+}
+#jimediamanager .ffbody.grid .ffrow .name {
+    text-align: center;
+    word-wrap: break-word;
+}
+.ffbody.grid.small .ffrow .size {
+    display: none;
+}
+.ffbody.grid.small .ffrow li {
+    width: auto !important;
+}
+.ffbody.grid.small .thumbicon img {
+    width: 16px;
+    margin: 0 auto;
+}
+.ffbody.grid.small .action {
+    position: absolute;
+    bottom: 10px;
+    margin: 0 10px;
+    right: 0;
+}
+/* UI Buttons & Icons */
+.jiicon[class^="icon-"]:before, .jiicon[class*=" icon-"]:before {
+    font-family: inherit;
+    font-style: normal;
+    speak: none;
+}
+.jimediamanager .jibtn {
+    display: inline-block;
+}
+.jimediamanager .jibtn .jiicon img {
+    display: block;
+    width: 100%;
+}
+.jimediamanager .jibtn.icon16 {
+    border-radius: 2px;
+    display: inline-block;
+    margin-left: 5px;
+    width: 14px;
+}
+.mbbody.grid .action {
+    position: absolute;
+    bottom: 10px;
+    left: 0;
+}
+/*.dllink {
+    text-align: center;
+}
+.dllink:hover {
+    background: #ffffff;
+    background: -moz-linear-gradient(top,  #ffffff 0%, #ffffff 5%, #f0f0f0 50%, #eeeeee 95%, #cccccc 100%);
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#ffffff), color-stop(5%,#ffffff), color-stop(50%,#f0f0f0), color-stop(95%,#eeeeee), color-stop(100%,#cccccc));
+    background: -webkit-linear-gradient(top,  #ffffff 0%,#ffffff 5%,#f0f0f0 50%,#eeeeee 95%,#cccccc 100%);
+    background: -o-linear-gradient(top,  #ffffff 0%,#ffffff 5%,#f0f0f0 50%,#eeeeee 95%,#cccccc 100%);
+    background: -ms-linear-gradient(top,  #ffffff 0%,#ffffff 5%,#f0f0f0 50%,#eeeeee 95%,#cccccc 100%);
+    background: linear-gradient(to bottom,  #ffffff 0%,#ffffff 5%,#f0f0f0 50%,#eeeeee 95%,#cccccc 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#cccccc',GradientType=0 );
+    border-radius: 3px;
+    border: 1px solid #AAA;
+}
+.dllink .dltext {
+    vertical-align: middle;
+    margin-right: 5px;
+}*/
+
+/* ICONS */
+.jimediamanager .jiicon {
+    font-size: 14px;
+    color: #555;
+    text-shadow: 1px 1px #FFF;
+}
+.jimediamanager .jibtn {
+    padding: 3px 5px;
+}
+.jimediamanager .jibtn:hover {
+    background: #ffffff; /* Old browsers */
+    background: -moz-linear-gradient(top,  #ffffff 0%, #ffffff 5%, #f0f0f0 50%, #eeeeee 95%, #cccccc 100%); /* FF3.6+ */
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#ffffff), color-stop(5%,#ffffff), color-stop(50%,#f0f0f0), color-stop(95%,#eeeeee), color-stop(100%,#cccccc)); /* Chrome,Safari4+ */
+    background: -webkit-linear-gradient(top,  #ffffff 0%,#ffffff 5%,#f0f0f0 50%,#eeeeee 95%,#cccccc 100%); /* Chrome10+,Safari5.1+ */
+    background: -o-linear-gradient(top,  #ffffff 0%,#ffffff 5%,#f0f0f0 50%,#eeeeee 95%,#cccccc 100%); /* Opera 11.10+ */
+    background: -ms-linear-gradient(top,  #ffffff 0%,#ffffff 5%,#f0f0f0 50%,#eeeeee 95%,#cccccc 100%); /* IE10+ */
+    background: linear-gradient(to bottom,  #ffffff 0%,#ffffff 5%,#f0f0f0 50%,#eeeeee 95%,#cccccc 100%); /* W3C */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#cccccc',GradientType=0 ); /* IE6-9 */
+    border: solid 1px #AAA;
+    text-decoration: none;
+    box-shadow: 0px 1px 1px #CCC;
+    padding: 2px 4px;
+}
+.ffbody .thumbicon {
+    display: block;
+}
+.ffbody .thumbicon img {
+    width: 100%;
+}
+
+/* Spinner */
+.jimediamanager .jimminner>.loadingicon {
+    position: relative;
+    top: inherit;
+    left: inherit;
+    margin: 0 auto;
+}
+.jimediamanager .ffbody.grid .ffrow a {
+    position: relative;
+}
+.jimediamanager .loadingicon {
+    position: absolute;
+    top: -10px;
+    left: -11px;
+    width:128px;
+    height:128px;
+    -moz-transform:scale(0.6);
+    -webkit-transform:scale(0.6);
+    -ms-transform:scale(0.6);
+    -o-transform:scale(0.6);
+    transform:scale(0.6);
+}
+.jimediamanager .f_circleG{
+    position:absolute;
+    background-color:#FFFFFF;
+    height:23px;
+    width:23px;
+    -moz-border-radius:12px;
+    -moz-animation-name:f_fadeG;
+    -moz-animation-duration:1.04s;
+    -moz-animation-iteration-count:infinite;
+    -moz-animation-direction:linear;
+    -webkit-border-radius:12px;
+    -webkit-animation-name:f_fadeG;
+    -webkit-animation-duration:1.04s;
+    -webkit-animation-iteration-count:infinite;
+    -webkit-animation-direction:linear;
+    -ms-border-radius:12px;
+    -ms-animation-name:f_fadeG;
+    -ms-animation-duration:1.04s;
+    -ms-animation-iteration-count:infinite;
+    -ms-animation-direction:linear;
+    -o-border-radius:12px;
+    -o-animation-name:f_fadeG;
+    -o-animation-duration:1.04s;
+    -o-animation-iteration-count:infinite;
+    -o-animation-direction:linear;
+    border-radius:12px;
+    animation-name:f_fadeG;
+    animation-duration:1.04s;
+    animation-iteration-count:infinite;
+    animation-direction:linear;
+}
+.jimediamanager .frotateG_01{
+    left:0;
+    top:52px;
+    -moz-animation-delay:0.39s;
+    -webkit-animation-delay:0.39s;
+    -ms-animation-delay:0.39s;
+    -o-animation-delay:0.39s;
+    animation-delay:0.39s;
+}
+.jimediamanager .frotateG_02{
+    left:15px;
+    top:15px;
+    -moz-animation-delay:0.52s;
+    -webkit-animation-delay:0.52s;
+    -ms-animation-delay:0.52s;
+    -o-animation-delay:0.52s;
+    animation-delay:0.52s;
+}
+.jimediamanager .frotateG_03{
+    left:52px;
+    top:0;
+    -moz-animation-delay:0.65s;
+    -webkit-animation-delay:0.65s;
+    -ms-animation-delay:0.65s;
+    -o-animation-delay:0.65s;
+    animation-delay:0.65s;
+}
+.jimediamanager .frotateG_04{
+    right:15px;
+    top:15px;
+    -moz-animation-delay:0.78s;
+    -webkit-animation-delay:0.78s;
+    -ms-animation-delay:0.78s;
+    -o-animation-delay:0.78s;
+    animation-delay:0.78s;
+}
+.jimediamanager .frotateG_05{
+    right:0;
+    top:52px;
+    -moz-animation-delay:0.91s;
+    -webkit-animation-delay:0.91s;
+    -ms-animation-delay:0.91s;
+    -o-animation-delay:0.91s;
+    animation-delay:0.91s;
+}
+.jimediamanager .frotateG_06{
+    right:15px;
+    bottom:15px;
+    -moz-animation-delay:1.04s;
+    -webkit-animation-delay:1.04s;
+    -ms-animation-delay:1.04s;
+    -o-animation-delay:1.04s;
+    animation-delay:1.04s;
+}
+.jimediamanager .frotateG_07{
+    left:52px;
+    bottom:0;
+    -moz-animation-delay:1.17s;
+    -webkit-animation-delay:1.17s;
+    -ms-animation-delay:1.17s;
+    -o-animation-delay:1.17s;
+    animation-delay:1.17s;
+}
+.jimediamanager .frotateG_08{
+    left:15px;
+    bottom:15px;
+    -moz-animation-delay:1.3s;
+    -webkit-animation-delay:1.3s;
+    -ms-animation-delay:1.3s;
+    -o-animation-delay:1.3s;
+    animation-delay:1.3s;
+}
+@-moz-keyframes f_fadeG{
+    0%{
+        background-color:#AAAAAA}
+    100%{
+        background-color:#FFFFFF}
+}
+@-webkit-keyframes f_fadeG{
+    0%{
+        background-color:#AAAAAA}
+    100%{
+        background-color:#FFFFFF}
+}
+@-ms-keyframes f_fadeG{
+    0%{
+        background-color:#AAAAAA}
+    100%{
+        background-color:#FFFFFF}
+}
+@-o-keyframes f_fadeG{
+    0%{
+        background-color:#AAAAAA}
+    100%{
+        background-color:#FFFFFF}
+}
+@keyframes f_fadeG{
+    0%{
+        background-color:#AAAAAA}
+
+    100%{
+        background-color:#FFFFFF}
+}

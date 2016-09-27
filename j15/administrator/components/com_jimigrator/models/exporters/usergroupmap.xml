@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<exporter version="1.5">
+    <name>UserGroupMap</name>
+    <description>Export User Group Map</description>
+    <group>joomlacore</group>
+    <tables>
+        <table name="core_acl_groups_aro_map" />
+    </tables>
+    <files>
+        <filename>user_group_map.csv</filename>
+    </files>
+</exporter>

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<exporter version="1.6">
+    <name>JiForms</name>
+    <description>Export JiForms</description>
+    <group>jinfinity</group>
+    <!-- >>> PRO >>> -->
+    <tables>
+        <table name="jiforms" />
+        <table name="jiforms_actions" />
+        <table name="jiforms_emails" />
+        <table name="jiforms_events" />
+    </tables>
+    <!-- <<< PRO <<< -->
+    <!-- >>> FREE >>> -->
+    <fields>
+        <field type="separator" label="JI_ONLY_AVAILABLE_IN_PRO_TITLE" />
+    </fields>
+    <!-- <<< FREE <<< -->
+</exporter>

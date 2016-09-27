@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension type="module" version="2.5" client="site" method="upgrade">
+	<name>JiGrid</name>
+	<creationDate>February 2014</creationDate>
+	<author>Jinfinity</author>
+	<authorEmail>support@jinfinity.com</authorEmail>
+	<authorUrl>http://www.jinfinity.com</authorUrl>
+	<copyright>Copyright (C) 2014 Jinfinity</copyright>
+	<license>GNU/GPLv3 http://www.gnu.org/licenses/gpl-3.0.html</license>
+	<version>1.1.8</version>
+	<description>MOD_JIGRID_MOD_DESCRIPTION</description>
+    <!-- Public front end files -->
+    <languages folder="language">
+        <language tag="en-GB">en-GB/en-GB.mod_jigrid.ini</language>
+        <language tag="en-GB">en-GB/en-GB.mod_jigrid.sys.ini</language>
+    </languages>
+	<files>
+		<filename module="mod_jigrid">mod_jigrid.php</filename>
+		<folder>assets</folder>
+        <folder>fields</folder>
+		<folder>tmpl</folder>
+		<filename>mod_jigrid.xml</filename>
+		<filename>helper.php</filename>
+		<filename>index.html</filename>
+	</files>
+	<config>
+		<fields name="params" addfieldpath="/modules/mod_jigrid/fields">
+			<fieldset name="basic">
+				<field name="moduletype" type="list" default="category" label="MOD_JIGRID_MODULETYPE_LABEL" description="MOD_JIGRID_MODULETYPE_DESC">
+					<option value="togglemenu">MOD_JIGRID_MODULETYPE_TOGGLEMENU</option>
+                    <option value="selectmenu">MOD_JIGRID_MODULETYPE_SELECTMENU</option>
+                    <option value="dropdownmenu">MOD_JIGRID_MODULETYPE_DROPDOWNMENU</option>
+				</field>
+                <field name="typechanger" type="typechanger" selector="jform_params_moduletype" types="togglemenu,selectmenu,dropdownmenu" />
+                <field name="btntype" type="typefield" controlclass="hide-dropdownmenu" rtype="list" default="text" label="MOD_JIGRID_BTNTYPE_LABEL" description="MOD_JIGRID_BTNTYPE_DESC">
+                    <option value="text">MOD_JIGRID_BTNTYPE_TEXT</option>
+                    <option value="icon">MOD_JIGRID_BTNTYPE_ICON</option>
+                    <option value="texticon">MOD_JIGRID_BTNTYPE_TEXTANDICON</option>
+                </field>
+                <field name="btntext" type="typefield" controlclass="hide-dropdownmenu" rtype="text" default="Menu" label="MOD_JIGRID_BTNTEXT_LABEL" description="MOD_JIGRID_BTNTEXT_DESC" />
+                <field name="headerposition" type="typefield" controlclass="hide-dropdownmenu" rtype="text" default="toggleheader" label="MOD_JIGRID_HEADERPOSITION_LABEL" description="MOD_JIGRID_HEADERPOSITION_DESC" />
+                <field
+                        name="menutype"
+                        type="menu"
+                        label="MOD_JIGRID_FIELD_MENUTYPE_LABEL"
+                        description="MOD_JIGRID_FIELD_MENUTYPE_DESC" />
+                <field
+                        name="active"
+                        type="menuitem"
+                        label="MOD_JIGRID_FIELD_ACTIVE_LABEL"
+                        description="MOD_JIGRID_FIELD_ACTIVE_DESC"
+                        >
+                    <option value="">JCURRENT</option>
+                </field>
+                <field
+                        name="startLevel"
+                        type="list"
+                        default="1"
+                        label="MOD_JIGRID_FIELD_STARTLEVEL_LABEL"
+                        description="MOD_JIGRID_FIELD_STARTLEVEL_DESC"
+                        >
+                    <option value="1">J1</option>
+                    <option value="2">J2</option>
+                    <option value="3">J3</option>
+                    <option value="4">J4</option>
+                    <option value="5">J5</option>
+                    <option value="6">J6</option>
+                    <option value="7">J7</option>
+                    <option value="8">J8</option>
+                    <option value="9">J9</option>
+                    <option value="10">J10</option>
+                </field>
+
+                <field
+                        name="endLevel"
+                        type="list"
+                        default="0"
+                        label="MOD_JIGRID_FIELD_ENDLEVEL_LABEL"
+                        description="MOD_JIGRID_FIELD_ENDLEVEL_DESC"
+                        >
+                    <option value="0">JALL</option>
+                    <option value="1">J1</option>
+                    <option value="2">J2</option>
+                    <option value="3">J3</option>
+                    <option value="4">J4</option>
+                    <option value="5">J5</option>
+                    <option value="6">J6</option>
+                    <option value="7">J7</option>
+                    <option value="8">J8</option>
+                    <option value="9">J9</option>
+                    <option value="10">J10</option>
+                </field>
+
+                <field
+                        name="showAllChildren"
+                        type="radio"
+                        class="btn-group"
+                        default="0"
+                        label="MOD_JIGRID_FIELD_ALLCHILDREN_LABEL"
+                        description="MOD_JIGRID_FIELD_ALLCHILDREN_DESC">
+                    <option
+                            value="0">JNO</option>
+                    <option
+                            value="1">JYES</option>
+                </field>
+			</fieldset>
+			<fieldset name="advanced">
+				<field name="load_jquery" type="list" default="1" label="MOD_JIGRID_LOADJQUERY_LABEL" description="MOD_JIGRID_LOADJQUERY_DESC">
+					<option value="1">JYES</option>
+					<option value="0">JNO</option>
+				</field>
+                <field
+                        name="moduleclass_sfx"
+                        type="text"
+                        label="COM_MODULES_FIELD_MODULECLASS_SFX_LABEL"
+                        description="COM_MODULES_FIELD_MODULECLASS_SFX_DESC" />
+			</fieldset>
+		</fields>
+	</config>
+</extension>

@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension version="3.0" type="plugin" group="system" method="upgrade" client="site">
+	<name>JiForms</name>
+	<creationDate>November 2014</creationDate>
+	<author>Jinfinity</author>
+	<authorEmail>support@jinfinity.com</authorEmail>
+	<authorUrl>http://www.jinfinity.com</authorUrl>
+	<copyright>Copyright (C) 2014 Jinfinity</copyright>
+	<license>GNU/GPLv3 http://www.gnu.org/licenses/gpl-3.0.html</license>
+	<version>0.8.8</version>
+    <description>PLG_JIFORMS_PLG_DESCRIPTION</description>
+	<files>
+		<filename plugin="jiforms">jiforms.php</filename>
+		<filename>jiforms.xml</filename>
+		<filename>index.html</filename>
+	</files>
+    <languages folder="language">
+        <language tag="en-GB">en-GB/en-GB.plg_system_jiforms.ini</language>
+        <language tag="en-GB">en-GB/en-GB.plg_system_jiforms.sys.ini</language>
+    </languages>
+    <config>
+        <fields name="params">
+            <fieldset name="basic">
+            </fieldset>
+            <fieldset name="advanced">
+                <field name="curlyvar" type="text" default="jiforms" label="PLG_JIFORMS_CURLYVAR_LABEL" description="PLG_JIFORMS_CURLYVAR_DESC" />
+            </fieldset>
+        </fields>
+	</config>
+</extension>

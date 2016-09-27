@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<exporter version="1.5">
+	<name>AdvancedModules</name>
+    <description>Export Advanced Modules</description>
+    <group>thirdparty</group>
+    <!-- >>> PRO >>> -->
+    <tables>
+        <table name="advancedmodules" pkey="moduleid" />
+    </tables>
+	<files>
+		<filename>advancedmodules.csv</filename>
+	</files>
+    <!-- <<< PRO <<< -->
+    <!-- >>> FREE >>> -->
+    <fields>
+        <field type="separator" label="JI_ONLY_AVAILABLE_IN_PRO_TITLE" />
+    </fields>
+    <!-- <<< FREE <<< -->
+</exporter>

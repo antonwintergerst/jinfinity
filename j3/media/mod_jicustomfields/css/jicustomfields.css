@@ -1,0 +1,43 @@
+/**
+ * @version     $Id: jicustomfields.css 061 2014-10-27 13:30:00Z Anton Wintergerst $
+ * @package     JiCustomFields Search Module for Joomla
+ * @copyright   Copyright (C) 2014 Jinfinity. All rights reserved.
+ * @license     GNU/GPLv3 http://www.gnu.org/licenses/gpl-3.0.html
+ * @website     www.jinfinity.com
+ * @email       support@jinfinity.com
+ */
+.modjicustomfields .fieldgroup, .modjicustomfields .fieldgroup .inputbox, .modjicustomfields .fieldgroup select {
+    max-width: 100% !important;
+}
+.modjicustomfields .hidden {
+    display: none;
+}
+.modjicustomfields {
+    margin-top: 5px;
+}
+.modjicustomfields .fieldgroup {
+    margin-bottom: 10px;
+    font-size: 13px;
+}
+.modjicustomfields .fieldgroup .textfield {
+    position: relative;
+}
+.modjicustomfields .fieldgroup .textfield label {
+    color: #999;
+    left: 0;
+    top: 0;
+    position: absolute;
+    cursor: text;
+    padding: 6px;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    font-size: 1em;
+    line-height: 16px;
+}
+.modjicustomfields .hidelabel label {
+    display: none;
+}

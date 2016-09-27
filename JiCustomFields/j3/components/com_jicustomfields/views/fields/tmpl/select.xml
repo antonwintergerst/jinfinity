@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<fieldtype version="2.5">
+	<name>Select</name>
+	<label>JICUSTOMFIELDS_SELECT</label>
+	<description>HTML Select List form displayed as HTML UL List</description>
+</fieldtype>

@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension type="module" version="1.7.0" client="site" method="upgrade">
+	<name>MOD_JIDISQUSAPI</name>
+	<creationDate>December 2014</creationDate>
+	<author>Jinfinity</author>
+	<authorEmail>antonwintergerst@gmail.com</authorEmail>
+	<authorUrl>http://www.jinfinity.com</authorUrl>
+	<copyright>Copyright (C) 2014 Jinfinity</copyright>
+	<license>GNU/GPLv3 http://www.gnu.org/licenses/gpl-3.0.html</license>
+	<version>1.1.7</version>
+	<description>MOD_JIDISQUSAPI_DESC</description>
+
+    <!-- Public front end files -->
+    <languages folder="language">
+        <language tag="en-GB">en-GB/en-GB.mod_jidisqusapi.ini</language>
+        <language tag="en-GB">en-GB/en-GB.mod_jidisqusapi.sys.ini</language>
+    </languages>
+    <media folder="media">
+        <folder>mod_jidisqusapi</folder>
+    </media>
+	<files>
+		<filename module="mod_jidisqusapi">mod_jidisqusapi.php</filename>
+        <folder>admin</folder>
+		<folder>assets</folder>
+        <folder>fields</folder>
+		<folder>tmpl</folder>
+        <filename>helper.php</filename>
+        <filename>index.html</filename>
+		<filename>mod_jidisqusapi.xml</filename>
+	</files>
+
+	<config>
+		<fields name="params" addfieldpath="/modules/mod_jidisqusapi/fields">
+            <fieldset name="basic">
+                <field name="apikey" type="text" default="" label="Disqus API Key" description=""/>
+                <field name="apisecret" type="text" default="" label="Disqus API Secret" description=""/>
+                <field name="forum" type="text" default="" label="Disqus Short Name" description=""/>
+                <field name="limit" type="text" default="5" label="Article Limit" description="Total number of articles to display"/>
+                <field name="filter_categories" type="category" extension="com_content" multiple="true" size="5" default="" label="Categories" description="Select the categories you would like to display.">
+                    <option value="0">JOPTION_ALL_CATEGORIES</option>
+                </field>
+                <field name="filter_categorychildren" type="list" default="1" label="Include Child Categories" description="">
+                    <option value="1">Yes</option>
+                    <option value="0">No</option>
+                </field>
+                <field name="filter_categorylevels" type="text" default="3" label="MOD_ARTICLES_CATEGORY_FIELD_CATDEPTH_LABEL" description="MOD_ARTICLES_CATEGORY_FIELD_CATDEPTH_DESC"/>
+                <field name="showdate" type="list" default="" label="Show Date" description="Display article date">
+                    <option value="1">Yes</option>
+                    <option value="0">No</option>
+                </field>
+                <field name="showtext" type="list" default="" label="Show Text" description="Display article text">
+                    <option value="1">Yes</option>
+                    <option value="0">No</option>
+                </field>
+            </fieldset>
+            <fieldset name="advanced">
+                <field name="moduleclass_sfx" type="textarea" rows="3" label="COM_MODULES_FIELD_MODULECLASS_SFX_LABEL" description="COM_MODULES_FIELD_MODULECLASS_SFX_DESC"/>
+                <field name="cachedata" type="list" default="1" label="Cache API Data" description="">
+                    <option value="1">Yes</option>
+                    <option value="0">No</option>
+                </field>
+                <field name="cachetime" type="text" default="3600" label="API Cache Time" description="Cache time limit in seconds."/>
+                <field name="apicache" type="cache" label="API Cache" description=""/>
+                <field name="apilimit" type="text" default="25" label="API Limit" description=""/>
+                <field name="apiinterval" type="text" default="90d" label="API Interval" description=""/>
+            </fieldset>
+        </fields>
+	</config>
+</extension>

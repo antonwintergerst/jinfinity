@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension type="plugin" version="1.5.0" method="upgrade" client="site" group="system">
+    <name>PLG_SYSTEM_JIFRAMEWORK</name>
+    <creationDate>December 2014</creationDate>
+    <author>Jinfinity</author>
+    <authorEmail>support@jinfinity.com</authorEmail>
+    <authorUrl>http://www.jinfinity.com</authorUrl>
+    <copyright>Copyright (C) 2014 Jinfinity</copyright>
+    <license>GNU/GPLv3 http://www.gnu.org/licenses/gpl-3.0.html</license>
+    <version>3.0.20</version>
+    <description>PLG_SYSTEM_JIFRAMEWORK_DESC</description>
+    <media folder="media">
+        <folder>jiframework</folder>
+    </media>
+    <files>
+        <folder>fields</folder>
+        <folder>helpers</folder>
+        <folder>language</folder>
+        <filename>index.html</filename>
+        <filename plugin="jiframework">jiframework.php</filename>
+    </files>
+    <languages folder="language">
+        <language tag="en-GB">en-GB/en-GB.plg_system_jiframework.ini</language>
+        <language tag="en-GB">en-GB/en-GB.plg_system_jiframework.sys.ini</language>
+    </languages>
+    <config>
+        <fields name="params" addfieldpath="/plugins/system/jiframework/fields">
+            <fieldset name="description">
+                <field name="@header" type="header" label="JIFRAMEWORK" description="JIFRAMEWORK_DESC" xml="/plugins/system/jiframework/jiframework.xml"/>
+            </fieldset>
+        </fields>
+    </config>
+</extension>

@@ -1,0 +1,142 @@
+/**
+ * @version     $Id: togglemenu.css 038 2013-09-30 13:01:00Z Anton Wintergerst $
+ * @package     JiToggleMenu
+ * @copyright   Copyright (C) 2013 Jinfinity. All rights reserved.
+ * @license     GNU/GPLv3 http://www.gnu.org/licenses/gpl-3.0.html
+ * @website     www.jinfinity.com
+ * @email       support@jinfinity.com
+ */
+body.hasjitogglemenu {
+    /*margin-top: 44px;*/
+}
+.innertogglemenu {
+    /*position: fixed;
+    top: 0;
+    left: 0;*/
+    display: none;
+    width: 100%;
+    min-width: 320px;
+    z-index: 1000;
+}
+.hasjitogglemenu .innertogglemenu {
+    display: block;
+}
+.jitogglemenubar {
+    height: 44px;
+    width: 100%;
+    background: #EFEFEF;
+    border-bottom: #CCC 1px solid;
+    overflow: hidden;
+}
+.jitogglemenubtn.btn {
+    height: auto;
+    margin: 2px;
+    padding: 8px 4px;
+    text-align: center;
+    text-decoration: none;
+    font-size: 18px;
+    cursor: pointer;
+    border: 1px solid #CCC;
+    border-radius: 4px;
+    line-height: 22px;
+    display: block;
+    float: left;
+    color: #888;
+}
+.jitogglemenubtn .btntext {
+    padding: 8px 20px;
+}
+.jitogglemenubtn .btnicon {
+    display: inline-block;
+    padding: 4px 8px 0;
+    vertical-align: top;
+}
+.jitogglemenubtn .btnicon .icon-bar {
+    display: block;
+    width: 18px;
+    height: 2px;
+    background-color: #AAA;
+    -webkit-border-radius: 1px;
+    -moz-border-radius: 1px;
+    border-radius: 1px;
+    -webkit-box-shadow: 0 1px 0 rgba(0,0,0,0.5);
+    -moz-box-shadow: 0 1px 0 rgba(0,0,0,0.5);
+    box-shadow: 0 1px 0 rgba(0,0,0,0.5);
+    margin-bottom: 4px;
+}
+.jitogglemenubtn:hover {
+    border-color: #BBB;
+    box-shadow: 0 1px 3px rgba(0,0,0,.2), inset 0 2px rgba(255,255,255,0.4), inset 0 3px rgba(255,255,255,0.3), inset 0 5px 5px rgba(255,255,255,0.4), inset 0 -5px 10px rgba(255,255,255,0.5);
+    -o-box-shadow: 0 1px 3px rgba(0,0,0,.2), inset 0 2px rgba(255,255,255,0.4), inset 0 3px rgba(255,255,255,0.3), inset 0 5px 5px rgba(255,255,255,0.4), inset 0 -5px 10px rgba(255,255,255,0.5);
+    -webkit-box-shadow: 0 1px 3px rgba(0,0,0,.2), inset 0 2px rgba(255,255,255,0.4), inset 0 3px rgba(255,255,255,0.3), inset 0 5px 5px rgba(255,255,255,0.4), inset 0 -5px 10px rgba(255,255,255,0.5);
+    -moz-box-shadow: 0 1px 3px rgba(0,0,0,.2), inset 0 2px rgba(255,255,255,0.4), inset 0 3px rgba(255,255,255,0.3), inset 0 5px 5px rgba(255,255,255,0.4), inset 0 -5px 10px rgba(255,255,255,0.5);
+    color: #555;
+}
+.jitogglemenubtn.active {
+    background: #FFF;
+    box-shadow: inset 0px 1px 2px rgba(0,0,0,0.5);
+    -o-box-shadow: inset 0px 1px 2px rgba(0,0,0,0.5);
+    -webkit-box-shadow: inset 0px 1px 2px rgba(0,0,0,0.5);
+    -moz-box-shadow: inset 0px 1px 2px rgba(0,0,0,0.5);
+    color: #333;
+}
+.jitoggleheader {
+    text-align: center;
+    color: #888;
+    margin: 10px 0 10px 130px;
+}
+.hasicon>.jitoggleheader {
+    margin-left:30px;
+}
+.jitoggleheader p {
+    margin: 0;
+}
+.jitogglemenu {
+    max-width: 480px;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    display: none;
+    border: 1px solid rgba(0,0,0,0.5);
+    background: rgba(160, 160, 160, 0.6);
+    overflow-y: auto;
+}
+.jitogglemenu li {
+    display: block;
+    border-bottom: 1px solid rgba(0,0,0,0.5);
+}
+.jitogglemenu li a {
+    display: block;
+    padding: 12px 0;
+    text-align: center;
+    color: #FFF;
+    font-size: 18px;
+    text-decoration: none
+}
+.jitogglemenu li.active a, .jitogglemenu li a:hover {
+    background: rgba(0,0,0,0.25);
+}
+.jitogglemenu .nav-childouter {
+    background: #000;
+}
+.jitogglemenu .nav-childinner {
+    padding: 20px;
+}
+.jitogglemenu .nav-child li {
+    border: 1px solid #1a1a1a;
+    margin: 0 0 8px;
+    display: block;
+    background: #101010;
+}
+.jitogglemenu .nav-child li.current, .jitogglemenu .nav-child li:hover {
+    border-color: #5fbfcb;
+    background: -webkit-gradient(linear,0% 0%,0% 100%,from(#85cfd8),to(#55b5c2));
+    background: -webkit-linear-gradient(top,#85cfd8,#55b5c2);
+    background: -moz-linear-gradient(top,#85cfd8,#55b5c2);
+    background: -ms-linear-gradient(top,#85cfd8,#55b5c2);
+    background: -o-linear-gradient(top,#85cfd8,#55b5c2);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#85cfd8,endColorstr=#55b5c2);
+    -ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr=#85cfd8,endColorstr=#55b5c2)";
+    background-color: #6ec2cc;
+    color: #FFF;
+}

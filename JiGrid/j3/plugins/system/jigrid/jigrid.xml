@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension type="plugin" version="1.5.0" method="upgrade" client="site" group="system">
+    <name>PLG_SYSTEM_JIGRID</name>
+    <creationDate>January 2015</creationDate>
+    <author>Jinfinity</author>
+    <authorEmail>support@jinfinity.com</authorEmail>
+    <authorUrl>http://www.jinfinity.com</authorUrl>
+    <copyright>Copyright (C) 2015 Jinfinity</copyright>
+    <license>GNU/GPLv3 http://www.gnu.org/licenses/gpl-3.0.html</license>
+    <version>3.0.5</version>
+    <description>PLG_SYSTEM_JIGRID_DESC</description>
+
+    <languages folder="language">
+        <language tag="en-GB">en-GB/en-GB.plg_system_jigrid.ini</language>
+        <language tag="en-GB">en-GB/en-GB.plg_system_jigrid.sys.ini</language>
+    </languages>
+    <media folder="media">
+        <folder>jigrid</folder>
+    </media>
+    <files>
+        <filename>index.html</filename>
+        <filename plugin="jigrid">jigrid.php</filename>
+    </files>
+
+    <config>
+        <fields name="params" addfieldpath="/plugins/system/jiframework/fields">
+            <fieldset name="description">
+                <field name="@header" type="header" label="JIGRID" description="JIGRID_DESC" xml="/plugins/system/jigrid/jigrid.xml"/>
+            </fieldset>
+        </fields>
+    </config>
+</extension>

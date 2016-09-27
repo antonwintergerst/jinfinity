@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<fieldtype version="2.5">
+	<name>Date</name>
+	<label>COM_JICUSTOMFIELDS_DATELABEL</label>
+	<description></description>
+</fieldtype>

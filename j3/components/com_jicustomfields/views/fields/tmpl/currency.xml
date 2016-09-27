@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<fieldtype version="2.5">
+	<name>Currency</name>
+	<label>JICUSTOMFIELDS_CURRENCY</label>
+	<description>JICUSTOMFIELDS_CURRENCY_DESC</description>
+</fieldtype>

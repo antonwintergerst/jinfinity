@@ -1,0 +1,90 @@
+/*
+ * @version     $Id: admin.css 011 2014-12-19 10:10:00Z Anton Wintergerst $
+ * @package     JiContentInjector for Joomla 2.5+
+ * @copyright   Copyright (C) 2014 Jinfinity. All rights reserved.
+ * @license     GNU/GPLv3 http://www.gnu.org/licenses/gpl-3.0.html
+ * @website     www.jinfinity.com
+ * @email       support@jinfinity.com
+*/
+/* Component Menu */
+.page-title .icon-jicontentinjector {
+    background-image: url('../images/jicontentinjector-icon.png');
+    background-size: 32px 32px;
+    height: 32px;
+    width: 32px;
+    vertical-align: middle;
+}
+table.lamp {
+    border: 1px solid #D4D4D4;
+    padding: 0;
+    width: 100%;
+}
+table.lamp th {
+    background-color: white;
+    color: #000000;
+    padding: 10px 5px 10px 10px;
+}
+table.lamp td {
+    background-color: #FFFFFF;
+    padding: 4px 10px 4px 0;
+}
+table.tecspec th, table.tecspec td {
+    border: 1px solid #D4D4D4;
+    padding: 7px 5px;
+    text-align: left;
+    vertical-align: top;
+}
+table.reference, table.tecspec {
+    border-collapse: collapse;
+    width: 100%;
+}
+table.reference tr:nth-child(2n+1) {
+    background-color: #F6F4F0;
+}
+table.reference tr:nth-child(2n) {
+    background-color: #FFFFFF;
+}
+table.reference tr.fixzebra {
+    background-color: #F6F4F0;
+}
+table.reference th {
+    background-color: #555555;
+    border: 1px solid #555555;
+    color: #FFFFFF;
+    font-size: 12px;
+    padding: 3px;
+    text-align: left;
+    vertical-align: top;
+}
+table.reference th a:link, table.reference th a:visited {
+    color: #FFFFFF;
+}
+table.reference th a:hover, table.reference th a:active {
+    color: #EE872A;
+}
+table.reference td {
+    border: 1px solid #D4D4D4;
+    padding: 7px 5px;
+    vertical-align: top;
+}
+table.reference td.example_code {
+    vertical-align: bottom;
+}
+table.summary {
+    background-color: #FAFAD2;
+    border: 1px solid #D4D4D4;
+    color: #555555;
+    font-size: 100%;
+    padding: 5px;
+}
+h2.example, h2.example_head {
+    background-color: transparent;
+    color: #617F10;
+    margin-top: 0;
+}
+h2.example {
+    font-size: 120%;
+}
+h2.example_head {
+    font-size: 140%;
+}

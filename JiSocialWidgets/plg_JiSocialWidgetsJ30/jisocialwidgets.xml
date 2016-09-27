@@ -1,0 +1,206 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension version="1.7" type="plugin" group="content" method="upgrade" client="site">
+	<name>JiSocialWidgets</name>
+	<creationDate>November 2014</creationDate>
+	<author>Jinfinity</author>
+	<authorEmail>support@jinfinity.com</authorEmail>
+	<authorUrl>http://www.jinfinity.com</authorUrl>
+	<copyright>Copyright (C) 2014 Jinfinity</copyright>
+	<license>GNU/GPLv3 http://www.gnu.org/licenses/gpl-3.0.html</license>
+	<version>1.3.2</version>
+	<description><![CDATA[PLG_JISOCIALWIDGETS_XML_DESCRIPTION]]></description>
+	<files>
+		<filename plugin="jisocialwidgets">index.html</filename>
+		<filename plugin="jisocialwidgets">jisocialwidgets.php</filename>
+		<filename plugin="jisocialwidgets">helper.php</filename>
+		<folder plugin="jisocialwidgets">assets</folder>
+	</files>
+	<languages folder="language">
+    	<language tag="en-GB">en-GB/en-GB.plg_content_jisocialwidgets.ini</language>
+    	<language tag="en-GB">en-GB/en-GB.plg_content_jisocialwidgets.sys.ini</language>
+	</languages>
+	<config>
+		<fields name="params">
+			<fieldset name="basic">
+				<field name="like" type="list" default="show" label="Show Facebook Like" description="Show official Facebook like button">
+					<option value="hide">No</option>
+					<option value="show">Yes</option>
+				</field>
+				<field name="comments" type="list" default="show" label="Show Facebook Comments Box" description="Show official Facebook comments box">
+					<option value="hide">No</option>
+					<option value="show">Yes</option>
+				</field>
+				<field name="page" type="list" default="show" label="Show Facebook Page Box" description="Show official Facebook page box (like box)">
+					<option value="hide">No</option>
+					<option value="show">Yes</option>
+				</field>
+				<field name="tweet" type="list" default="show" label="Show Twitter Tweet" description="Show official Twitter tweet button">
+					<option value="hide">No</option>
+					<option value="show">Yes</option>
+				</field>
+				<field name="twitter_text" type="text" default="Tweet" label="Twitter Tweet Text" description="By default the Twitter button text is Tweet, you may customize it here." />
+			</fieldset>
+			<fieldset name="facebooklike">
+				<field name="like_href" type="text" default="" label="URL" description="Global url to use on every like button unless specified otherwise" />
+				<field name="like_send" type="list" default="true" label="Show Send Button" description="Global show send button">
+					<option value="false">No</option>
+					<option value="true">Yes</option>
+				</field>
+				<field name="like_layout" type="list" default="" label="Layout" description="Global layout for like buttons">
+					<option value="">Standard</option>
+					<option value="button_count">Button Count</option>
+					<option value="box_count">Box Count</option>
+				</field>
+				<field name="like_width" type="text" default="270" label="Width" description="Global width for like buttons" />
+				<field name="like_show-faces" type="list" default="false" label="Show Faces" description="Global faces below like buttons">
+					<option value="false">No</option>
+					<option value="true">Yes</option>
+				</field>
+				<field name="like_action" type="list" default="" label="Verb to display" description="Global verb to display for like buttons">
+					<option value="">Like</option>
+					<option value="recommend">Recommend</option>
+				</field>
+				<field name="like_colorscheme" type="list" default="" label="Colorscheme" description="Global colorscheme for like buttons">
+					<option value="">Light</option>
+					<option value="dark">Dark</option>
+				</field>
+				<field name="like_font" type="list" default="" label="Font" description="Global font for like buttons">
+					<option value="">Default</option>
+					<option value="arial">Arial</option>
+					<option value="lucida grande">Lucida Grande</option>
+					<option value="segoi ui">Segoi UI</option>
+					<option value="tahoma">Tahoma</option>
+					<option value="trebuchet ms">Trebuchet MS</option>
+					<option value="verdana">Verdana</option>
+				</field>
+			</fieldset>
+			<fieldset name="facebooksubscribe">
+				<field name="subscribe_href" type="text" default="" label="URL" description="Global url to use on every subscribe button unless specified otherwise" />
+				<field name="subscribe_layout" type="list" default="" label="Layout" description="Global layout for subscribe buttons">
+					<option value="">Standard</option>
+					<option value="button_count">Button Count</option>
+					<option value="box_count">Box Count</option>
+				</field>
+				<field name="subscribe_width" type="text" default="270" label="Width" description="Global width for subscribe buttons" />
+				<field name="subscribe_show-faces" type="list" default="false" label="Show Faces" description="Global faces below subscribe buttons">
+					<option value="false">No</option>
+					<option value="true">Yes</option>
+				</field>
+				<field name="subscribe_colorscheme" type="list" default="" label="Colorscheme" description="Global colorscheme for subscribe buttons">
+					<option value="">Light</option>
+					<option value="dark">Dark</option>
+				</field>
+				<field name="subscribe_font" type="list" default="" label="Font" description="Global font for subscribe buttons">
+					<option value="">Default</option>
+					<option value="arial">Arial</option>
+					<option value="lucida grande">Lucida Grande</option>
+					<option value="segoi ui">Segoi UI</option>
+					<option value="tahoma">Tahoma</option>
+					<option value="trebuchet ms">Trebuchet MS</option>
+					<option value="verdana">Verdana</option>
+				</field>
+			</fieldset>
+			<fieldset name="facebookcomments">
+				<field name="comments_href" type="text" default="" label="URL" description="Global url to use on every comments box unless specified otherwise" />
+				<field name="comments_num-posts" type="text" default="2" label="Number of Posts" description="Global number of posts to show in the comments box" />
+				<field name="comments_width" type="text" default="460" label="Width" description="Global width for comments boxes" />
+				<field name="comments_colorscheme" type="list" default="" label="Colorscheme" description="Global colorscheme for comments boxes">
+					<option value="">Light</option>
+					<option value="dark">Dark</option>
+				</field>
+			</fieldset>
+			<fieldset name="facebookpage">
+				<field name="page_href" type="text" default="" label="Page URL" description="Global url to use on every page box unless specified otherwise" />
+				<field name="page_width" type="text" default="460" label="Width" description="Global width for page boxes" />
+				<field name="page_height" type="text" default="" label="Height" description="Global height for page boxes" />
+				<field name="page_show-faces" type="list" default="false" label="Show Faces" description="Global faces below page boxes">
+					<option value="false">No</option>
+					<option value="true">Yes</option>
+				</field>
+				<field name="page_colorscheme" type="list" default="" label="Colorscheme" description="Global colorscheme for page boxes">
+					<option value="">Light</option>
+					<option value="dark">Dark</option>
+				</field>
+				<field name="page_border-color" type="text" default="" label="Border Color" description="Global border color for page boxes. Format: Hex without the hashtag. E.g. 0000FF" />
+				<field name="page_stream" type="list" default="true" label="Show Stream" description="Global show stream on page boxes">
+					<option value="false">No</option>
+					<option value="true">Yes</option>
+				</field>
+				<field name="page_header" type="list" default="true" label="Show Header" description="Global show header on page boxes">
+					<option value="false">No</option>
+					<option value="true">Yes</option>
+				</field>
+				<field name="page_force-wall" type="list" default="false" label="Show Force Wall" description="For Places, specifies whether the stream contains posts from the Place's wall or just checkins from friends.">
+					<option value="false">No</option>
+					<option value="true">Yes</option>
+				</field>
+			</fieldset>
+			<fieldset name="twittertweet">
+			</fieldset>
+			<fieldset name="googleplus1">
+			</fieldset>
+			<fieldset name="googleplus">
+			</fieldset>
+			<fieldset name="linkedinshare">
+			</fieldset>
+			<fieldset name="linkedinmember">
+			</fieldset>
+			<fieldset name="pinterestpinit">
+			</fieldset>
+			<fieldset name="pinterestfollow">
+			</fieldset>
+			<fieldset name="disqus">
+			</fieldset>
+			<fieldset name="advanced">
+				<field name="replacemethod" type="list" default="all" label="Replace Method" description="Set this to Simple if you plan on ensuring the curly bracket code is never inserted into an illegal HTML DOM structure. The Simple Replace Method may provide marginal performance increases on large sites.">
+					<option value="safe">DOM Safe</option>
+					<option value="simple">Simple</option>
+				</field>
+				<field name="assignment" type="list" default="all" label="Assignment" description="When should this plugin be activated?">
+					<option value="all">All Articles</option>
+					<option value="curly">Only on Article with plugin code</option>
+				</field>
+				<field name="facebook_loadapi" type="list" default="true" label="Load Facebook API" description="Load Facebook API as below">
+					<option value="false">No</option>
+					<option value="true">Yes</option>
+				</field>
+				<field name="facebook_api" type="textarea" filter="raw" default="" label="Facebook API" rows="10" cols="50" description="Facebook javascript API. More information at http://developers.facebook.com/docs/reference/plugins" />
+				<field name="facebook_loadog" type="list" default="false" label="Load Facebook Open Graph" description="Load Facebook Open Graph as below">
+					<option value="false">No</option>
+					<option value="true">Yes</option>
+				</field>
+				<field name="facebook_og" type="textarea" filter="raw" default="" label="Facebook Open Graph" rows="10" cols="50" description="Facebook Open Graph. More information at https://developers.facebook.com/docs/reference/plugins/like/#ogtags" />
+				
+				<field name="twitter_loadapi" type="list" default="true" label="Load Twitter API" description="Load Twitter API as below">
+					<option value="false">No</option>
+					<option value="true">Yes</option>
+				</field>
+				<field name="twitter_api" type="textarea" filter="raw" default="" label="Twitter API" rows="10" cols="50" description="Twitter javascript API. More information at https://dev.twitter.com" />
+				
+				<field name="googleplus_loadapi" type="list" default="true" label="Load Google Plus API" description="Load Google Plus API as below">
+					<option value="false">No</option>
+					<option value="true">Yes</option>
+				</field>
+				<field name="googleplus_api" type="textarea" filter="raw" default="" label="Google Plus API" rows="10" cols="50" description="Google Plus javascript API. More information at https://developers.google.com/+/plugins" />
+				
+				<field name="linkedin_loadapi" type="list" default="true" label="Load LinkedIn API" description="Load LinkedIn API as below">
+					<option value="false">No</option>
+					<option value="true">Yes</option>
+				</field>
+				<field name="linkedin_api" type="textarea" filter="raw" default="" label="LinkedIn API" rows="10" cols="50" description="LinkedIn javascript API. More information at http://developer.linkedin.com/plugins" />
+				
+				<field name="pinterest_loadapi" type="list" default="true" label="Load Pinterest API" description="Load Pinterest API as below">
+					<option value="false">No</option>
+					<option value="true">Yes</option>
+				</field>
+				<field name="pinterest_api" type="textarea" filter="raw" default="" label="Pinterest API" rows="10" cols="50" description="Pinterest javascript API. More information at http://pinterest.com/about/goodies" />
+				
+				<field name="disqus_loadapi" type="list" default="true" label="Load Disqus API" description="Load Disqus API as below">
+					<option value="false">No</option>
+					<option value="true">Yes</option>
+				</field>
+				<field name="disqus_api" type="textarea" filter="raw" default="" label="Disqus API" rows="10" cols="50" description="Disqus javascript API. More information at http://help.disqus.com/customer/portal/articles/472097-universal-code" />
+			</fieldset>
+		</fields>
+	</config>
+</extension>

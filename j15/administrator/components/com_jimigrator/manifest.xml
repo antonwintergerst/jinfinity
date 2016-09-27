@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<install type="component" version="1.5.0" method="upgrade">
+	<name>JiMigrator</name>
+	<creationDate>January 2015</creationDate>
+	<author>Jinfinity</author>
+	<authorEmail>support@jinfinity.com</authorEmail>
+	<authorUrl>http://www.jinfinity.com</authorUrl>
+	<copyright>Copyright (C) 2015 Jinfinity</copyright>
+	<license>GNU/GPLv3 http://www.gnu.org/licenses/gpl-3.0.html</license>
+	<version>3.0.9</version>
+	<description>COM_JIMIGRATOR_DESC</description>
+	<!-- Runs on install -->
+	<installfile>install.jimigrator.php</installfile>
+	<!-- Runs on uninstall -->
+	<uninstallfile>uninstall.jimigrator.php</uninstallfile>
+	<!-- Public front end files -->
+    <media folder="media">
+        <folder>jimigrator</folder>
+    </media>
+	<!-- Administrator back-end section -->
+	<administration>
+		<!-- Administration menu -->
+		<menu img="../media/jimigrator/images/icon-16-jimigrator.png">JIMIGRATOR</menu>
+		<submenu>
+            <menu view="snapshots">SNAPSHOTS</menu>
+			<menu view="import">IMPORT</menu>
+			<menu view="export">EXPORT</menu>
+            <menu view="logs">LOGS</menu>
+		</submenu>
+		<!-- Back-end files -->	
+		<files folder="admin">
+			<folder>controllers</folder>
+			<folder>helpers</folder>
+			<folder>jifields</folder>
+			<folder>models</folder>
+            <folder>tmp</folder>
+			<folder>views</folder>
+            <filename>config.xml</filename>
+            <filename>controller.php</filename>
+            <filename>index.html</filename>
+            <filename>jimigrator.php</filename>
+		</files>
+		<languages folder="admin/language">
+            <language tag="en-GB">en-GB/en-GB.com_jimigrator.ini</language>
+			<language tag="en-GB">en-GB/en-GB.com_jimigrator.menu.ini</language>
+        </languages>
+	</administration>
+</install>

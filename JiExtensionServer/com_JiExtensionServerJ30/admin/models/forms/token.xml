@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<form>
+    <fieldset>
+        <field name="dlkey" type="text" label="COM_JIEXTENSIONSERVER_DOWNLOADTOKEN_LABEL" description="COM_JIEXTENSIONSERVER_DOWNLOADTOKEN_DESC" class="input-xlarge" size="30" required="true" labelclass="control-label" />
+        <field name="valid" type="text" class="readonly" labelclass="control-label" label="COM_JIEXTENSIONSERVER_VALIDTOKEN_LABEL" description ="COM_JIEXTENSIONSERVER_VALIDTOKEN_DESC" size="10" default="0" readonly="true" />
+        <field name="id" type="text" class="readonly" labelclass="control-label" label="COM_JIEXTENSIONSERVER_USERID_LABEL" description ="COM_JIEXTENSIONSERVER_USERID_DESC" size="10" default="0" readonly="true" />
+    </fieldset>
+    <fields name="attribs">
+    </fields>
+</form>

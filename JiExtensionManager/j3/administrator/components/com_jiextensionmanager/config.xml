@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<config>
+    <fieldset name="options" label="JOPTIONS" description="JIEXTENSIONMANAGER_CONFIG_OPTIONS_DESC">
+        <field name="dlkey" type="password" autocomplete="false" default="" label="JIEXTENSIONMANAGER_DOWNLOADTOKEN" description="JIEXTENSIONMANAGER_DOWNLOADTOKEN_DESC" size="122" maxlength="122" />
+    </fieldset>
+</config>

@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension type="component" version="2.5" method="upgrade">
+	<name>JiGrid</name>
+	<creationDate>November 2014</creationDate>
+	<author>Jinfinity</author>
+	<authorEmail>support@jinfinity.com</authorEmail>
+	<authorUrl>http://www.jinfinity.com</authorUrl>
+	<copyright>Copyright (C) 2014 Jinfinity</copyright>
+	<license>GNU/GPLv3 http://www.gnu.org/licenses/gpl-3.0.html</license>
+	<version>1.3.2</version>
+	<description>COM_JIGRID_COM_DESCRIPTION</description>
+	<languages folder="language">
+		<language tag="en-GB">en-GB/en-GB.com_jigrid.ini</language>
+		<language tag="en-GB">en-GB/en-GB.com_jigrid.sys.ini</language>
+	</languages>
+	<!-- install/uninstall -->
+	<scriptfile>script.jigrid.php</scriptfile>
+    <!-- Public front end files -->
+    <media folder="media">
+        <folder>jigrid</folder>
+        <folder>jinfinity</folder>
+    </media>
+	<!-- Administrator back-end section -->
+	<administration>
+		<!-- Administration menu -->
+		<menu img="components/com_jigrid/assets/images/icon-16-jigrid.png">COM_JIGRID</menu>
+		<!-- Back-end files -->	
+		<files folder="admin">
+            <folder>assets</folder>
+            <folder>controllers</folder>
+            <folder>helpers</folder>
+            <folder>models</folder>
+            <folder>tables</folder>
+            <folder>views</folder>
+            <filename>config.xml</filename>
+			<filename>controller.php</filename>
+			<filename>index.html</filename>
+            <filename>jigrid.php</filename>
+		</files>
+		<languages folder="admin/language">
+            <language tag="en-GB">en-GB/en-GB.com_jigrid.ini</language>
+			<language tag="en-GB">en-GB/en-GB.com_jigrid.sys.ini</language>
+        </languages>
+		<media folder="admin" destination="com_jigrid/images">
+	  		<filename>images/jigrid-16.png</filename>
+		</media>
+	</administration>
+    <modules>
+        <module module="mod_jigrid" client="site" />
+    </modules>
+    <plugins>
+        <plugin plugin="jigrid" group="system" />
+    </plugins>
+    <config>
+	</config>
+</extension>

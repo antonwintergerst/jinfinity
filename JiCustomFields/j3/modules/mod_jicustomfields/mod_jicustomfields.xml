@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension type="module" version="1.7.0" client="site" method="upgrade">
+	<name>mod_jicustomfields</name>
+	<creationDate>January 2015</creationDate>
+	<author>Jinfinity</author>
+	<authorEmail>support@jinfinity.com</authorEmail>
+	<authorUrl>http://www.jinfinity.com</authorUrl>
+	<copyright>Copyright (C) 2015 Jinfinity</copyright>
+	<license>GNU/GPLv3 http://www.gnu.org/licenses/gpl-3.0.html</license>
+	<version>3.3.6</version>
+	<description>MOD_JICUSTOMFIELDS_DESC</description>
+
+    <!-- Public front end files -->
+    <languages folder="language">
+        <language tag="en-GB">en-GB/en-GB.mod_jicustomfields.ini</language>
+        <language tag="en-GB">en-GB/en-GB.mod_jicustomfields.sys.ini</language>
+    </languages>
+    <media folder="media">
+        <folder>mod_jicustomfields</folder>
+    </media>
+	<files>
+		<filename module="mod_jicustomfields">mod_jicustomfields.php</filename>
+		<folder>tmpl</folder>
+		<filename>mod_jicustomfields.xml</filename>
+		<filename>helper.php</filename>
+		<filename>index.html</filename>
+	</files>
+
+	<config>
+		<fields name="params" addfieldpath="/administrator/components/com_jicustomfields/models/fields">
+			<fieldset name="basic" addfieldpath="/administrator/components/com_content/models/fields">
+                <field name="com_content" type="language"/>
+				<field name="fields" type="fields" default="" multiple="multiple" label="JICUSTOMFIELDS_FIELDS_LABEL" description="JICUSTOMFIELDS_FIELDS_DESC"/>
+                <field name="mode" default="dynamic" type="list" label="MOD_JICUSTOMFIELDS_MODE" description="MOD_JICUSTOMFIELDS_MODE_DESC">
+                    <option value="static">MOD_JICUSTOMFIELDS_MODE_STATIC</option>
+                    <option value="dynamic">MOD_JICUSTOMFIELDS_MODE_DYNAMIC</option>
+                </field>
+                <field name="item_id" type="modal_article" label="COM_CONTENT_FIELD_SELECT_ARTICLE_LABEL" required="true" description="COM_CONTENT_FIELD_SELECT_ARTICLE_DESC"/>
+            </fieldset>
+            <fieldset name="advanced">
+                <field name="layout" type="modulelayout" label="JFIELD_ALT_LAYOUT_LABEL" description="JFIELD_ALT_MODULE_LAYOUT_DESC"/>
+
+                <field name="moduleclass_sfx" type="textarea" rows="3" label="COM_MODULES_FIELD_MODULECLASS_SFX_LABEL" description="COM_MODULES_FIELD_MODULECLASS_SFX_DESC"/>
+
+                <field name="cache" type="list" default="1" label="COM_MODULES_FIELD_CACHING_LABEL" description="COM_MODULES_FIELD_CACHING_DESC">
+                    <option value="1">JGLOBAL_USE_GLOBAL</option>
+                    <option value="0">COM_MODULES_FIELD_VALUE_NOCACHING</option>
+                </field>
+
+                <field name="cache_time" type="text" default="900" label="COM_MODULES_FIELD_CACHE_TIME_LABEL" description="COM_MODULES_FIELD_CACHE_TIME_DESC"/>
+
+                <field name="cachemode" type="hidden" default="static">
+                    <option value="static"/>
+                </field>
+            </fieldset>
+		</fields>
+	</config>
+</extension>

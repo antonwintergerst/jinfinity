@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<config>
+    <fieldset name="description" label="JGLOBAL_DESCRIPTION" addfieldpath="/plugins/system/jiframework/fields">
+        <field name="@header" type="header" label="JIGRID" description="JIGRID_DESC" xml="/administrator/components/com_jigrid/jigrid.xml"/>
+    </fieldset>
+    <fieldset name="options" label="COM_JIGRID_FIELDSET_LAYOUT_LABEL" description="COM_JIGRID_FIELDSET_LAYOUT_DESC" addfieldpath="/administrator/components/com_jigrid/models/fields">
+        <field name="mode" type="list" default="easy" label="COM_JIGRID_MODE_LABEL" description="COM_JIGRID_MODE_DESC" class="small" labelclass="control-label">
+            <option value="easy">COM_JIGRID_EASY</option>
+            <option value="advanced">COM_JIGRID_ADVANCED</option>
+        </field>
+        <field name="editroot" type="editroot" default="" label="COM_JIGRID_EDITROOT_LABEL" description="COM_JIGRID_EDITROOT_DESC" />
+        <field name="sitewidth" type="text" default="960px" label="COM_JIGRID_SITEWIDTH_LABEL" description="COM_JIGRID_SITEWIDTH_DESC" />
+        <field name="sitealignment" type="list" default="center" label="COM_JIGRID_SITEALIGNMENT_LABEL" description="COM_JIGRID_SITEALIGNMENT_DESC">
+            <option value="left">COM_JIGRID_LEFT</option>
+            <option value="center">COM_JIGRID_CENTER</option>
+            <option value="right">COM_JIGRID_RIGHT</option>
+        </field>
+        <field name="tvwidth" type="text" default="1920" label="COM_JIGRID_TVWIDTH_LABEL" description="COM_JIGRID_TVWIDTH_DESC" />
+        <field name="desktopwidth" type="text" default="980" label="COM_JIGRID_DESKTOPWIDTH_LABEL" description="COM_JIGRID_DESKTOPWIDTH_DESC" />
+        <field name="tabletwidth" type="text" default="768" label="COM_JIGRID_TABLETWIDTH_LABEL" description="COM_JIGRID_TABLETWIDTH_DESC" />
+        <field name="phonewidth" type="text" default="480" label="COM_JIGRID_PHONEWIDTH_LABEL" description="COM_JIGRID_PHONEWIDTH_DESC" />
+        <field name="setminheight" type="list" default="1" label="COM_JIGRID_SETMINHEIGHT_LABEL" description="COM_JIGRID_SETMINHEIGHT_DESC">
+            <option value="1">JYES</option>
+            <option value="0">JNO</option>
+        </field>
+        <field name="equalizeheights" type="list" default="1" label="COM_JIGRID_EQUALIZEHEIGHTS_LABEL" description="COM_JIGRID_EQUALIZEHEIGHTS_DESC">
+            <option value="1">JYES</option>
+            <option value="0">JNO</option>
+        </field>
+        <field name="rainbow" type="list" default="1" label="COM_JIGRID_RAINBOW_LABEL" description="COM_JIGRID_RAINBOW_DESC">
+            <option value="1">JON</option>
+            <option value="0">JOFF</option>
+        </field>
+        <field name="showmodulepositions" type="list" default="1" label="COM_JIGRID_SHOWMODULEPOSITIONS_LABEL" description="COM_JIGRID_SHOWMODULEPOSITIONS_DESC">
+            <option value="1">JON</option>
+            <option value="0">JOFF</option>
+        </field>
+        <field name="hideempty" type="list" default="0" label="COM_JIGRID_HIDEEMPTY_LABEL" description="COM_JIGRID_HIDEEMPTY_DESC">
+            <option value="1">JYES</option>
+            <option value="0">JNO</option>
+        </field>
+        <field name="hidesmall" type="list" default="1" label="COM_JIGRID_HIDESMALL_LABEL" description="COM_JIGRID_HIDESMALL_DESC">
+            <option value="1">JYES</option>
+            <option value="0">JNO</option>
+        </field>
+        <field name="setscreencontext" type="list" default="1" label="COM_JIGRID_SETSCREENCONTEXT_LABEL" description="COM_JIGRID_SETSCREENCONTEXT_DESC">
+            <option value="1">JYES</option>
+            <option value="0">JNO</option>
+        </field>
+        <field name="setbrowsercontext" type="list" default="1" label="COM_JIGRID_SETBROWSERCONTEXT_LABEL" description="COM_JIGRID_SETBROWSERCONTEXT_DESC">
+            <option value="1">JYES</option>
+            <option value="0">JNO</option>
+        </field>
+    </fieldset>
+</config>

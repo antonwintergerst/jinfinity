@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension type="component" version="3.0" method="upgrade">
+	<name>JiContentInjector</name>
+	<creationDate>January 2015</creationDate>
+	<author>Jinfinity</author>
+	<authorEmail>support@jinfinity.com</authorEmail>
+	<authorUrl>http://www.jinfinity.com</authorUrl>
+	<copyright>Copyright (C) 2015 Jinfinity</copyright>
+	<license>GNU/GPLv3 http://www.gnu.org/licenses/gpl-3.0.html</license>
+	<version>3.0.8</version>
+	<description>JICONTENTINJECTOR_DESC</description>
+    <media folder="media">
+        <folder>jicontentinjector</folder>
+    </media>
+	<!-- install/uninstall -->
+	<scriptfile>script.jicontentinjector.php</scriptfile>
+	<!-- Administrator back-end section -->
+	<administration>
+		<!-- Administration menu -->
+		<menu img="../media/jicontentinjector/images/icon-16-jicontentinjector.png">JICONTENTINJECTOR</menu>
+        <submenu>
+            <menu view="injections">JICONTENTINJECTOR_INJECTIONS</menu>
+        </submenu>
+		<!-- Back-end files -->	
+		<files folder="admin">
+            <folder>controllers</folder>
+            <folder>helpers</folder>
+            <folder>models</folder>
+            <folder>tables</folder>
+            <folder>views</folder>
+            <filename>config.xml</filename>
+			<filename>controller.php</filename>
+			<filename>index.html</filename>
+            <filename>jicontentinjector.php</filename>
+		</files>
+		<languages folder="admin/language">
+            <language tag="en-GB">en-GB/en-GB.com_jicontentinjector.ini</language>
+			<language tag="en-GB">en-GB/en-GB.com_jicontentinjector.sys.ini</language>
+        </languages>
+	</administration>
+    <plugins>
+        <plugin plugin="jicontentinjector" group="system"/>
+    </plugins>
+	<config>
+	</config>
+</extension>

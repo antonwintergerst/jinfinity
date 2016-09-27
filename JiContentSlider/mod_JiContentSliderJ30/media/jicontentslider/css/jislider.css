@@ -1,0 +1,237 @@
+/**
+ * @version     $Id: jislider.css 182 2014-10-30 19:31:00Z Anton Wintergerst $
+ * @package     JiContentSlider for Joomla
+ * @copyright   Copyright (C) 2014 Jinfinity. All rights reserved.
+ * @license     GNU/GPLv3 http://www.gnu.org/licenses/gpl-3.0.html
+ * @website     www.jinfinity.com
+ * @email       support@jinfinity.com
+ */
+/* Slider */
+.jislider {
+    position: relative;
+    font-family: sans-serif;
+    display: block;
+}
+.jislider a {
+    background: none;
+}
+.jislider.large {
+    font-size: 28px;
+}
+.jislider.medium {
+    font-size: 22px;
+}
+.jislider.small {
+    font-size: 14px;
+}
+/* Slides */
+.jislider .slidesmask {
+    overflow: hidden;
+    position: relative;
+    width: 100%;
+}
+.jislider .slides {
+    left: 0;
+    overflow: hidden;
+    position: absolute;
+    top: 0;
+    width: 3000px;
+}
+.jislider .slides .slidebox {
+    overflow: hidden;
+    float: left;
+    position: relative;
+}
+.jislider.jifade .slides .slidebox {
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+.jislider .slides .slide {
+    position: relative;
+    display: inline-block;
+}
+.jislider .slides .slide .imagelink {
+    display: block;
+}
+.jislider .slideimg {
+    height: auto;
+    margin: 0 auto;
+    display: block;
+}
+/* Captions */
+.jislider .jicaption.flat {
+    position: absolute;
+    bottom: 0;
+    color: #333;
+    width: 94%;
+    padding: 10px 3%;
+}
+.jislider .jicaption.flat .title {
+    font-size: 180%;
+}
+.jislider .jicaption.flat .title, .jislider .jicaption.flat .title a {
+    color: #6E6E6E;
+    margin: 0;
+    font-weight: 600;
+}
+.jislider .jicaption.flat .text {
+    background: rgba(255, 255, 255, 0.78);
+    display: inline;
+    float: left;
+    padding: 2px 10px;
+}
+.jislider .jicaption.overlay {
+    left: 0;
+    bottom: 10px;
+    position: absolute;
+    text-align: center;
+    width: 100%;
+}
+.jislider .jicaption.overlay a {
+    display: block;
+    position: relative;
+    z-index: 100;
+    width: 100%;
+    cursor: pointer;
+}
+.jislider .jicaption.overlay span {
+    background: #E0E0E0;
+    color: #333;
+    border-radius: 5px;
+    display: inline-block;
+    opacity: 0.5;
+    padding: 10px 30px;
+    margin: 0 10px;
+    text-shadow: 0px -1px 0px #111;
+}
+.jislider.hover .slidebox.hover .jicaption.overlay a span, .jislider .jicaption.overlay a:hover span {
+    opacity: 1;
+}
+.jislider.hover.hoverpaddle .jicaption.overlay a span {
+    opacity: 0.5;
+}
+.jislider .jicaption.hide {
+    display: none;
+}
+/* Icons */
+.jislider .icon {
+    text-align: left;
+    display: inline-block;
+}
+.jislider .icon span {
+    text-indent: -9000px;
+    display: block;
+}
+/* Prev/Next */
+.jislider .prevnav {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 25%;
+    height: 100%;
+}
+.jislider .nextnav {
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 25%;
+    height: 100%;
+}
+.jislider .paddelbox.paddel {
+    background: url('../images/clear.png') repeat transparent;
+    display: block;
+    width: 100%;
+    height: 100%;
+    position: relative;
+    cursor: pointer;
+    z-index: 10;
+}
+.jislider .nav a {
+    display: inline-block;
+    opacity: 0;
+    position: absolute;
+    text-align: left;
+    text-indent: -9000px;
+    top: 50%;
+    width: 38px;
+    height: 79px;
+    margin-top: -40px;
+}
+.jislider .prevnav a {
+    background: url('../images/left.png') no-repeat 0 0 transparent;
+    left: 10px;
+}
+.jislider .nextnav a {
+    background: url('../images/right.png') no-repeat 0 0 transparent;
+    right: 10px;
+}
+/* Discs */
+.jislider.overlay .discs, .jislider.flat .discs {
+    background: #FFF;
+    bottom: 0;
+    padding: 10px 0;
+    position: absolute;
+    text-align: center;
+    width: 100%;
+    margin: 0 auto;
+    z-index: 3;
+}
+.jislider .discs .jislidergotobtn {
+    background: url('../images/discs.png') no-repeat 0 0 transparent;
+    width: 16px;
+    height: 16px;
+    position: relative;
+    z-index: 5;
+}
+.jislider .discs .jislidergotobtn:hover, .jislider .discs .jislidergotobtn.active {
+    background-position: 0 -16px;
+}
+
+.jislider a, .jislider a:hover, .jislider a:visited, .jislider a:active, .jislider a img, .jislider a:hover img, .jislider a:visited img, .jislider a:active img {
+    border: none;
+    outline: none;
+    text-decoration: none;
+    max-width: none;
+}
+.jislider .discs.hide {
+    display: none;
+}
+/* Admin */
+.jislideradmin {
+    width: 100%;
+    max-width: 800px;
+}
+.jislideradmin .previewfield {
+    clear: both;
+}
+.jislideradmin .previewfield .previewbtn {
+    background: #00ADEE;
+    background: -webkit-gradient(linear, left top, left bottom, from(#00ADEE), to(#0078A5));
+    background: -moz-linear-gradient(center top, #00ADEE, #0078A5);
+    filter:  progid:DXImageTransform.Microsoft.gradient(startColorstr='#00ADEE', endColorstr='#0078A5');
+    
+    border: 1px solid #0076A3;
+    border-radius: 0.5em 0.5em 0.5em 0.5em;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+    color: #D9EEF7;
+    cursor: pointer;
+    display: block;
+    margin: 15px 0 10px;
+    outline: medium none;
+    overflow: hidden;
+    padding: 0.5em 2em 0.55em;
+    text-align: center;
+    text-decoration: none;
+    text-shadow: 0 1px 1px rgba(0, 0, 0, 0.3);
+    vertical-align: baseline;
+    white-space: nowrap;
+    font-size: 14px;
+    width: 100px;
+}
+.jislideradmin .previewfield .previewbtn:hover {
+    background: #0095CC;
+    background: -webkit-gradient(linear, left top, left bottom, from(#0095CC), to(#00678E));
+    background: -moz-linear-gradient(center top, #0095CC, #00678E);
+    filter:  progid:DXImageTransform.Microsoft.gradient(startColorstr='#0095CC', endColorstr='#00678E');
+}

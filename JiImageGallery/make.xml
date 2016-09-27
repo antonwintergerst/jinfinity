@@ -1,0 +1,21 @@
+<extension>
+    <manifest>plugins/content/jiimagegallery/jiimagegallery.xml</manifest>
+    <manifests>
+        <manifest>plugins/content/jiimagegallery/jiimagegallery.xml</manifest>
+    </manifests>
+    <hasfree>0</hasfree>
+    <haspro>1</haspro>
+    <files>
+        <file>administrator/language/en-GB/en-GB.plg_content_jiimagegallery.ini</file>
+        <file>administrator/language/en-GB/en-GB.plg_content_jiimagegallery.sys.ini</file>
+        <file>media/jiimagegallery</file>
+        <file>plugins/content/jiimagegallery</file>
+    </files>
+    <includes>
+        <file>media/jiframework/js/jquery.jicachecleaner.js</file>
+        <file>media/jiframework/js/jquery.jimodalpicker.js</file>
+        <file>media/jiframework/modals</file>
+        <file>plugins/system/jiframework/fields/cachecleaner.php</file>
+        <file>plugins/system/jiframework/fields/modalpicker.php</file>
+    </includes>
+</extension>

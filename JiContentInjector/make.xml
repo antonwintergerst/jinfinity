@@ -1,0 +1,19 @@
+<extension>
+    <manifest>administrator/components/com_jicontentinjector/jicontentinjector.xml</manifest>
+    <manifests>
+        <manifest>administrator/components/com_jicontentinjector/jicontentinjector.xml</manifest>
+        <manifest>plugins/system/jicontentinjector/jicontentinjector.xml</manifest>
+    </manifests>
+    <hasfree>0</hasfree>
+    <haspro>1</haspro>
+    <files>
+        <file>administrator/components/com_jicontentinjector</file>
+        <file>administrator/language/en-GB/en-GB.com_jicontentinjector.ini</file>
+        <file>administrator/language/en-GB/en-GB.com_jicontentinjector.sys.ini</file>
+        <file>administrator/language/en-GB/en-GB.plg_system_jicontentinjector.ini</file>
+        <file>administrator/language/en-GB/en-GB.plg_system_jicontentinjector.sys.ini</file>
+        <file>components/com_jicontentinjector</file>
+        <file>media/jicontentinjector</file>
+        <file>plugins/system/jicontentinjector</file>
+    </files>
+</extension>

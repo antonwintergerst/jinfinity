@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<form>
+	<fields name="attribs">
+		<fieldset name="fieldsform" label="JICUSTOMFIELDS_FIELDS" addfieldpath="/administrator/components/com_jicustomfields/models/fields">
+			<field name="jifields" type="fieldsform" default="" label="" description="" />
+            <field name="addfield" type="modal_field" default="" label="Assign existing field to this category" description="" />
+		</fieldset>
+	</fields>
+</form>

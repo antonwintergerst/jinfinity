@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension version="3.0" type="plugin" group="content" method="upgrade" client="site">
+	<name>PLG_CONTENT_JIUNIQUENESSQUANTIFIER</name>
+    <description>PLG_CONTENT_JIUNIQUENESSQUANTIFIER_DESC</description>
+	<creationDate>December 2014</creationDate>
+	<author>Jinfinity</author>
+	<authorEmail>support@jinfinity.com</authorEmail>
+	<authorUrl>http://www.jinfinity.com</authorUrl>
+	<copyright>Copyright (C) 2014 Jinfinity</copyright>
+	<license>GNU/GPLv3 http://www.gnu.org/licenses/gpl-3.0.html</license>
+	<version>3.0.5</version>
+
+    <languages folder="language">
+        <language tag="en-GB">en-GB/en-GB.plg_content_jiuniquenessquantifier.ini</language>
+        <language tag="en-GB">en-GB/en-GB.plg_content_jiuniquenessquantifier.sys.ini</language>
+    </languages>
+    <media folder="media">
+        <folder>jiuniquenessquantifier</folder>
+    </media>
+	<files>
+		<filename plugin="jiuniquenessquantifier">jiuniquenessquantifier.php</filename>
+		<filename>jiuniquenessquantifier.xml</filename>
+		<filename>index.html</filename>
+	</files>
+
+	<config>
+        <fields name="params" addfieldpath="/plugins/system/jiframework/fields">
+            <fieldset name="description">
+                <field name="plg_content_jiuniquenessquantifier" type="loadlanguage"/>
+                <field name="@header" type="header" label="JIUNIQUENESSQUANTIFIER" description="JIUNIQUENESSQUANTIFIER_DESC" xml="/plugins/content/jiuniquenessquantifier/jiuniquenessquantifier.xml"/>
+            </fieldset>
+            <!-- >>> FREE >>> -->
+            <fieldset name="permissions" label="JIUNIQUENESSQUANTIFIER_PERMISSIONS" description="JI_ONLY_AVAILABLE_IN_PRO_TITLE">
+            </fieldset>
+            <!-- <<< FREE <<< -->
+            <!-- >>> PRO >>> -->
+            <fieldset name="permissions" label="JIUNIQUENESSQUANTIFIER_PERMISSIONS" description="">
+                <field name="rules" type="rulesextended" label="JCONFIG_PERMISSIONS_LABEL" validate="rules" filter="rules">
+                    <action default="1" name="content.edit.alias" title="JIUNIQUENESSQUANTIFIER_EDITALIAS_ACCESS" description="JIUNIQUENESSQUANTIFIER_EDITALIAS_ACCESS_DESC"/>
+                </field>
+            </fieldset>
+            <!-- <<< PRO <<< -->
+        </fields>
+	</config>
+</extension>

@@ -1,0 +1,26 @@
+/*
+ * @version     $Id: jiblogtools.css 010 2014-12-18 17:53:00Z Anton Wintergerst $
+ * @package     JiBlogTools Content Plugin for Joomla 1.7+
+ * @copyright   Copyright (C) 2014 Jinfinity. All rights reserved.
+ * @license     GNU/GPLv3 http://www.gnu.org/licenses/gpl-3.0.html
+ * @website     www.jinfinity.com
+ * @email       support@jinfinity.com
+*/
+.jiblogtools {
+    overflow: hidden;
+    margin: 0 -5px;
+    width: 100%;
+}
+.jiblogtools .thumb {
+    float: left;
+    width: 25%;
+}
+.jiblogtools .thumb>a, .jiblogtools .thumb>span {
+    border: 1px solid #CCC;
+    display: block;
+    margin: 5px;
+    padding: 5px;
+}
+.jiblogtools .thumb img {
+    width: 100%;
+}

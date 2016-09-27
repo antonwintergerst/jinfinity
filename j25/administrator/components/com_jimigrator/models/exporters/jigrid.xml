@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<exporter version="1.6">
+    <name>JiGrid</name>
+    <description>Export JiGrid</description>
+    <group>jinfinity</group>
+    <!-- >>> PRO >>> -->
+    <tables>
+        <table name="jigrid" />
+    </tables>
+    <!-- <<< PRO <<< -->
+    <!-- >>> FREE >>> -->
+    <fields>
+        <field type="separator" label="JI_ONLY_AVAILABLE_IN_PRO_TITLE" />
+    </fields>
+    <!-- <<< FREE <<< -->
+</exporter>

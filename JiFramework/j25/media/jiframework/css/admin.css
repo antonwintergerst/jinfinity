@@ -1,0 +1,80 @@
+/**
+ * @version     $Id: admin.css 013 2014-12-15 12:16:00Z Anton Wintergerst $
+ * @package     JiFramework System Plugin for Joomla! 3.x
+ * @copyright   Copyright (C) 2014 Jinfinity. All rights reserved.
+ * @license     GNU/GPLv3 http://www.gnu.org/licenses/gpl-3.0.html
+ * @website     www.jinfinity.com
+ * @email       support@jinfinity.com
+ */
+.jiadmin {
+    text-align: left;
+    font-size: 13px;
+    line-height: 18px;
+}
+.jiadmin .items .item {
+    margin-bottom: 15px;
+}
+.jiadmin .item-image {
+    width: 70px;
+    background: #6285c7;
+    border-radius: 8px;
+    display: inline-block;
+    margin-right: 10px;
+}
+.jiadmin .item-image img {
+    width: 100%;
+    height: auto;
+    display: inline-block;
+}
+.jiadmin .item-text {
+    display: inline-block;
+    vertical-align: bottom;
+}
+.jiadmin .item-status {
+    display: inline-block;
+}
+.jiadmin .item-status i {
+    margin: 0 10px;
+}
+.jiadmin .item-description {
+    margin-top: 10px;
+}
+.jiadmin .item-licence.free {
+    background: #5ca251;
+    border-color: #5ca251;
+}
+.jiadmin .item-licence.pro {
+    background: #6285c7;
+    border-color: #6285c7;
+}
+.jiadmin .label.label-danger {
+    background: #d9534f;
+    border-color: #d9534f;
+}
+
+/* child installers */
+.jiadmin.jiinstaller .jiinstaller {
+    margin-left: 53px;
+    border-left: 1px solid #f6f6f6;
+}
+.jiadmin.jiinstaller .jiinstaller .items {
+    padding-bottom: 10px;
+}
+.jiadmin.jiinstaller .jiinstaller .subtitle {
+    font-size: 100%;
+    padding-left: 30px;
+    padding-bottom: 5px;
+}
+.jiadmin.jiinstaller .jiinstaller .item {
+    padding-left: 30px;
+    margin-bottom: 0;
+    font-size: 100%;
+}
+.jiadmin.jiinstaller .jiinstaller .item-title {
+    margin-bottom: 0;
+    font-size: 100%;
+}
+.jiadmin.jiinstaller .jiinstaller .subtitle {
+    border-bottom: 1px solid #f6f6f6;
+    color: #AAA;
+}

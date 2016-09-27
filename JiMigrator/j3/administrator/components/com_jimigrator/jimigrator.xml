@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension type="component" version="1.7" method="upgrade">
+	<name>JiMigrator</name>
+	<creationDate>January 2015</creationDate>
+	<author>Jinfinity</author>
+	<authorEmail>support@jinfinity.com</authorEmail>
+	<authorUrl>http://www.jinfinity.com</authorUrl>
+	<copyright>Copyright (C) 2015 Jinfinity</copyright>
+	<license>GNU/GPLv3 http://www.gnu.org/licenses/gpl-3.0.html</license>
+	<version>3.0.9</version>
+	<description>COM_JIMIGRATOR_DESC</description>
+	<!-- install/uninstall -->
+	<scriptfile>script.jimigrator.php</scriptfile>
+	<!-- Public front end files -->
+    <media folder="media">
+        <folder>jimigrator</folder>
+    </media>
+	<!-- Administrator back-end section -->
+	<administration>
+		<!-- Administration menu -->
+		<menu img="../media/jimigrator/images/icon-16-jimigrator.png">JIMIGRATOR</menu>
+		<submenu>
+            <menu view="snapshots">JIMIGRATOR_SNAPSHOTS</menu>
+			<menu view="import">JIMIGRATOR_IMPORT</menu>
+			<menu view="export">JIMIGRATOR_EXPORT</menu>
+			<menu view="tools">JIMIGRATOR_TOOLS</menu>
+			<menu view="logs">JIMIGRATOR_LOGS</menu>
+		</submenu>
+		<!-- Back-end files -->	
+		<files folder="admin">
+			<folder>controllers</folder>
+            <folder>helpers</folder>
+			<folder>jifields</folder>
+			<folder>models</folder>
+            <folder>tmp</folder>
+			<folder>views</folder>
+            <filename>config.xml</filename>
+            <filename>controller.php</filename>
+            <filename>index.html</filename>
+            <filename>jimigrator.php</filename>
+		</files>
+		<languages folder="admin/language">
+            <language tag="en-GB">en-GB/en-GB.com_jimigrator.ini</language>
+			<language tag="en-GB">en-GB/en-GB.com_jimigrator.sys.ini</language>
+        </languages>
+	</administration>
+    <config>
+        <fieldset name="options" label="JOPTIONS" description="JIMIGRATOR_CONFIG_OPTIONS_DESC">
+            <field name="list_limit" type="text" default="50" label="COM_JIMIGRATOR_LIST_LIMIT_LABEL" description="COM_JIMIGRATOR_LIST_LIMIT_DESC"/>
+            <field name="process_limit" type="text" default="100" label="COM_JIMIGRATOR_PROCESS_LIMIT_LABEL" description="COM_JIMIGRATOR_PROCESS_LIMIT_DESC"/>
+            <field name="maxcalls" type="text" default="60" label="COM_JIMIGRATOR_MAXCALLS_LABEL" description="COM_JIMIGRATOR_MAXCALLS_DESC"/>
+            <field name="zipengine" type="list" default="native" label="COM_JIMIGRATOR_ZIP_ENGINE_LABEL" description="COM_JIMIGRATOR_ZIP_ENGINE_DESC">
+                <option value="native">COM_JIMIGRATOR_ZIP_ENGINE_NATIVE</option>
+                <option value="jiziparchive">COM_JIMIGRATOR_ZIP_ENGINE_JI</option>
+            </field>
+            <field name="filters_enabled" type="list" default="1" label="COM_JIMIGRATOR_FILTERS_ENABLED_LABEL" description="COM_JIMIGRATOR_FILTERS_ENABLED_DESC">
+                <option value="1">JYES</option>
+                <option value="0">JNO</option>
+            </field>
+        </fieldset>
+    </config>
+</extension>

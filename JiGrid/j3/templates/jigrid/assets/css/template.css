@@ -1,0 +1,82 @@
+/**
+ * @version     $Id: template.css 040 2014-11-04 10:15:00Z Anton Wintergerst $
+ * @package     JiGrid Template Framework for Joomla 2.5-3.0
+ * @copyright   Copyright (C) 2014 Jinfinity. All rights reserved.
+ * @license     GNU/GPLv3 http://www.gnu.org/licenses/gpl-3.0.html
+ * @website     www.jinfinity.com
+ * @email       support@jinfinity.com
+ */
+body {
+    font-family: sans-serif;
+    /*transition: width 100ms;
+    -webkit-transition: width 100ms;*/
+    padding: 0;
+    margin: 0;
+}
+.pull-right {
+    float: right;
+}
+ul, li {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+.clear {
+    clear: both;
+}
+.jicell>.outer {
+    padding: 10px;
+}
+.jicell img {
+    max-width: 100%;
+}
+/* Font Sizes */
+.tv, .desktop, .tablet, .phone {
+    font-size: 100%;
+}
+.jumbotext {
+    font-size: 135%;
+}
+h1, h2, .largetext {
+    font-size: 120%;
+}
+h3, h4, h5, h6, .mediumtext {
+    font-size: 110%;
+}
+.smalltext {
+    font-size: 90%;
+}
+.tinytext {
+    font-size: 80%;
+}
+/* Screen Types */
+.tv .hide-tv {
+    display: none;
+}
+.desktop .hide-desktop {
+    display: none;
+}
+.tablet .hide-tablet {
+    display: none;
+}
+.phone .hide-phone {
+    display: none;
+}
+.desktop .tv-only, .tablet .tv-only, .phone .tv-only {
+    display: none;
+}
+.tv .desktop-only, .tablet .desktop-only, .phone .desktop-only {
+    display: none;
+}
+.tv .tablet-only, .desktop .tablet-only, .phone .tablet-only {
+    display: none;
+}
+.tv .phone-only, .desktop .phone-only, .tablet .phone-only {
+    display: none;
+}
+.hasright .jigrid.maingrid.autospan {
+    width: 75%;
+}
+.hasleft .jigrid.maingrid.autospan {
+    width: 75%;
+}

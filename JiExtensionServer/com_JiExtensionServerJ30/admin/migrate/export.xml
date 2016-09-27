@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<exporter version="1.5">
+    <name>JiExtensionServer</name>
+    <description>Export Ji Extension Server</description>
+    <group>thirdparty</group>
+    <tables>
+        <table name="jiextensions" pkey="id" />
+        <table name="jiextensions_activity" pkey="id" />
+        <table name="jiextensions_branches" pkey="id" />
+        <table name="jiextensions_subversions" pkey="id"  />
+    </tables>
+    <files>
+        <filename>jiextensions.csv</filename>
+        <filename>jiextensions_activity.csv</filename>
+        <filename>jiextensions_branches.csv</filename>
+        <filename>jiextensions_subversions.csv</filename>
+    </files>
+</exporter>

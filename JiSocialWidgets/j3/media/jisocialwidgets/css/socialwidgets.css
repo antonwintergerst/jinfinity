@@ -1,0 +1,17 @@
+/*
+ * @version     $Id: default.php 020 2012-10-22 19:23:00Z Anton Wintergerst $
+ * @package     JiSocialWidgets Content Plugin for Joomla 1.5+
+ * @copyright   Copyright (C) 2012 Jinfinity. All rights reserved.
+ * @license     GNU/GPLv3 http://www.gnu.org/licenses/gpl-3.0.html
+ * @website     www.jinfinity.com
+ * @email       support@jinfinity.com
+*/
+.jisocialwidgets {
+    display:block;
+}
+.jisocialwidgets .fb-like>span {
+    vertical-align: baseline;
+}
+.jisocialwidgets .tweet, .jisocialwidgets .plus1, .jisocialwidgets .inshare, .jisocialwidgets .pinit, .jisocialwidgets .pinterest {
+    display: inline-block;
+}

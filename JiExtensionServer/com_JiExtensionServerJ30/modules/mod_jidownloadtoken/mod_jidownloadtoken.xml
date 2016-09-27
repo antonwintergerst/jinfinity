@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension type="module" version="1.7.0" client="site" method="upgrade">
+	<name>JiDownloadToken</name>
+	<creationDate>June 2013</creationDate>
+	<author>Jinfinity</author>
+	<authorEmail>antonwintergerst@gmail.com</authorEmail>
+	<authorUrl>http://www.jinfinity.com</authorUrl>
+	<copyright>Copyright (C) 2013 Jinfinity</copyright>
+	<license>GNU/GPLv3 http://www.gnu.org/licenses/gpl-3.0.html</license>
+	<version>0.4.5</version>
+	<description>Jinfinity Download Token Module for Joomla 2.5-3.0</description>
+	<files>
+		<filename module="mod_jidownloadtoken">mod_jidownloadtoken.php</filename>
+		<folder>assets</folder>
+		<folder>tmpl</folder>
+        <filename>helper.php</filename>
+        <filename>index.html</filename>
+		<filename>mod_jidownloadtoken.xml</filename>
+	</files>
+	<config>
+        <fields name="params">
+            <fieldset name="basic">
+                <field name="load_jquery" type="list" default="0" label="Load jQuery" description="Allow jQuery to load as required.">
+                    <option value="1">Yes</option>
+                    <option value="0">No</option>
+                </field>
+                <field name="load_mootools" type="list" default="0" label="Load MooTools" description="Allow MooTools to load as required.">
+                    <option value="1">Yes</option>
+                    <option value="0">No</option>
+                </field>
+            </fieldset>
+            <fieldset name="advanced">
+                <field name="layout" type="modulelayout" label="JFIELD_ALT_LAYOUT_LABEL" description="JFIELD_ALT_MODULE_LAYOUT_DESC"/>
+
+                <field name="moduleclass_sfx" type="textarea" rows="3" label="COM_MODULES_FIELD_MODULECLASS_SFX_LABEL" description="COM_MODULES_FIELD_MODULECLASS_SFX_DESC"/>
+
+                <field name="cache" type="list" default="1" label="COM_MODULES_FIELD_CACHING_LABEL" description="COM_MODULES_FIELD_CACHING_DESC">
+                    <option value="1">JGLOBAL_USE_GLOBAL</option>
+                    <option value="0">COM_MODULES_FIELD_VALUE_NOCACHING</option>
+                </field>
+
+                <field name="cache_time" type="text" default="900" label="COM_MODULES_FIELD_CACHE_TIME_LABEL" description="COM_MODULES_FIELD_CACHE_TIME_DESC"/>
+
+                <field name="cachemode" type="hidden" default="static">
+                    <option value="static"/>
+                </field>
+            </fieldset>
+        </fields>
+	</config>
+</extension>

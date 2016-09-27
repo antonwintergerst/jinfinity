@@ -1,0 +1,767 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension type="plugin" version="1.7.0" method="upgrade" client="site" group="content">
+	<name>PLG_CONTENT_JIBLOGTOOLS</name>
+	<creationDate>December 2014</creationDate>
+	<author>Jinfinity</author>
+	<authorEmail>support@jinfinity.com</authorEmail>
+	<authorUrl>http://www.jinfinity.com</authorUrl>
+	<copyright>Copyright (C) 2014 Jinfinity</copyright>
+	<license>GNU/GPLv3 http://www.gnu.org/licenses/gpl-3.0.html</license>
+	<version>3.0.3</version>
+    <description>PLG_CONTENT_JIBLOGTOOLS_DESC</description>
+    <!-- Public front end files -->
+    <media folder="media">
+        <folder>jiblogtools</folder>
+    </media>
+	<files>
+       <filename plugin="jiblogtools">jiblogtools.php</filename>
+       <filename plugin="jiblogtools">helper.php</filename>
+	   <filename plugin="jiblogtools">index.html</filename>
+	</files>
+	<languages folder="language">
+    	<language tag="en-GB">en-GB/en-GB.plg_content_jiblogtools.ini</language>
+        <language tag="en-GB">en-GB/en-GB.plg_content_jiblogtools.sys.ini</language>
+	</languages>
+	<config>
+        <fields name="params" addfieldpath="/plugins/system/jiframework/fields">
+            <fieldset name="description">
+                <field name="@header" type="header" label="JIBLOGTOOLS" description="JIBLOGTOOLS_DESC" xml="/plugins/content/jiblogtools/jiblogtools.xml"/>
+            </fieldset>
+			<fieldset name="blogitems" label="COM_PLUGINS_BLOG_ITEMS">
+                <field name="blog_featured_articles" type="list" default="1" label="JIBLOGTOOLS_FEATURED_ARTICLES" description="JIBLOGTOOLS_FEATURED_ARTICLES_DESC">
+                    <option value="1">JYES</option>
+                    <option value="0">JNO</option>
+                </field>
+
+				<field type="spacer" name="titlebasicoptions" label="JIBLOGTOOLS_TITLE_OPTIONS"/>
+				<field name="blog_title_truncate" type="list" default="0" label="JIBLOGTOOLS_TITLE_TRUNCATE" description="JIBLOGTOOLS_TITLE_TRUNCATE_DESC  ">
+					<option value="1">JYES</option>
+					<option value="0">JNO</option>
+				</field>
+				<field name="blog_title_length" type="text" default="35" label="JIBLOGTOOLS_TITLE_LENGTH" description="JIBLOGTOOLS_TITLE_LENGTH_DESC" size="5"/>
+				
+				<field type="spacer" name="textoptions" label="JIBLOGTOOLS_TEXT_OPTIONS"/>
+				<field name="blog_desc_truncate" type="list" default="1" label="JIBLOGTOOLS_CROP_TEXT" description="JIBLOGTOOLS_CROP_TEXT_DESC">
+					<option value="1">JIBLOGTOOLS_BYCHARS</option>
+                    <option value="2">JIBLOGTOOLS_BYWORDS</option>
+                    <option value="3">JIBLOGTOOLS_BYPARAS</option>
+                    <option value="4">JIBLOGTOOLS_BYCUSTOM</option>
+					<option value="0">JNO</option>
+				</field>
+				<field name="blog_desc_length" type="text" default="220" label="JIBLOGTOOLS_CROP_TEXT_LIMIT" description="JIBLOGTOOLS_CROP_TEXT_LIMIT_DESC" size="5"/>
+                <field name="blog_desc_truncate_break" type="text" filter="raw" default="/(&lt;\/p&gt;\s*|&lt;br&gt;|&lt;br?\/&gt;)|i\s/" label="JIBLOGTOOLS_CROP_TEXT_CUSTOMLIMIT" description="JIBLOGTOOLS_CROP_TEXT_CUSTOMLIMIT_DESC"/>
+                <field name="blog_desc_truncate_suffix" type="text" filter="raw" default="{readmore}" label="JIBLOGTOOLS_CROP_TEXT_SUFFIX" description="JIBLOGTOOLS_CROP_TEXT_SUFFIX_DESC"/>
+                <field name="blog_desc_truncate_suffixpos" type="list" default="0" label="JIBLOGTOOLS_CROP_TEXT_SUFFIXPOS" description="JIBLOGTOOLS_CROP_TEXT_SUFFIXPOS_DESC">
+                    <option value="1">JIBLOGTOOLS_INSIDE</option>
+                    <option value="0">JIBLOGTOOLS_OUTSIDE</option>
+                </field>
+				
+				<field type="spacer" name="readmoreoptions" label="JIBLOGTOOLS_READMORE_OPTIONS"/>
+                <field name="blog_readmore_insert" type="list" default="1" label="JIBLOGTOOLS_READMORE_INSERT" description="JIBLOGTOOLS_READMORE_INSERT_DESC">
+                    <option value="1">JYES</option>
+                    <option value="0">JNO</option>
+                </field>
+                <field name="blog_readmore_respect" type="list" default="1" label="JIBLOGTOOLS_READMORE_RESPECT" description="JIBLOGTOOLS_READMORE_RESPECT_DESC">
+                    <option value="1">JYES</option>
+                    <option value="0">JNO</option>
+                </field>
+                <field name="blog_readmore_prefix" type="textarea" filter="raw" cols="56" rows="5" default="&lt;p class=&quot;readmore&quot;&gt;" label="JIBLOGTOOLS_READMORE_PREFIX" description="JIBLOGTOOLS_READMORE_PREFIX_DESC"/>
+				<field name="blog_readmore_text" type="text" default="Read more..." label="JIBLOGTOOLS_READMORE_TEXT" description="JIBLOGTOOLS_READMORE_TEXT_DESC"/>
+				<field name="blog_readmore_suffix" type="textarea" filter="raw" cols="56" rows="5" default="&lt;/p&gt;" label="JIBLOGTOOLS_READMORE_SUFFIX" description="JIBLOGTOOLS_READMORE_SUFFIX_DESC"/>
+
+				<field type="spacer" name="thumbbasicoptions" label="JIBLOGTOOLS_THUMBNAIL_OPTIONS"/>
+                <!-- >>> FREE >>> -->
+                <field name="blog_thumbs_enabled" type="plaintext" label="JIBLOGTOOLS_THUMBNAIL" description="JIBLOGTOOLS_THUMBNAIL_DESC" default="JI_ONLY_AVAILABLE_IN_PRO"/>
+                <field name="blog_thumbs_count" type="plaintext" label="JIBLOGTOOLS_THUMBNAIL_LIMIT" description="JIBLOGTOOLS_THUMBNAIL_LIMIT_DESC" default="JI_ONLY_AVAILABLE_IN_PRO"/>
+                <field name="blog_thumbs_prefix" type="plaintext" label="JIBLOGTOOLS_THUMBNAIL_PREFIX" description="JIBLOGTOOLS_THUMBNAIL_PREFIX_DESC" default="JI_ONLY_AVAILABLE_IN_PRO"/>
+                <field name="blog_thumbs_suffix" type="plaintext" label="JIBLOGTOOLS_THUMBNAIL_SUFFIX" description="JIBLOGTOOLS_THUMBNAIL_SUFFIX_DESC" default="JI_ONLY_AVAILABLE_IN_PRO"/>
+                <field name="blog_thumbs_preserveattribs" type="plaintext" label="JIBLOGTOOLS_THUMBNAIL_PRESERVEATTRIBS" description="JIBLOGTOOLS_THUMBNAIL_PRESERVEATTRIBS_DESC" default="JI_ONLY_AVAILABLE_IN_PRO"/>
+
+                <field type="spacer" name="thumblinkoptions" label="JIBLOGTOOLS_THUMBNAIL_LINK_OPTIONS"/>
+                <field name="blog_thumbs_link" type="plaintext" label="JIBLOGTOOLS_THUMBNAIL_LINK" description="JIBLOGTOOLS_THUMBNAIL_LINK_DESC" default="JI_ONLY_AVAILABLE_IN_PRO"/>
+                <field type="plaintext" name="blog_modaltype" label="JIBLOGTOOLS_THUMBS_MODALTYPE" description="JIBLOGTOOLS_THUMBS_MODALTYPE_DESC" default="JI_ONLY_AVAILABLE_IN_PRO"/>
+                <field name="blog_thumbs_linkattr" type="plaintext" label="JIBLOGTOOLS_THUMBS_LINK_ATTR" description="JIBLOGTOOLS_THUMBS_LINK_ATTR_DESC" default="JI_ONLY_AVAILABLE_IN_PRO"/>
+                <field name="blog_thumbs_linktarget" type="plaintext" label="JIBLOGTOOLS_THUMBS_LINK_TARGET" description="JIBLOGTOOLS_THUMBS_LINK_TARGET_DESC" default="JI_ONLY_AVAILABLE_IN_PRO"/>
+                <field name="blog_link_preserveattribs" type="plaintext" label="JIBLOGTOOLS_LINK_PRESERVEATTRIBS" description="JIBLOGTOOLS_LINK_PRESERVEATTRIBS_DESC" default="JI_ONLY_AVAILABLE_IN_PRO"/>
+
+                <field type="spacer" name="thumbsizeoptions" label="JIBLOGTOOLS_THUMBNAIL_SIZE_OPTIONS"/>
+                <field name="blog_thumbs_modify" type="plaintext" label="JIBLOGTOOLS_THUMBS_RESIZE" description="JIBLOGTOOLS_THUMBS_RESIZE_DESC" default="JI_ONLY_AVAILABLE_IN_PRO"/>
+                <field name="blog_thumbs_width" type="plaintext" label="JIBLOGTOOLS_THUMBS_WIDTH" description="JIBLOGTOOLS_THUMBS_WIDTH_DESC" default="JI_ONLY_AVAILABLE_IN_PRO"/>
+                <field name="blog_thumbs_height" type="plaintext" label="JIBLOGTOOLS_THUMBS_HEIGHT" description="JIBLOGTOOLS_THUMBS_HEIGHT_DESC" default="JI_ONLY_AVAILABLE_IN_PRO"/>
+                <field name="blog_thumbs_quality" type="plaintext" label="JIBLOGTOOLS_THUMBS_QUALITY" description="JIBLOGTOOLS_THUMBS_QUALITY_DESC" default="JI_ONLY_AVAILABLE_IN_PRO"/>
+                <field name="blog_thumbs_keepratio" type="plaintext" label="JIBLOGTOOLS_THUMBS_KEEPRATIO" description="JIBLOGTOOLS_THUMBS_KEEPRATIO_DESC" default="JI_ONLY_AVAILABLE_IN_PRO"/>
+                <field name="blog_thumbs_cropcenter" type="plaintext" label="JIBLOGTOOLS_THUMBS_CROPCENTER" description="JIBLOGTOOLS_THUMBS_CROPCENTER_DESC" default="JI_ONLY_AVAILABLE_IN_PRO"/>
+                <field name="blog_thumbs_fill" type="plaintext" label="JIBLOGTOOLS_THUMBS_FILL" description="JIBLOGTOOLS_THUMBS_FILL_DESC" default="JI_ONLY_AVAILABLE_IN_PRO"/>
+                <field name="blog_thumbs_xcenter" type="plaintext" label="JIBLOGTOOLS_THUMBS_XCENTER" description="JIBLOGTOOLS_THUMBS_XCENTER_DESC" default="JI_ONLY_AVAILABLE_IN_PRO"/>
+                <field name="blog_thumbs_ycenter" type="plaintext" label="JIBLOGTOOLS_THUMBS_YCENTER" description="JIBLOGTOOLS_THUMBS_YCENTER_DESC" default="JI_ONLY_AVAILABLE_IN_PRO"/>
+
+                <field type="spacer" name="finetuning" label="JIBLOGTOOLS_FINE_TUNING_OPTIONS"/>
+                <field name="blog_thumbs_group" type="plaintext" label="JIBLOGTOOLS_THUMBNAIL_GROUP" description="JIBLOGTOOLS_THUMBNAIL_GROUP_DESC" default="JI_ONLY_AVAILABLE_IN_PRO"/>
+                <field name="blog_thumbs_groupclass" type="plaintext" label="JIBLOGTOOLS_GROUPBY_CLASS" description="JIBLOGTOOLS_GROUPBY_CLASS_DESC" default="JI_ONLY_AVAILABLE_IN_PRO"/>
+                <field name="blog_thumbs_pos" type="plaintext" label="JIBLOGTOOLS_GROUP_POS" description="JIBLOGTOOLS_GROUP_POS_DESC" default="JI_ONLY_AVAILABLE_IN_PRO"/>
+                <field name="blog_group_prefix" type="plaintext" label="JIBLOGTOOLS_GROUP_PREFIX" description="JIBLOGTOOLS_GROUP_PREFIX_DESC" default="JI_ONLY_AVAILABLE_IN_PRO"/>
+                <field name="blog_group_suffix" type="plaintext" label="JIBLOGTOOLS_GROUP_SUFFIX" description="JIBLOGTOOLS_GROUP_SUFFIX_DESC" default="JI_ONLY_AVAILABLE_IN_PRO"/>
+
+                <field name="blog_placeholder" type="plaintext" label="JIBLOGTOOLS_PLACEHOLDER" description="JIBLOGTOOLS_PLACEHOLDER_DESC" default="JI_ONLY_AVAILABLE_IN_PRO"/>
+                <field name="blog_imageplaceholder" type="plaintext" label="JIBLOGTOOLS_PLACEHOLDER_IMAGE" description="JIBLOGTOOLS_PLACEHOLDER_IMAGE_DESC" default="JI_ONLY_AVAILABLE_IN_PRO"/>
+                <field name="blog_htmlplaceholder" type="plaintext" label="JIBLOGTOOLS_PLACEHOLDER_HTML" description="JIBLOGTOOLS_PLACEHOLDER_HTML_DESC" default="JI_ONLY_AVAILABLE_IN_PRO"/>
+                <field name="blog_thumbs_removeparas" type="plaintext" label="JIBLOGTOOLS_THUMBNAIL_REMOVEPARAS" description="JIBLOGTOOLS_THUMBNAIL_REMOVEPARAS_DESC" default="JI_ONLY_AVAILABLE_IN_PRO"/>
+                <!-- <<< FREE <<< -->
+                <!-- >>> PRO >>> -->
+                <field name="cachecleaner" type="cachecleaner"/>
+				<field name="blog_thumbs_enabled" type="list" default="1" label="JIBLOGTOOLS_THUMBNAIL" description="JIBLOGTOOLS_THUMBNAIL_DESC">
+					<option value="1">JYES</option>
+					<option value="0">JNO</option>
+				</field>
+				<field name="blog_thumbs_count" type="text" default="1" label="JIBLOGTOOLS_THUMBNAIL_LIMIT" description="JIBLOGTOOLS_THUMBNAIL_LIMIT_DESC"/>
+                <field name="blog_thumbs_prefix" type="textarea" filter="raw" cols="56" rows="5" default="&lt;div class=&quot;thumbnail blog-image image{count}&quot;&gt;" label="JIBLOGTOOLS_THUMBNAIL_PREFIX" description="JIBLOGTOOLS_THUMBNAIL_PREFIX_DESC"/>
+                <field name="blog_thumbs_suffix" type="textarea" filter="raw" cols="56" rows="5" default="&lt;/div&gt;" label="JIBLOGTOOLS_THUMBNAIL_SUFFIX" description="JIBLOGTOOLS_THUMBNAIL_SUFFIX_DESC"/>
+                <field name="blog_thumbs_preserveattribs" type="list" default="1" label="JIBLOGTOOLS_THUMBNAIL_PRESERVEATTRIBS" description="JIBLOGTOOLS_THUMBNAIL_PRESERVEATTRIBS_DESC">
+                    <option value="1">JYES</option>
+                    <option value="0">JNO</option>
+                </field>
+
+                <field type="spacer" name="thumblinkoptions" label="JIBLOGTOOLS_THUMBNAIL_LINK_OPTIONS"/>
+                <field name="blog_thumbs_link" type="list" default="article" label="JIBLOGTOOLS_THUMBNAIL_LINK" description="JIBLOGTOOLS_THUMBNAIL_LINK_DESC">
+                    <option value="article">JIBLOGTOOLS_THUMBNAIL_LINK_ARTICLE</option>
+                    <option value="image">JIBLOGTOOLS_THUMBNAIL_LINK_IMAGE</option>
+                    <option value="none">JIBLOGTOOLS_NONE</option>
+                </field>
+                <field name="blog_modaltype" type="modalpicker" group="{alias}" attrinput="#jform_params_blog_thumbs_linkattr" default="slimbox2" label="JIBLOGTOOLS_THUMBS_MODALTYPE" description="JIBLOGTOOLS_THUMBS_MODALTYPE_DESC"/>
+                <field name="blog_thumbs_linkattr" size="50" type="text" filter="raw" default="" label="JIBLOGTOOLS_THUMBS_LINK_ATTR" description="JIBLOGTOOLS_THUMBS_LINK_ATTR_DESC"/>
+                <field name="blog_thumbs_linktarget" type="list" default="_self" label="JIBLOGTOOLS_THUMBS_LINK_TARGET" description="JIBLOGTOOLS_THUMBS_LINK_TARGET_DESC">
+                    <option value="_self">JIBLOGTOOLS_TARGET_SELF</option>
+                    <option value="_blank">JIBLOGTOOLS_TARGET_BLANK</option>
+                    <option value="_parent">JIBLOGTOOLS_TARGET_PARENT</option>
+                    <option value="_top">JIBLOGTOOLS_TARGET_TOP</option>
+                </field>
+                <field name="blog_link_preserveattribs" type="list" default="1" label="JIBLOGTOOLS_LINK_PRESERVEATTRIBS" description="JIBLOGTOOLS_LINK_PRESERVEATTRIBS_DESC">
+                    <option value="1">JYES</option>
+                    <option value="0">JNO</option>
+                </field>
+
+				<field type="spacer" name="thumbsizeoptions" label="JIBLOGTOOLS_THUMBNAIL_SIZE_OPTIONS"/>
+				<field name="blog_thumbs_modify" type="list" default="1" label="JIBLOGTOOLS_THUMBS_RESIZE" description="JIBLOGTOOLS_THUMBS_RESIZE_DESC">
+					<option value="1">JYES</option>
+					<option value="0">JNO</option>
+				</field>
+				<field name="blog_thumbs_width" type="text" default="" label="JIBLOGTOOLS_THUMBS_WIDTH" description="JIBLOGTOOLS_THUMBS_WIDTH_DESC" size="5"/>
+				<field name="blog_thumbs_height" type="text" default="" label="JIBLOGTOOLS_THUMBS_HEIGHT" description="JIBLOGTOOLS_THUMBS_HEIGHT_DESC" size="5"/>
+				<field name="blog_thumbs_quality" type="text" default="75" label="JIBLOGTOOLS_THUMBS_QUALITY" description="JIBLOGTOOLS_THUMBS_QUALITY_DESC" size="5"/>
+				<field name="blog_thumbs_keepratio" type="list" default="1" label="JIBLOGTOOLS_THUMBS_KEEPRATIO" description="JIBLOGTOOLS_THUMBS_KEEPRATIO_DESC">
+					<option value="1">JYES</option>
+					<option value="0">JNO</option>
+				</field>
+				<field name="blog_thumbs_cropcenter" type="list" default="0" label="JIBLOGTOOLS_THUMBS_CROPCENTER" description="JIBLOGTOOLS_THUMBS_CROPCENTER_DESC">
+					<option value="1">JYES</option>
+					<option value="0">JNO</option>
+				</field>
+				<field name="blog_thumbs_fill" type="list" default="0" label="JIBLOGTOOLS_THUMBS_FILL" description="JIBLOGTOOLS_THUMBS_FILL_DESC">
+					<option value="1">JYES</option>
+					<option value="0">JNO</option>
+				</field>
+				<field name="blog_thumbs_xcenter" type="list" default="1" label="JIBLOGTOOLS_THUMBS_XCENTER" description="JIBLOGTOOLS_THUMBS_XCENTER_DESC">
+					<option value="1">JYES</option>
+					<option value="0">JNO</option>
+				</field>
+				<field name="blog_thumbs_ycenter" type="list" default="1" label="JIBLOGTOOLS_THUMBS_YCENTER" description="JIBLOGTOOLS_THUMBS_YCENTER_DESC">
+					<option value="1">JYES</option>
+					<option value="0">JNO</option>
+				</field>
+				
+				<field type="spacer" name="finetuning" label="JIBLOGTOOLS_FINE_TUNING_OPTIONS"/>
+                <field name="blog_thumbs_group" type="list" default="all" label="JIBLOGTOOLS_THUMBNAIL_GROUP" description="JIBLOGTOOLS_THUMBNAIL_GROUP_DESC">
+                    <option value="all">JYES</option>
+                    <option value="include">JIBLOGTOOLS_GROUP_CLASS_INCLUDE</option>
+                    <option value="exclude">JIBLOGTOOLS_GROUP_CLASS_EXCLUDE</option>
+                    <option value="none">JNO</option>
+                </field>
+                <field name="blog_thumbs_groupclass" type="text" default="" label="JIBLOGTOOLS_GROUPBY_CLASS" description="JIBLOGTOOLS_GROUPBY_CLASS_DESC"/>
+                <field name="blog_thumbs_pos" type="list" default="beforedesc" label="JIBLOGTOOLS_GROUP_POS" description="JIBLOGTOOLS_GROUP_POS_DESC">
+                    <option value="beforedesc">JIBLOGTOOLS_BEFORE_DESC</option>
+                    <option value="afterdesc">JIBLOGTOOLS_AFTER_DESC</option>
+                </field>
+                <field name="blog_group_prefix" type="textarea" filter="raw" cols="56" rows="5" default="" label="JIBLOGTOOLS_GROUP_PREFIX" description="JIBLOGTOOLS_GROUP_PREFIX_DESC"/>
+                <field name="blog_group_suffix" type="textarea" filter="raw" cols="56" rows="5" default="" label="JIBLOGTOOLS_GROUP_SUFFIX" description="JIBLOGTOOLS_GROUP_SUFFIX_DESC"/>
+
+				<field name="blog_placeholder" type="list" default="" label="JIBLOGTOOLS_PLACEHOLDER" description="JIBLOGTOOLS_PLACEHOLDER_DESC">
+					<option value="image">JIBLOGTOOLS_PLACEHOLDER_IMAGE</option>
+					<option value="html">JIBLOGTOOLS_PLACEHOLDER_HTML</option>
+                    <option value="none">JIBLOGTOOLS_NONE</option>
+				</field>
+				<field name="blog_imageplaceholder" type="text" size="80" default="" label="JIBLOGTOOLS_PLACEHOLDER_IMAGE" description="JIBLOGTOOLS_PLACEHOLDER_IMAGE_DESC"/>
+				<field name="blog_htmlplaceholder" type="textarea" filter="raw" cols="56" rows="5" default="" label="JIBLOGTOOLS_PLACEHOLDER_HTML" description="JIBLOGTOOLS_PLACEHOLDER_HTML_DESC"/>
+                <field name="blog_thumbs_removeparas" type="list" default="1" label="JIBLOGTOOLS_THUMBNAIL_REMOVEPARAS" description="JIBLOGTOOLS_THUMBNAIL_REMOVEPARAS_DESC">
+                    <option value="1">JYES</option>
+                    <option value="0">JNO</option>
+                </field>
+                <!-- <<< PRO <<< -->
+			</fieldset>
+            <fieldset name="leaditems" label="COM_PLUGINS_LEADING_BLOG_ITEMS">
+                <field name="lead_mirror_blog" type="list" default="1" label="JIBLOGTOOLS_MIRROR_BLOG" description="JIBLOGTOOLS_MIRROR_BLOG_DESC">
+                    <option value="1">JYES</option>
+                    <option value="0">JNO</option>
+                </field>
+                <field name="lead_featured_articles" type="list" default="1" label="JIBLOGTOOLS_FEATURED_ARTICLES" description="JIBLOGTOOLS_FEATURED_ARTICLES_DESC">
+                    <option value="1">JYES</option>
+                    <option value="0">JNO</option>
+                </field>
+
+                <field type="spacer" name="titlebasicoptions" label="JIBLOGTOOLS_TITLE_OPTIONS"/>
+                <field name="lead_title_truncate" type="list" default="0" label="JIBLOGTOOLS_TITLE_TRUNCATE" description="JIBLOGTOOLS_TITLE_TRUNCATE_DESC  ">
+                    <option value="1">JYES</option>
+                    <option value="0">JNO</option>
+                </field>
+                <field name="lead_title_length" type="text" default="35" label="JIBLOGTOOLS_TITLE_LENGTH" description="JIBLOGTOOLS_TITLE_LENGTH_DESC" size="5"/>
+
+                <field type="spacer" name="textoptions" label="JIBLOGTOOLS_TEXT_OPTIONS"/>
+                <field name="lead_desc_truncate" type="list" default="1" label="JIBLOGTOOLS_CROP_TEXT" description="JIBLOGTOOLS_CROP_TEXT_DESC">
+                    <option value="1">JIBLOGTOOLS_BYCHARS</option>
+                    <option value="2">JIBLOGTOOLS_BYWORDS</option>
+                    <option value="3">JIBLOGTOOLS_BYPARAS</option>
+                    <option value="4">JIBLOGTOOLS_BYCUSTOM</option>
+                    <option value="0">JNO</option>
+                </field>
+                <field name="lead_desc_length" type="text" default="220" label="JIBLOGTOOLS_CROP_TEXT_LIMIT" description="JIBLOGTOOLS_CROP_TEXT_LIMIT_DESC" size="5"/>
+                <field name="lead_desc_truncate_break" type="text" filter="raw" default="/(&lt;\/p&gt;\s*|&lt;br&gt;|&lt;br?\/&gt;)|i\s/" label="JIBLOGTOOLS_CROP_TEXT_CUSTOMLIMIT" description="JIBLOGTOOLS_CROP_TEXT_CUSTOMLIMIT_DESC"/>
+                <field name="lead_desc_truncate_suffix" type="text" filter="raw" default="{readmore}" label="JIBLOGTOOLS_CROP_TEXT_SUFFIX" description="JIBLOGTOOLS_CROP_TEXT_SUFFIX_DESC"/>
+                <field name="lead_desc_truncate_suffixpos" type="list" default="0" label="JIBLOGTOOLS_CROP_TEXT_SUFFIXPOS" description="JIBLOGTOOLS_CROP_TEXT_SUFFIXPOS_DESC">
+                    <option value="1">JIBLOGTOOLS_INSIDE</option>
+                    <option value="0">JIBLOGTOOLS_OUTSIDE</option>
+                </field>
+
+                <field type="spacer" name="readmoreoptions" label="JIBLOGTOOLS_READMORE_OPTIONS"/>
+                <field name="lead_readmore_insert" type="list" default="1" label="JIBLOGTOOLS_READMORE_INSERT" description="JIBLOGTOOLS_READMORE_INSERT_DESC">
+                    <option value="1">JYES</option>
+                    <option value="0">JNO</option>
+                </field>
+                <field name="lead_readmore_respect" type="list" default="1" label="JIBLOGTOOLS_READMORE_RESPECT" description="JIBLOGTOOLS_READMORE_RESPECT_DESC">
+                    <option value="1">JYES</option>
+                    <option value="0">JNO</option>
+                </field>
+                <field name="lead_readmore_prefix" type="textarea" filter="raw" cols="56" rows="5" default="&lt;p class=&quot;readmore&quot;&gt;" label="JIBLOGTOOLS_READMORE_PREFIX" description="JIBLOGTOOLS_READMORE_PREFIX_DESC"/>
+                <field name="lead_readmore_text" type="text" default="Read more..." label="JIBLOGTOOLS_READMORE_TEXT" description="JIBLOGTOOLS_READMORE_TEXT_DESC"/>
+                <field name="lead_readmore_suffix" type="textarea" filter="raw" cols="56" rows="5" default="&lt;/p&gt;" label="JIBLOGTOOLS_READMORE_SUFFIX" description="JIBLOGTOOLS_READMORE_SUFFIX_DESC"/>
+
+                <field type="spacer" name="thumbbasicoptions" label="JIBLOGTOOLS_THUMBNAIL_OPTIONS"/>
+                <!-- >>> FREE >>> -->
+                <field name="lead_thumbs_enabled" type="plaintext" label="JIBLOGTOOLS_THUMBNAIL" description="JIBLOGTOOLS_THUMBNAIL_DESC" default="JI_ONLY_AVAILABLE_IN_PRO"/>
+                <field name="lead_thumbs_count" type="plaintext" label="JIBLOGTOOLS_THUMBNAIL_LIMIT" description="JIBLOGTOOLS_THUMBNAIL_LIMIT_DESC" default="JI_ONLY_AVAILABLE_IN_PRO"/>
+                <field name="lead_thumbs_prefix" type="plaintext" label="JIBLOGTOOLS_THUMBNAIL_PREFIX" description="JIBLOGTOOLS_THUMBNAIL_PREFIX_DESC" default="JI_ONLY_AVAILABLE_IN_PRO"/>
+                <field name="lead_thumbs_suffix" type="plaintext" label="JIBLOGTOOLS_THUMBNAIL_SUFFIX" description="JIBLOGTOOLS_THUMBNAIL_SUFFIX_DESC" default="JI_ONLY_AVAILABLE_IN_PRO"/>
+                <field name="lead_thumbs_preserveattribs" type="plaintext" label="JIBLOGTOOLS_THUMBNAIL_PRESERVEATTRIBS" description="JIBLOGTOOLS_THUMBNAIL_PRESERVEATTRIBS_DESC" default="JI_ONLY_AVAILABLE_IN_PRO"/>
+
+                <field type="spacer" name="thumblinkoptions" label="JIBLOGTOOLS_THUMBNAIL_LINK_OPTIONS"/>
+                <field name="lead_thumbs_link" type="plaintext" label="JIBLOGTOOLS_THUMBNAIL_LINK" description="JIBLOGTOOLS_THUMBNAIL_LINK_DESC" default="JI_ONLY_AVAILABLE_IN_PRO"/>
+                <field name="lead_modaltype" type="plaintext" label="JIBLOGTOOLS_THUMBS_MODALTYPE" description="JIBLOGTOOLS_THUMBS_MODALTYPE_DESC" default="JI_ONLY_AVAILABLE_IN_PRO"/>
+                <field name="lead_thumbs_linkattr" type="plaintext" label="JIBLOGTOOLS_THUMBS_LINK_ATTR" description="JIBLOGTOOLS_THUMBS_LINK_ATTR_DESC" default="JI_ONLY_AVAILABLE_IN_PRO"/>
+                <field name="lead_thumbs_linktarget" type="plaintext" label="JIBLOGTOOLS_THUMBS_LINK_TARGET" description="JIBLOGTOOLS_THUMBS_LINK_TARGET_DESC" default="JI_ONLY_AVAILABLE_IN_PRO"/>
+                <field name="lead_link_preserveattribs" type="plaintext" label="JIBLOGTOOLS_LINK_PRESERVEATTRIBS" description="JIBLOGTOOLS_LINK_PRESERVEATTRIBS_DESC" default="JI_ONLY_AVAILABLE_IN_PRO"/>
+
+                <field type="spacer" name="thumbsizeoptions" label="JIBLOGTOOLS_THUMBNAIL_SIZE_OPTIONS"/>
+                <field name="lead_thumbs_modify" type="plaintext" label="JIBLOGTOOLS_THUMBS_RESIZE" description="JIBLOGTOOLS_THUMBS_RESIZE_DESC" default="JI_ONLY_AVAILABLE_IN_PRO"/>
+                <field name="lead_thumbs_width" type="plaintext" label="JIBLOGTOOLS_THUMBS_WIDTH" description="JIBLOGTOOLS_THUMBS_WIDTH_DESC" default="JI_ONLY_AVAILABLE_IN_PRO"/>
+                <field name="lead_thumbs_height" type="plaintext" label="JIBLOGTOOLS_THUMBS_HEIGHT" description="JIBLOGTOOLS_THUMBS_HEIGHT_DESC" default="JI_ONLY_AVAILABLE_IN_PRO"/>
+                <field name="lead_thumbs_quality" type="plaintext" label="JIBLOGTOOLS_THUMBS_QUALITY" description="JIBLOGTOOLS_THUMBS_QUALITY_DESC" default="JI_ONLY_AVAILABLE_IN_PRO"/>
+                <field name="lead_thumbs_keepratio" type="plaintext" label="JIBLOGTOOLS_THUMBS_KEEPRATIO" description="JIBLOGTOOLS_THUMBS_KEEPRATIO_DESC" default="JI_ONLY_AVAILABLE_IN_PRO"/>
+                <field name="lead_thumbs_cropcenter" type="plaintext" label="JIBLOGTOOLS_THUMBS_CROPCENTER" description="JIBLOGTOOLS_THUMBS_CROPCENTER_DESC" default="JI_ONLY_AVAILABLE_IN_PRO"/>
+                <field name="lead_thumbs_fill" type="plaintext" label="JIBLOGTOOLS_THUMBS_FILL" description="JIBLOGTOOLS_THUMBS_FILL_DESC" default="JI_ONLY_AVAILABLE_IN_PRO"/>
+                <field name="lead_thumbs_xcenter" type="plaintext" label="JIBLOGTOOLS_THUMBS_XCENTER" description="JIBLOGTOOLS_THUMBS_XCENTER_DESC" default="JI_ONLY_AVAILABLE_IN_PRO"/>
+                <field name="lead_thumbs_ycenter" type="plaintext" label="JIBLOGTOOLS_THUMBS_YCENTER" description="JIBLOGTOOLS_THUMBS_YCENTER_DESC" default="JI_ONLY_AVAILABLE_IN_PRO"/>
+
+                <field type="spacer" name="finetuning" label="JIBLOGTOOLS_FINE_TUNING_OPTIONS"/>
+                <field name="lead_thumbs_group" type="plaintext" label="JIBLOGTOOLS_THUMBNAIL_GROUP" description="JIBLOGTOOLS_THUMBNAIL_GROUP_DESC" default="JI_ONLY_AVAILABLE_IN_PRO"/>
+                <field name="lead_thumbs_groupclass" type="plaintext" label="JIBLOGTOOLS_GROUPBY_CLASS" description="JIBLOGTOOLS_GROUPBY_CLASS_DESC" default="JI_ONLY_AVAILABLE_IN_PRO"/>
+                <field name="lead_thumbs_pos" type="plaintext" label="JIBLOGTOOLS_GROUP_POS" description="JIBLOGTOOLS_GROUP_POS_DESC" default="JI_ONLY_AVAILABLE_IN_PRO"/>
+                <field name="lead_group_prefix" type="plaintext" label="JIBLOGTOOLS_GROUP_PREFIX" description="JIBLOGTOOLS_GROUP_PREFIX_DESC" default="JI_ONLY_AVAILABLE_IN_PRO"/>
+                <field name="lead_group_suffix" type="plaintext" label="JIBLOGTOOLS_GROUP_SUFFIX" description="JIBLOGTOOLS_GROUP_SUFFIX_DESC" default="JI_ONLY_AVAILABLE_IN_PRO"/>
+
+                <field name="lead_placeholder" type="plaintext" label="JIBLOGTOOLS_PLACEHOLDER" description="JIBLOGTOOLS_PLACEHOLDER_DESC" default="JI_ONLY_AVAILABLE_IN_PRO"/>
+                <field name="lead_imageplaceholder" type="plaintext" label="JIBLOGTOOLS_PLACEHOLDER_IMAGE" description="JIBLOGTOOLS_PLACEHOLDER_IMAGE_DESC" default="JI_ONLY_AVAILABLE_IN_PRO"/>
+                <field name="lead_htmlplaceholder" type="plaintext" label="JIBLOGTOOLS_PLACEHOLDER_HTML" description="JIBLOGTOOLS_PLACEHOLDER_HTML_DESC" default="JI_ONLY_AVAILABLE_IN_PRO"/>
+                <field name="lead_thumbs_removeparas" type="plaintext" label="JIBLOGTOOLS_THUMBNAIL_REMOVEPARAS" description="JIBLOGTOOLS_THUMBNAIL_REMOVEPARAS_DESC" default="JI_ONLY_AVAILABLE_IN_PRO"/>
+                <!-- <<< FREE <<< -->
+                <!-- >>> PRO >>> -->
+                <field name="lead_thumbs_enabled" type="list" default="1" label="JIBLOGTOOLS_THUMBNAIL" description="JIBLOGTOOLS_THUMBNAIL_DESC">
+                    <option value="1">JYES</option>
+                    <option value="0">JNO</option>
+                </field>
+                <field name="lead_thumbs_count" type="text" default="1" label="JIBLOGTOOLS_THUMBNAIL_LIMIT" description="JIBLOGTOOLS_THUMBNAIL_LIMIT_DESC"/>
+                <field name="lead_thumbs_prefix" type="textarea" filter="raw" cols="56" rows="5" default="&lt;div class=&quot;thumbnail blog-image leading-image image{count}&quot;&gt;" label="JIBLOGTOOLS_THUMBNAIL_PREFIX" description="JIBLOGTOOLS_THUMBNAIL_PREFIX_DESC"/>
+                <field name="lead_thumbs_suffix" type="textarea" filter="raw" cols="56" rows="5" default="&lt;/div&gt;" label="JIBLOGTOOLS_THUMBNAIL_SUFFIX" description="JIBLOGTOOLS_THUMBNAIL_SUFFIX_DESC"/>
+                <field name="lead_thumbs_preserveattribs" type="list" default="1" label="JIBLOGTOOLS_THUMBNAIL_PRESERVEATTRIBS" description="JIBLOGTOOLS_THUMBNAIL_PRESERVEATTRIBS_DESC">
+                    <option value="1">JYES</option>
+                    <option value="0">JNO</option>
+                </field>
+
+                <field type="spacer" name="thumblinkoptions" label="JIBLOGTOOLS_THUMBNAIL_LINK_OPTIONS"/>
+                <field name="lead_thumbs_link" type="list" default="article" label="JIBLOGTOOLS_THUMBNAIL_LINK" description="JIBLOGTOOLS_THUMBNAIL_LINK_DESC">
+                    <option value="article">JIBLOGTOOLS_THUMBNAIL_LINK_ARTICLE</option>
+                    <option value="image">JIBLOGTOOLS_THUMBNAIL_LINK_IMAGE</option>
+                    <option value="none">JIBLOGTOOLS_NONE</option>
+                </field>
+                <field name="lead_modaltype" type="modalpicker" group="{alias}" attrinput="#jform_params_lead_thumbs_linkattr" default="slimbox2" label="JIBLOGTOOLS_THUMBS_MODALTYPE" description="JIBLOGTOOLS_THUMBS_MODALTYPE_DESC"/>
+                <field name="lead_thumbs_linkattr" size="50" type="text" filter="raw" default="" label="JIBLOGTOOLS_THUMBS_LINK_ATTR" description="JIBLOGTOOLS_THUMBS_LINK_ATTR_DESC"/>
+                <field name="lead_thumbs_linktarget" type="list" default="_self" label="JIBLOGTOOLS_THUMBS_LINK_TARGET" description="JIBLOGTOOLS_THUMBS_LINK_TARGET_DESC">
+                    <option value="_self">JIBLOGTOOLS_TARGET_SELF</option>
+                    <option value="_blank">JIBLOGTOOLS_TARGET_BLANK</option>
+                    <option value="_parent">JIBLOGTOOLS_TARGET_PARENT</option>
+                    <option value="_top">JIBLOGTOOLS_TARGET_TOP</option>
+                </field>
+                <field name="lead_link_preserveattribs" type="list" default="1" label="JIBLOGTOOLS_LINK_PRESERVEATTRIBS" description="JIBLOGTOOLS_LINK_PRESERVEATTRIBS_DESC">
+                    <option value="1">JYES</option>
+                    <option value="0">JNO</option>
+                </field>
+
+                <field type="spacer" name="thumbsizeoptions" label="JIBLOGTOOLS_THUMBNAIL_SIZE_OPTIONS"/>
+                <field name="lead_thumbs_modify" type="list" default="1" label="JIBLOGTOOLS_THUMBS_RESIZE" description="JIBLOGTOOLS_THUMBS_RESIZE_DESC">
+                    <option value="1">JYES</option>
+                    <option value="0">JNO</option>
+                </field>
+                <field name="lead_thumbs_width" type="text" default="" label="JIBLOGTOOLS_THUMBS_WIDTH" description="JIBLOGTOOLS_THUMBS_WIDTH_DESC" size="5"/>
+                <field name="lead_thumbs_height" type="text" default="" label="JIBLOGTOOLS_THUMBS_HEIGHT" description="JIBLOGTOOLS_THUMBS_HEIGHT_DESC" size="5"/>
+                <field name="lead_thumbs_quality" type="text" default="75" label="JIBLOGTOOLS_THUMBS_QUALITY" description="JIBLOGTOOLS_THUMBS_QUALITY_DESC" size="5"/>
+                <field name="lead_thumbs_keepratio" type="list" default="1" label="JIBLOGTOOLS_THUMBS_KEEPRATIO" description="JIBLOGTOOLS_THUMBS_KEEPRATIO_DESC">
+                    <option value="1">JYES</option>
+                    <option value="0">JNO</option>
+                </field>
+                <field name="lead_thumbs_cropcenter" type="list" default="0" label="JIBLOGTOOLS_THUMBS_CROPCENTER" description="JIBLOGTOOLS_THUMBS_CROPCENTER_DESC">
+                    <option value="1">JYES</option>
+                    <option value="0">JNO</option>
+                </field>
+                <field name="lead_thumbs_fill" type="list" default="0" label="JIBLOGTOOLS_THUMBS_FILL" description="JIBLOGTOOLS_THUMBS_FILL_DESC">
+                    <option value="1">JYES</option>
+                    <option value="0">JNO</option>
+                </field>
+                <field name="lead_thumbs_xcenter" type="list" default="1" label="JIBLOGTOOLS_THUMBS_XCENTER" description="JIBLOGTOOLS_THUMBS_XCENTER_DESC">
+                    <option value="1">JYES</option>
+                    <option value="0">JNO</option>
+                </field>
+                <field name="lead_thumbs_ycenter" type="list" default="1" label="JIBLOGTOOLS_THUMBS_YCENTER" description="JIBLOGTOOLS_THUMBS_YCENTER_DESC">
+                    <option value="1">JYES</option>
+                    <option value="0">JNO</option>
+                </field>
+
+                <field type="spacer" name="finetuning" label="JIBLOGTOOLS_FINE_TUNING_OPTIONS"/>
+                <field name="lead_thumbs_group" type="list" default="all" label="JIBLOGTOOLS_THUMBNAIL_GROUP" description="JIBLOGTOOLS_THUMBNAIL_GROUP_DESC">
+                    <option value="all">JYES</option>
+                    <option value="include">JIBLOGTOOLS_GROUP_CLASS_INCLUDE</option>
+                    <option value="exclude">JIBLOGTOOLS_GROUP_CLASS_EXCLUDE</option>
+                    <option value="none">JNO</option>
+                </field>
+                <field name="lead_thumbs_groupclass" type="text" default="" label="JIBLOGTOOLS_GROUPBY_CLASS" description="JIBLOGTOOLS_GROUPBY_CLASS_DESC"/>
+                <field name="lead_thumbs_pos" type="list" default="beforedesc" label="JIBLOGTOOLS_GROUP_POS" description="JIBLOGTOOLS_GROUP_POS_DESC">
+                    <option value="beforedesc">JIBLOGTOOLS_BEFORE_DESC</option>
+                    <option value="afterdesc">JIBLOGTOOLS_AFTER_DESC</option>
+                </field>
+                <field name="lead_group_prefix" type="textarea" filter="raw" cols="56" rows="5" default="" label="JIBLOGTOOLS_GROUP_PREFIX" description="JIBLOGTOOLS_GROUP_PREFIX_DESC"/>
+                <field name="lead_group_suffix" type="textarea" filter="raw" cols="56" rows="5" default="" label="JIBLOGTOOLS_GROUP_SUFFIX" description="JIBLOGTOOLS_GROUP_SUFFIX_DESC"/>
+
+                <field name="lead_placeholder" type="list" default="" label="JIBLOGTOOLS_PLACEHOLDER" description="JIBLOGTOOLS_PLACEHOLDER_DESC">
+                    <option value="image">JIBLOGTOOLS_PLACEHOLDER_IMAGE</option>
+                    <option value="html">JIBLOGTOOLS_PLACEHOLDER_HTML</option>
+                    <option value="none">JIBLOGTOOLS_NONE</option>
+                </field>
+                <field name="lead_imageplaceholder" type="text" size="80" default="" label="JIBLOGTOOLS_PLACEHOLDER_IMAGE" description="JIBLOGTOOLS_PLACEHOLDER_IMAGE_DESC"/>
+                <field name="lead_htmlplaceholder" type="textarea" filter="raw" cols="56" rows="5" default="" label="JIBLOGTOOLS_PLACEHOLDER_HTML" description="JIBLOGTOOLS_PLACEHOLDER_HTML_DESC"/>
+                <field name="lead_thumbs_removeparas" type="list" default="1" label="JIBLOGTOOLS_THUMBNAIL_REMOVEPARAS" description="JIBLOGTOOLS_THUMBNAIL_REMOVEPARAS_DESC">
+                    <option value="1">JYES</option>
+                    <option value="0">JNO</option>
+                </field>
+                <!-- <<< PRO <<< -->
+            </fieldset>
+            <fieldset name="catitems" label="COM_PLUGINS_BLOG_CATEGORIES">
+                <field name="cat_mirror_blog" type="list" default="1" label="JIBLOGTOOLS_MIRROR_BLOG" description="JIBLOGTOOLS_MIRROR_BLOG_DESC">
+                    <option value="1">JYES</option>
+                    <option value="0">JNO</option>
+                </field>
+
+                <field type="spacer" name="titlebasicoptions" label="JIBLOGTOOLS_TITLE_OPTIONS"/>
+                <field name="cat_title_truncate" type="list" default="0" label="JIBLOGTOOLS_TITLE_TRUNCATE" description="JIBLOGTOOLS_TITLE_TRUNCATE_DESC  ">
+                    <option value="1">JYES</option>
+                    <option value="0">JNO</option>
+                </field>
+                <field name="cat_title_length" type="text" default="35" label="JIBLOGTOOLS_TITLE_LENGTH" description="JIBLOGTOOLS_TITLE_LENGTH_DESC" size="5"/>
+
+                <field type="spacer" name="textoptions" label="JIBLOGTOOLS_TEXT_OPTIONS"/>
+                <field name="cat_desc_truncate" type="list" default="0" label="JIBLOGTOOLS_CROP_TEXT" description="JIBLOGTOOLS_CROP_TEXT_DESC">
+                    <option value="1">JIBLOGTOOLS_BYCHARS</option>
+                    <option value="2">JIBLOGTOOLS_BYWORDS</option>
+                    <option value="3">JIBLOGTOOLS_BYPARAS</option>
+                    <option value="4">JIBLOGTOOLS_BYCUSTOM</option>
+                    <option value="0">JNO</option>
+                </field>
+                <field name="cat_desc_length" type="text" default="220" label="JIBLOGTOOLS_CROP_TEXT_LIMIT" description="JIBLOGTOOLS_CROP_TEXT_LIMIT_DESC" size="5"/>
+                <field name="cat_desc_truncate_break" type="text" filter="raw" default="/(&lt;\/p&gt;\s*|&lt;br&gt;|&lt;br?\/&gt;)|i\s/" label="JIBLOGTOOLS_CROP_TEXT_CUSTOMLIMIT" description="JIBLOGTOOLS_CROP_TEXT_CUSTOMLIMIT_DESC"/>
+                <field name="cat_desc_truncate_suffix" type="text" filter="raw" default="{readmore}" label="JIBLOGTOOLS_CROP_TEXT_SUFFIX" description="JIBLOGTOOLS_CROP_TEXT_SUFFIX_DESC"/>
+                <field name="cat_desc_truncate_suffixpos" type="list" default="0" label="JIBLOGTOOLS_CROP_TEXT_SUFFIXPOS" description="JIBLOGTOOLS_CROP_TEXT_SUFFIXPOS_DESC">
+                    <option value="1">JIBLOGTOOLS_INSIDE</option>
+                    <option value="0">JIBLOGTOOLS_OUTSIDE</option>
+                </field>
+
+                <field type="spacer" name="readmoreoptions" label="JIBLOGTOOLS_READMORE_OPTIONS"/>
+                <field name="cat_readmore_insert" type="list" default="0" label="JIBLOGTOOLS_READMORE_INSERT" description="JIBLOGTOOLS_READMORE_INSERT_DESC">
+                    <option value="1">JYES</option>
+                    <option value="0">JNO</option>
+                </field>
+                <field name="cat_readmore_respect" type="list" default="1" label="JIBLOGTOOLS_READMORE_RESPECT" description="JIBLOGTOOLS_READMORE_RESPECT_DESC">
+                    <option value="1">JYES</option>
+                    <option value="0">JNO</option>
+                </field>
+                <field name="cat_readmore_prefix" type="textarea" filter="raw" cols="56" rows="5" default="&lt;p class=&quot;readmore&quot;&gt;" label="JIBLOGTOOLS_READMORE_PREFIX" description="JIBLOGTOOLS_READMORE_PREFIX_DESC"/>
+                <field name="cat_readmore_text" type="text" default="Read more..." label="JIBLOGTOOLS_READMORE_TEXT" description="JIBLOGTOOLS_READMORE_TEXT_DESC"/>
+                <field name="cat_readmore_suffix" type="textarea" filter="raw" cols="56" rows="5" default="&lt;/p&gt;" label="JIBLOGTOOLS_READMORE_SUFFIX" description="JIBLOGTOOLS_READMORE_SUFFIX_DESC"/>
+
+                <field type="spacer" name="thumbbasicoptions" label="JIBLOGTOOLS_THUMBNAIL_OPTIONS"/>
+                <!-- >>> FREE >>> -->
+                <field name="cat_thumbs_enabled" type="plaintext" label="JIBLOGTOOLS_THUMBNAIL" description="JIBLOGTOOLS_THUMBNAIL_DESC" default="JI_ONLY_AVAILABLE_IN_PRO"/>
+                <field name="cat_thumbs_count" type="plaintext" label="JIBLOGTOOLS_THUMBNAIL_LIMIT" description="JIBLOGTOOLS_THUMBNAIL_LIMIT_DESC" default="JI_ONLY_AVAILABLE_IN_PRO"/>
+                <field name="cat_thumbs_prefix" type="plaintext" label="JIBLOGTOOLS_THUMBNAIL_PREFIX" description="JIBLOGTOOLS_THUMBNAIL_PREFIX_DESC" default="JI_ONLY_AVAILABLE_IN_PRO"/>
+                <field name="cat_thumbs_suffix" type="plaintext" label="JIBLOGTOOLS_THUMBNAIL_SUFFIX" description="JIBLOGTOOLS_THUMBNAIL_SUFFIX_DESC" default="JI_ONLY_AVAILABLE_IN_PRO"/>
+                <field name="cat_thumbs_preserveattribs" type="plaintext" label="JIBLOGTOOLS_THUMBNAIL_PRESERVEATTRIBS" description="JIBLOGTOOLS_THUMBNAIL_PRESERVEATTRIBS_DESC" default="JI_ONLY_AVAILABLE_IN_PRO"/>
+
+                <field type="spacer" name="thumblinkoptions" label="JIBLOGTOOLS_THUMBNAIL_LINK_OPTIONS"/>
+                <field name="cat_thumbs_link" type="plaintext" label="JIBLOGTOOLS_THUMBNAIL_LINK" description="JIBLOGTOOLS_THUMBNAIL_LINK_DESC" default="JI_ONLY_AVAILABLE_IN_PRO"/>
+                <field name="cat_modaltype" type="plaintext" label="JIBLOGTOOLS_THUMBS_MODALTYPE" description="JIBLOGTOOLS_THUMBS_MODALTYPE_DESC" default="JI_ONLY_AVAILABLE_IN_PRO"/>
+                <field name="cat_thumbs_linkattr" type="plaintext" label="JIBLOGTOOLS_THUMBS_LINK_ATTR" description="JIBLOGTOOLS_THUMBS_LINK_ATTR_DESC" default="JI_ONLY_AVAILABLE_IN_PRO"/>
+                <field name="cat_thumbs_linktarget" type="plaintext" label="JIBLOGTOOLS_THUMBS_LINK_TARGET" description="JIBLOGTOOLS_THUMBS_LINK_TARGET_DESC" default="JI_ONLY_AVAILABLE_IN_PRO"/>
+                <field name="cat_link_preserveattribs" type="plaintext" label="JIBLOGTOOLS_LINK_PRESERVEATTRIBS" description="JIBLOGTOOLS_LINK_PRESERVEATTRIBS_DESC" default="JI_ONLY_AVAILABLE_IN_PRO"/>
+
+                <field type="spacer" name="thumbsizeoptions" label="JIBLOGTOOLS_THUMBNAIL_SIZE_OPTIONS"/>
+                <field name="cat_thumbs_modify" type="plaintext" label="JIBLOGTOOLS_THUMBS_RESIZE" description="JIBLOGTOOLS_THUMBS_RESIZE_DESC" default="JI_ONLY_AVAILABLE_IN_PRO"/>
+                <field name="cat_thumbs_width" type="plaintext" label="JIBLOGTOOLS_THUMBS_WIDTH" description="JIBLOGTOOLS_THUMBS_WIDTH_DESC" default="JI_ONLY_AVAILABLE_IN_PRO"/>
+                <field name="cat_thumbs_height" type="plaintext" label="JIBLOGTOOLS_THUMBS_HEIGHT" description="JIBLOGTOOLS_THUMBS_HEIGHT_DESC" default="JI_ONLY_AVAILABLE_IN_PRO"/>
+                <field name="cat_thumbs_quality" type="plaintext" label="JIBLOGTOOLS_THUMBS_QUALITY" description="JIBLOGTOOLS_THUMBS_QUALITY_DESC" default="JI_ONLY_AVAILABLE_IN_PRO"/>
+                <field name="cat_thumbs_keepratio" type="plaintext" label="JIBLOGTOOLS_THUMBS_KEEPRATIO" description="JIBLOGTOOLS_THUMBS_KEEPRATIO_DESC" default="JI_ONLY_AVAILABLE_IN_PRO"/>
+                <field name="cat_thumbs_cropcenter" type="plaintext" label="JIBLOGTOOLS_THUMBS_CROPCENTER" description="JIBLOGTOOLS_THUMBS_CROPCENTER_DESC" default="JI_ONLY_AVAILABLE_IN_PRO"/>
+                <field name="cat_thumbs_fill" type="plaintext" label="JIBLOGTOOLS_THUMBS_FILL" description="JIBLOGTOOLS_THUMBS_FILL_DESC" default="JI_ONLY_AVAILABLE_IN_PRO"/>
+                <field name="cat_thumbs_xcenter" type="plaintext" label="JIBLOGTOOLS_THUMBS_XCENTER" description="JIBLOGTOOLS_THUMBS_XCENTER_DESC" default="JI_ONLY_AVAILABLE_IN_PRO"/>
+                <field name="cat_thumbs_ycenter" type="plaintext" label="JIBLOGTOOLS_THUMBS_YCENTER" description="JIBLOGTOOLS_THUMBS_YCENTER_DESC" default="JI_ONLY_AVAILABLE_IN_PRO"/>
+
+                <field type="spacer" name="finetuning" label="JIBLOGTOOLS_FINE_TUNING_OPTIONS"/>
+                <field name="cat_thumbs_group" type="plaintext" label="JIBLOGTOOLS_THUMBNAIL_GROUP" description="JIBLOGTOOLS_THUMBNAIL_GROUP_DESC" default="JI_ONLY_AVAILABLE_IN_PRO"/>
+                <field name="cat_thumbs_groupclass" type="plaintext" label="JIBLOGTOOLS_GROUPBY_CLASS" description="JIBLOGTOOLS_GROUPBY_CLASS_DESC" default="JI_ONLY_AVAILABLE_IN_PRO"/>
+                <field name="cat_thumbs_pos" type="plaintext" label="JIBLOGTOOLS_GROUP_POS" description="JIBLOGTOOLS_GROUP_POS_DESC" default="JI_ONLY_AVAILABLE_IN_PRO"/>
+                <field name="cat_group_prefix" type="plaintext" label="JIBLOGTOOLS_GROUP_PREFIX" description="JIBLOGTOOLS_GROUP_PREFIX_DESC" default="JI_ONLY_AVAILABLE_IN_PRO"/>
+                <field name="cat_group_suffix" type="plaintext" label="JIBLOGTOOLS_GROUP_SUFFIX" description="JIBLOGTOOLS_GROUP_SUFFIX_DESC" default="JI_ONLY_AVAILABLE_IN_PRO"/>
+
+                <field name="cat_placeholder" type="plaintext" label="JIBLOGTOOLS_PLACEHOLDER" description="JIBLOGTOOLS_PLACEHOLDER_DESC" default="JI_ONLY_AVAILABLE_IN_PRO"/>
+                <field name="cat_imageplaceholder" type="plaintext" label="JIBLOGTOOLS_PLACEHOLDER_IMAGE" description="JIBLOGTOOLS_PLACEHOLDER_IMAGE_DESC" default="JI_ONLY_AVAILABLE_IN_PRO"/>
+                <field name="cat_htmlplaceholder" type="plaintext" label="JIBLOGTOOLS_PLACEHOLDER_HTML" description="JIBLOGTOOLS_PLACEHOLDER_HTML_DESC" default="JI_ONLY_AVAILABLE_IN_PRO"/>
+                <field name="cat_thumbs_removeparas" type="plaintext" label="JIBLOGTOOLS_THUMBNAIL_REMOVEPARAS" description="JIBLOGTOOLS_THUMBNAIL_REMOVEPARAS_DESC" default="JI_ONLY_AVAILABLE_IN_PRO"/>
+                <!-- <<< FREE <<< -->
+                <!-- >>> PRO >>> -->
+                <field name="cat_thumbs_enabled" type="list" default="0" label="JIBLOGTOOLS_THUMBNAIL" description="JIBLOGTOOLS_THUMBNAIL_DESC">
+                    <option value="1">JYES</option>
+                    <option value="0">JNO</option>
+                </field>
+                <field name="cat_thumbs_count" type="text" default="1" label="JIBLOGTOOLS_THUMBNAIL_LIMIT" description="JIBLOGTOOLS_THUMBNAIL_LIMIT_DESC"/>
+                <field name="cat_thumbs_prefix" type="textarea" filter="raw" cols="56" rows="5" default="&lt;div class=&quot;thumbnail blog-image cating-image image{count}&quot;&gt;" label="JIBLOGTOOLS_THUMBNAIL_PREFIX" description="JIBLOGTOOLS_THUMBNAIL_PREFIX_DESC"/>
+                <field name="cat_thumbs_suffix" type="textarea" filter="raw" cols="56" rows="5" default="&lt;/div&gt;" label="JIBLOGTOOLS_THUMBNAIL_SUFFIX" description="JIBLOGTOOLS_THUMBNAIL_SUFFIX_DESC"/>
+                <field name="cat_thumbs_preserveattribs" type="list" default="1" label="JIBLOGTOOLS_THUMBNAIL_PRESERVEATTRIBS" description="JIBLOGTOOLS_THUMBNAIL_PRESERVEATTRIBS_DESC">
+                    <option value="1">JYES</option>
+                    <option value="0">JNO</option>
+                </field>
+
+                <field type="spacer" name="thumblinkoptions" label="JIBLOGTOOLS_THUMBNAIL_LINK_OPTIONS"/>
+                <field name="cat_thumbs_link" type="list" default="category" label="JIBLOGTOOLS_THUMBNAIL_LINK" description="JIBLOGTOOLS_THUMBNAIL_LINK_DESC">
+                    <option value="category">JIBLOGTOOLS_THUMBNAIL_LINK_CATEGORY</option>
+                    <option value="image">JIBLOGTOOLS_THUMBNAIL_LINK_IMAGE</option>
+                    <option value="none">JIBLOGTOOLS_NONE</option>
+                </field>
+                <field name="cat_modaltype" type="modalpicker" group="{alias}" attrinput="#jform_params_cat_thumbs_linkattr" default="slimbox2" label="JIBLOGTOOLS_THUMBS_MODALTYPE" description="JIBLOGTOOLS_THUMBS_MODALTYPE_DESC"/>
+                <field name="cat_thumbs_linkattr" size="50" type="text" filter="raw" default="" label="JIBLOGTOOLS_THUMBS_LINK_ATTR" description="JIBLOGTOOLS_THUMBS_LINK_ATTR_DESC"/>
+                <field name="cat_thumbs_linktarget" type="list" default="_self" label="JIBLOGTOOLS_THUMBS_LINK_TARGET" description="JIBLOGTOOLS_THUMBS_LINK_TARGET_DESC">
+                    <option value="_self">JIBLOGTOOLS_TARGET_SELF</option>
+                    <option value="_blank">JIBLOGTOOLS_TARGET_BLANK</option>
+                    <option value="_parent">JIBLOGTOOLS_TARGET_PARENT</option>
+                    <option value="_top">JIBLOGTOOLS_TARGET_TOP</option>
+                </field>
+                <field name="cat_link_preserveattribs" type="list" default="1" label="JIBLOGTOOLS_LINK_PRESERVEATTRIBS" description="JIBLOGTOOLS_LINK_PRESERVEATTRIBS_DESC">
+                    <option value="1">JYES</option>
+                    <option value="0">JNO</option>
+                </field>
+
+                <field type="spacer" name="thumbsizeoptions" label="JIBLOGTOOLS_THUMBNAIL_SIZE_OPTIONS"/>
+                <field name="cat_thumbs_modify" type="list" default="0" label="JIBLOGTOOLS_THUMBS_RESIZE" description="JIBLOGTOOLS_THUMBS_RESIZE_DESC">
+                    <option value="1">JYES</option>
+                    <option value="0">JNO</option>
+                </field>
+                <field name="cat_thumbs_width" type="text" default="" label="JIBLOGTOOLS_THUMBS_WIDTH" description="JIBLOGTOOLS_THUMBS_WIDTH_DESC" size="5"/>
+                <field name="cat_thumbs_height" type="text" default="" label="JIBLOGTOOLS_THUMBS_HEIGHT" description="JIBLOGTOOLS_THUMBS_HEIGHT_DESC" size="5"/>
+                <field name="cat_thumbs_quality" type="text" default="75" label="JIBLOGTOOLS_THUMBS_QUALITY" description="JIBLOGTOOLS_THUMBS_QUALITY_DESC" size="5"/>
+                <field name="cat_thumbs_keepratio" type="list" default="1" label="JIBLOGTOOLS_THUMBS_KEEPRATIO" description="JIBLOGTOOLS_THUMBS_KEEPRATIO_DESC">
+                    <option value="1">JYES</option>
+                    <option value="0">JNO</option>
+                </field>
+                <field name="cat_thumbs_cropcenter" type="list" default="0" label="JIBLOGTOOLS_THUMBS_CROPCENTER" description="JIBLOGTOOLS_THUMBS_CROPCENTER_DESC">
+                    <option value="1">JYES</option>
+                    <option value="0">JNO</option>
+                </field>
+                <field name="cat_thumbs_fill" type="list" default="0" label="JIBLOGTOOLS_THUMBS_FILL" description="JIBLOGTOOLS_THUMBS_FILL_DESC">
+                    <option value="1">JYES</option>
+                    <option value="0">JNO</option>
+                </field>
+                <field name="cat_thumbs_xcenter" type="list" default="1" label="JIBLOGTOOLS_THUMBS_XCENTER" description="JIBLOGTOOLS_THUMBS_XCENTER_DESC">
+                    <option value="1">JYES</option>
+                    <option value="0">JNO</option>
+                </field>
+                <field name="cat_thumbs_ycenter" type="list" default="1" label="JIBLOGTOOLS_THUMBS_YCENTER" description="JIBLOGTOOLS_THUMBS_YCENTER_DESC">
+                    <option value="1">JYES</option>
+                    <option value="0">JNO</option>
+                </field>
+
+                <field type="spacer" name="finetuning" label="JIBLOGTOOLS_FINE_TUNING_OPTIONS"/>
+                <field name="cat_thumbs_group" type="list" default="all" label="JIBLOGTOOLS_THUMBNAIL_GROUP" description="JIBLOGTOOLS_THUMBNAIL_GROUP_DESC">
+                    <option value="all">JYES</option>
+                    <option value="include">JIBLOGTOOLS_GROUP_CLASS_INCLUDE</option>
+                    <option value="exclude">JIBLOGTOOLS_GROUP_CLASS_EXCLUDE</option>
+                    <option value="none">JNO</option>
+                </field>
+                <field name="cat_thumbs_groupclass" type="text" default="" label="JIBLOGTOOLS_GROUPBY_CLASS" description="JIBLOGTOOLS_GROUPBY_CLASS_DESC"/>
+                <field name="cat_thumbs_pos" type="list" default="beforedesc" label="JIBLOGTOOLS_GROUP_POS" description="JIBLOGTOOLS_GROUP_POS_DESC">
+                    <option value="beforedesc">JIBLOGTOOLS_BEFORE_DESC</option>
+                    <option value="afterdesc">JIBLOGTOOLS_AFTER_DESC</option>
+                </field>
+                <field name="cat_group_prefix" type="textarea" filter="raw" cols="56" rows="5" default="" label="JIBLOGTOOLS_GROUP_PREFIX" description="JIBLOGTOOLS_GROUP_PREFIX_DESC"/>
+                <field name="cat_group_suffix" type="textarea" filter="raw" cols="56" rows="5" default="" label="JIBLOGTOOLS_GROUP_SUFFIX" description="JIBLOGTOOLS_GROUP_SUFFIX_DESC"/>
+
+                <field name="cat_placeholder" type="list" default="" label="JIBLOGTOOLS_PLACEHOLDER" description="JIBLOGTOOLS_PLACEHOLDER_DESC">
+                    <option value="image">JIBLOGTOOLS_PLACEHOLDER_IMAGE</option>
+                    <option value="html">JIBLOGTOOLS_PLACEHOLDER_HTML</option>
+                    <option value="none">JIBLOGTOOLS_NONE</option>
+                </field>
+                <field name="cat_imageplaceholder" type="text" size="80" default="" label="JIBLOGTOOLS_PLACEHOLDER_IMAGE" description="JIBLOGTOOLS_PLACEHOLDER_IMAGE_DESC"/>
+                <field name="cat_htmlplaceholder" type="textarea" filter="raw" cols="56" rows="5" default="" label="JIBLOGTOOLS_PLACEHOLDER_HTML" description="JIBLOGTOOLS_PLACEHOLDER_HTML_DESC"/>
+                <field name="cat_thumbs_removeparas" type="list" default="1" label="JIBLOGTOOLS_THUMBNAIL_REMOVEPARAS" description="JIBLOGTOOLS_THUMBNAIL_REMOVEPARAS_DESC">
+                    <option value="1">JYES</option>
+                    <option value="0">JNO</option>
+                </field>
+                <!-- <<< PRO <<< -->
+            </fieldset>
+			<fieldset name="articleviews" label="JIBLOGTOOLS_ARTICLE_VIEWS">
+                <field type="spacer" name="thumbbasicoptions" label="JIBLOGTOOLS_THUMBNAIL_OPTIONS"/>
+                <!-- >>> FREE >>> -->
+                <field name="art_thumbs_enabled" type="plaintext" label="JIBLOGTOOLS_THUMBNAIL" description="JIBLOGTOOLS_THUMBNAIL_DESC" default="JI_ONLY_AVAILABLE_IN_PRO"/>
+                <field name="art_thumbs_count" type="plaintext" label="JIBLOGTOOLS_THUMBNAIL_LIMIT" description="JIBLOGTOOLS_THUMBNAIL_LIMIT_DESC" default="JI_ONLY_AVAILABLE_IN_PRO"/>
+                <field name="art_thumbs_prefix" type="plaintext" label="JIBLOGTOOLS_THUMBNAIL_PREFIX" description="JIBLOGTOOLS_THUMBNAIL_PREFIX_DESC" default="JI_ONLY_AVAILABLE_IN_PRO"/>
+                <field name="art_thumbs_suffix" type="plaintext" label="JIBLOGTOOLS_THUMBNAIL_SUFFIX" description="JIBLOGTOOLS_THUMBNAIL_SUFFIX_DESC" default="JI_ONLY_AVAILABLE_IN_PRO"/>
+                <field name="art_thumbs_preserveattribs" type="plaintext" label="JIBLOGTOOLS_THUMBNAIL_PRESERVEATTRIBS" description="JIBLOGTOOLS_THUMBNAIL_PRESERVEATTRIBS_DESC" default="JI_ONLY_AVAILABLE_IN_PRO"/>
+
+                <field type="spacer" name="thumblinkoptions" label="JIBLOGTOOLS_THUMBNAIL_LINK_OPTIONS"/>
+                <field name="art_thumbs_link" type="plaintext" label="JIBLOGTOOLS_THUMBNAIL_LINK" description="JIBLOGTOOLS_THUMBNAIL_LINK_DESC" default="JI_ONLY_AVAILABLE_IN_PRO"/>
+                <field name="art_modaltype" type="plaintext" label="JIBLOGTOOLS_THUMBS_MODALTYPE" description="JIBLOGTOOLS_THUMBS_MODALTYPE_DESC" default="JI_ONLY_AVAILABLE_IN_PRO"/>
+                <field name="art_thumbs_linkattr" type="plaintext" label="JIBLOGTOOLS_THUMBS_LINK_ATTR" description="JIBLOGTOOLS_THUMBS_LINK_ATTR_DESC" default="JI_ONLY_AVAILABLE_IN_PRO"/>
+                <field name="art_thumbs_linktarget" type="plaintext" label="JIBLOGTOOLS_THUMBS_LINK_TARGET" description="JIBLOGTOOLS_THUMBS_LINK_TARGET_DESC" default="JI_ONLY_AVAILABLE_IN_PRO"/>
+                <field name="art_link_preserveattribs" type="plaintext" label="JIBLOGTOOLS_LINK_PRESERVEATTRIBS" description="JIBLOGTOOLS_LINK_PRESERVEATTRIBS_DESC" default="JI_ONLY_AVAILABLE_IN_PRO"/>
+
+                <field type="spacer" name="thumbsizeoptions" label="JIBLOGTOOLS_THUMBNAIL_SIZE_OPTIONS"/>
+                <field name="art_thumbs_modify" type="plaintext" label="JIBLOGTOOLS_THUMBS_RESIZE" description="JIBLOGTOOLS_THUMBS_RESIZE_DESC" default="JI_ONLY_AVAILABLE_IN_PRO"/>
+                <field name="art_thumbs_width" type="plaintext" label="JIBLOGTOOLS_THUMBS_WIDTH" description="JIBLOGTOOLS_THUMBS_WIDTH_DESC" default="JI_ONLY_AVAILABLE_IN_PRO"/>
+                <field name="art_thumbs_height" type="plaintext" label="JIBLOGTOOLS_THUMBS_HEIGHT" description="JIBLOGTOOLS_THUMBS_HEIGHT_DESC" default="JI_ONLY_AVAILABLE_IN_PRO"/>
+                <field name="art_thumbs_quality" type="plaintext" label="JIBLOGTOOLS_THUMBS_QUALITY" description="JIBLOGTOOLS_THUMBS_QUALITY_DESC" default="JI_ONLY_AVAILABLE_IN_PRO"/>
+                <field name="art_thumbs_keepratio" type="plaintext" label="JIBLOGTOOLS_THUMBS_KEEPRATIO" description="JIBLOGTOOLS_THUMBS_KEEPRATIO_DESC" default="JI_ONLY_AVAILABLE_IN_PRO"/>
+                <field name="art_thumbs_cropcenter" type="plaintext" label="JIBLOGTOOLS_THUMBS_CROPCENTER" description="JIBLOGTOOLS_THUMBS_CROPCENTER_DESC" default="JI_ONLY_AVAILABLE_IN_PRO"/>
+                <field name="art_thumbs_fill" type="plaintext" label="JIBLOGTOOLS_THUMBS_FILL" description="JIBLOGTOOLS_THUMBS_FILL_DESC" default="JI_ONLY_AVAILABLE_IN_PRO"/>
+                <field name="art_thumbs_xcenter" type="plaintext" label="JIBLOGTOOLS_THUMBS_XCENTER" description="JIBLOGTOOLS_THUMBS_XCENTER_DESC" default="JI_ONLY_AVAILABLE_IN_PRO"/>
+                <field name="art_thumbs_ycenter" type="plaintext" label="JIBLOGTOOLS_THUMBS_YCENTER" description="JIBLOGTOOLS_THUMBS_YCENTER_DESC" default="JI_ONLY_AVAILABLE_IN_PRO"/>
+
+                <field type="spacer" name="finetuning" label="JIBLOGTOOLS_FINE_TUNING_OPTIONS"/>
+                <field name="art_thumbs_group" type="plaintext" label="JIBLOGTOOLS_THUMBNAIL_GROUP" description="JIBLOGTOOLS_THUMBNAIL_GROUP_DESC" default="JI_ONLY_AVAILABLE_IN_PRO"/>
+                <field name="art_thumbs_groupclass" type="plaintext" label="JIBLOGTOOLS_GROUPBY_CLASS" description="JIBLOGTOOLS_GROUPBY_CLASS_DESC" default="JI_ONLY_AVAILABLE_IN_PRO"/>
+                <field name="art_thumbs_pos" type="plaintext" label="JIBLOGTOOLS_GROUP_POS" description="JIBLOGTOOLS_GROUP_POS_DESC" default="JI_ONLY_AVAILABLE_IN_PRO"/>
+                <field name="art_group_prefix" type="plaintext" label="JIBLOGTOOLS_GROUP_PREFIX" description="JIBLOGTOOLS_GROUP_PREFIX_DESC" default="JI_ONLY_AVAILABLE_IN_PRO"/>
+                <field name="art_group_suffix" type="plaintext" label="JIBLOGTOOLS_GROUP_SUFFIX" description="JIBLOGTOOLS_GROUP_SUFFIX_DESC" default="JI_ONLY_AVAILABLE_IN_PRO"/>
+
+                <field name="art_placeholder" type="plaintext" label="JIBLOGTOOLS_PLACEHOLDER" description="JIBLOGTOOLS_PLACEHOLDER_DESC" default="JI_ONLY_AVAILABLE_IN_PRO"/>
+                <field name="art_imageplaceholder" type="plaintext" label="JIBLOGTOOLS_PLACEHOLDER_IMAGE" description="JIBLOGTOOLS_PLACEHOLDER_IMAGE_DESC" default="JI_ONLY_AVAILABLE_IN_PRO"/>
+                <field name="art_htmlplaceholder" type="plaintext" label="JIBLOGTOOLS_PLACEHOLDER_HTML" description="JIBLOGTOOLS_PLACEHOLDER_HTML_DESC" default="JI_ONLY_AVAILABLE_IN_PRO"/>
+                <field name="art_thumbs_removeparas" type="plaintext" label="JIBLOGTOOLS_THUMBNAIL_REMOVEPARAS" description="JIBLOGTOOLS_THUMBNAIL_REMOVEPARAS_DESC" default="JI_ONLY_AVAILABLE_IN_PRO"/>
+                <!-- <<< FREE <<< -->
+                <!-- >>> PRO >>> -->
+                <field name="art_thumbs_enabled" type="list" default="1" label="JIBLOGTOOLS_THUMBNAIL" description="JIBLOGTOOLS_THUMBNAIL_DESC">
+                    <option value="1">JYES</option>
+                    <option value="0">JNO</option>
+                </field>
+                <field name="art_thumbs_count" type="text" default="-1" label="JIBLOGTOOLS_THUMBNAIL_LIMIT" description="JIBLOGTOOLS_THUMBNAIL_LIMIT_DESC"/>
+                <field name="art_thumbs_prefix" type="textarea" filter="raw" cols="56" rows="5" default="&lt;div class=&quot;thumbnail article-image image{count}&quot;&gt;" label="JIBLOGTOOLS_THUMBNAIL_PREFIX" description="JIBLOGTOOLS_THUMBNAIL_PREFIX_DESC"/>
+                <field name="art_thumbs_suffix" type="textarea" filter="raw" cols="56" rows="5" default="&lt;/div&gt;" label="JIBLOGTOOLS_THUMBNAIL_SUFFIX" description="JIBLOGTOOLS_THUMBNAIL_SUFFIX_DESC"/>
+                <field name="art_thumbs_preserveattribs" type="list" default="1" label="JIBLOGTOOLS_THUMBNAIL_PRESERVEATTRIBS" description="JIBLOGTOOLS_THUMBNAIL_PRESERVEATTRIBS_DESC">
+                    <option value="1">JYES</option>
+                    <option value="0">JNO</option>
+                </field>
+
+                <field type="spacer" name="thumblinkoptions" label="JIBLOGTOOLS_THUMBNAIL_LINK_OPTIONS"/>
+                <field name="art_thumbs_link" type="list" default="image" label="JIBLOGTOOLS_THUMBNAIL_LINK" description="JIBLOGTOOLS_THUMBNAIL_LINK_DESC">
+                    <option value="image">JIBLOGTOOLS_THUMBNAIL_LINK_IMAGE</option>
+                    <option value="none">JIBLOGTOOLS_NONE</option>
+                </field>
+                <field name="art_modaltype" type="modalpicker" group="{alias}" attrinput="#jform_params_art_thumbs_linkattr" default="slimbox2" label="JIBLOGTOOLS_THUMBS_MODALTYPE" description="JIBLOGTOOLS_THUMBS_MODALTYPE_DESC"/>
+                <field name="art_thumbs_linkattr" size="50" type="text" filter="raw" default="" label="JIBLOGTOOLS_THUMBS_LINK_ATTR" description="JIBLOGTOOLS_THUMBS_LINK_ATTR_DESC"/>
+                <field name="art_thumbs_linktarget" type="list" default="_blank" label="JIBLOGTOOLS_THUMBS_LINK_TARGET" description="JIBLOGTOOLS_THUMBS_LINK_TARGET_DESC">
+                    <option value="_self">JIBLOGTOOLS_TARGET_SELF</option>
+                    <option value="_blank">JIBLOGTOOLS_TARGET_BLANK</option>
+                    <option value="_parent">JIBLOGTOOLS_TARGET_PARENT</option>
+                    <option value="_top">JIBLOGTOOLS_TARGET_TOP</option>
+                </field>
+                <field name="art_link_preserveattribs" type="list" default="1" label="JIBLOGTOOLS_LINK_PRESERVEATTRIBS" description="JIBLOGTOOLS_LINK_PRESERVEATTRIBS_DESC">
+                    <option value="1">JYES</option>
+                    <option value="0">JNO</option>
+                </field>
+
+                <field type="spacer" name="thumbsizeoptions" label="JIBLOGTOOLS_THUMBNAIL_SIZE_OPTIONS"/>
+                <field name="art_thumbs_modify" type="list" default="1" label="JIBLOGTOOLS_THUMBS_RESIZE" description="JIBLOGTOOLS_THUMBS_RESIZE_DESC">
+                    <option value="1">JYES</option>
+                    <option value="0">JNO</option>
+                </field>
+                <field name="art_thumbs_width" type="text" default="" label="JIBLOGTOOLS_THUMBS_WIDTH" description="JIBLOGTOOLS_THUMBS_WIDTH_DESC" size="5"/>
+                <field name="art_thumbs_height" type="text" default="" label="JIBLOGTOOLS_THUMBS_HEIGHT" description="JIBLOGTOOLS_THUMBS_HEIGHT_DESC" size="5"/>
+                <field name="art_thumbs_quality" type="text" default="75" label="JIBLOGTOOLS_THUMBS_QUALITY" description="JIBLOGTOOLS_THUMBS_QUALITY_DESC" size="5"/>
+                <field name="art_thumbs_keepratio" type="list" default="1" label="JIBLOGTOOLS_THUMBS_KEEPRATIO" description="JIBLOGTOOLS_THUMBS_KEEPRATIO_DESC">
+                    <option value="1">JYES</option>
+                    <option value="0">JNO</option>
+                </field>
+                <field name="art_thumbs_cropcenter" type="list" default="0" label="JIBLOGTOOLS_THUMBS_CROPCENTER" description="JIBLOGTOOLS_THUMBS_CROPCENTER_DESC">
+                    <option value="1">JYES</option>
+                    <option value="0">JNO</option>
+                </field>
+                <field name="art_thumbs_fill" type="list" default="0" label="JIBLOGTOOLS_THUMBS_FILL" description="JIBLOGTOOLS_THUMBS_FILL_DESC">
+                    <option value="1">JYES</option>
+                    <option value="0">JNO</option>
+                </field>
+                <field name="art_thumbs_xcenter" type="list" default="1" label="JIBLOGTOOLS_THUMBS_XCENTER" description="JIBLOGTOOLS_THUMBS_XCENTER_DESC">
+                    <option value="1">JYES</option>
+                    <option value="0">JNO</option>
+                </field>
+                <field name="art_thumbs_ycenter" type="list" default="1" label="JIBLOGTOOLS_THUMBS_YCENTER" description="JIBLOGTOOLS_THUMBS_YCENTER_DESC">
+                    <option value="1">JYES</option>
+                    <option value="0">JNO</option>
+                </field>
+
+                <field type="spacer" name="finetuning" label="JIBLOGTOOLS_FINE_TUNING_OPTIONS"/>
+                <field name="art_thumbs_group" type="list" default="all" label="JIBLOGTOOLS_THUMBNAIL_GROUP" description="JIBLOGTOOLS_THUMBNAIL_GROUP_DESC">
+                    <option value="all">JYES</option>
+                    <option value="include">JIBLOGTOOLS_GROUP_CLASS_INCLUDE</option>
+                    <option value="exclude">JIBLOGTOOLS_GROUP_CLASS_EXCLUDE</option>
+                    <option value="none">JNO</option>
+                </field>
+                <field name="art_thumbs_groupclass" type="text" default="" label="JIBLOGTOOLS_GROUPBY_CLASS" description="JIBLOGTOOLS_GROUPBY_CLASS_DESC"/>
+                <field name="art_thumbs_pos" type="list" default="beforedesc" label="JIBLOGTOOLS_GROUP_POS" description="JIBLOGTOOLS_GROUP_POS_DESC">
+                    <option value="beforedesc">JIBLOGTOOLS_BEFORE_DESC</option>
+                    <option value="afterdesc">JIBLOGTOOLS_AFTER_DESC</option>
+                </field>
+                <field name="art_group_prefix" type="textarea" filter="raw" cols="56" rows="5" default="" label="JIBLOGTOOLS_GROUP_PREFIX" description="JIBLOGTOOLS_GROUP_PREFIX_DESC"/>
+                <field name="art_group_suffix" type="textarea" filter="raw" cols="56" rows="5" default="" label="JIBLOGTOOLS_GROUP_SUFFIX" description="JIBLOGTOOLS_GROUP_SUFFIX_DESC"/>
+
+                <field name="art_placeholder" type="list" default="" label="JIBLOGTOOLS_PLACEHOLDER" description="JIBLOGTOOLS_PLACEHOLDER_DESC">
+                    <option value="image">JIBLOGTOOLS_PLACEHOLDER_IMAGE</option>
+                    <option value="html">JIBLOGTOOLS_PLACEHOLDER_HTML</option>
+                    <option value="none">JIBLOGTOOLS_NONE</option>
+                </field>
+                <field name="art_imageplaceholder" type="text" size="80" default="" label="JIBLOGTOOLS_PLACEHOLDER_IMAGE" description="JIBLOGTOOLS_PLACEHOLDER_IMAGE_DESC"/>
+                <field name="art_htmlplaceholder" type="textarea" filter="raw" cols="56" rows="5" default="" label="JIBLOGTOOLS_PLACEHOLDER_HTML" description="JIBLOGTOOLS_PLACEHOLDER_HTML_DESC"/>
+                <field name="art_thumbs_removeparas" type="list" default="1" label="JIBLOGTOOLS_THUMBNAIL_REMOVEPARAS" description="JIBLOGTOOLS_THUMBNAIL_REMOVEPARAS_DESC">
+                    <option value="1">JYES</option>
+                    <option value="0">JNO</option>
+                </field>
+                <!-- <<< PRO <<< -->
+			</fieldset>
+			<fieldset name="pluginassignment">
+				<field name="assign_method" type="list" default="all" label="JIBLOGTOOLS_MATCH_METHOD" description="JIBLOGTOOLS_MATCH_METHOD_DESC">
+					<option value="all">JALL</option>
+					<option value="any">JANY</option>
+				</field>
+				
+				<field name="assign_articlemethod" default="all" type="list" label="JIBLOGTOOLS_ASSIGN_ARTICLE_METHOD" description="JIBLOGTOOLS_ASSIGN_ARTICLE_METHOD_DESC">
+					<option value="all">JALL</option>
+					<option value="include">JIBLOGTOOLS_INCLUDE_SELECTION</option>
+					<option value="exclude">JIBLOGTOOLS_EXCLUDE_SELECTION</option>
+					<option value="none">JIBLOGTOOLS_NONE</option>
+				</field>
+				<field name="assign_articles" type="articles" multiple="multiple" default="" label="JIBLOGTOOLS_ASSIGN_ARTICLES" description="JIBLOGTOOLS_ASSIGN_ARTICLES_DESC"/>
+				<field name="assign_categorymethod" default="all" type="list" label="JIBLOGTOOLS_ASSIGN_CATEGORY_METHOD" description="JIBLOGTOOLS_ASSIGN_CATEGORY_METHOD_DESC">
+					<option value="all">JALL</option>
+					<option value="include">JIBLOGTOOLS_INCLUDE_SELECTION</option>
+					<option value="exclude">JIBLOGTOOLS_EXCLUDE_SELECTION</option>
+					<option value="none">JIBLOGTOOLS_NONE</option>
+				</field>
+                <field name="assign_categories" type="category" extension="com_content" multiple="true" size="5" default="" label="JIBLOGTOOLS_ASSIGN_CATEGORIES" description="JIBLOGTOOLS_ASSIGN_CATEGORIES_DESC">
+                </field>
+                <field name="assign_categorychildren" type="list" default="1" label="JIBLOGTOOLS_ASSIGN_CATEGORY_CHILDREN" description="JIBLOGTOOLS_ASSIGN_CATEGORY_CHILDREN_DESC">
+                    <option value="1">Yes</option>
+                    <option value="0">No</option>
+                </field>
+                <field name="assign_categorylevels" type="text" default="3" label="JIBLOGTOOLS_ASSIGN_CATEGORY_LEVELS" description="JIBLOGTOOLS_ASSIGN_CATEGORY_LEVELS_DESC"/>
+			</fieldset>
+			<fieldset name="advanced">
+                <field type="spacer" name="scriptloading" label="JIBLOGTOOLS_SCRIPT_LOADING_OPTIONS"/>
+                <field name="load_jquery" type="list" default="1" label="JIBLOGTOOLS_LOAD_JQUERY" description="JIBLOGTOOLS_LOAD_JQUERY_DESC">
+                    <option value="1">Yes</option>
+                    <option value="0">No</option>
+                </field>
+                <field name="load_slimbox2" type="list" default="1" label="JIBLOGTOOLS_LOAD_SLIMBOX2" description="JIBLOGTOOLS_LOAD_SLIMBOX2_DESC">
+                    <option value="1">Yes</option>
+                    <option value="0">No</option>
+                </field>
+                <field name="load_shadowbox" type="list" default="1" label="JIBLOGTOOLS_LOAD_SHADOWBOX" description="JIBLOGTOOLS_LOAD_SHADOWBOX_DESC">
+                    <option value="1">Yes</option>
+                    <option value="0">No</option>
+                </field>
+                <field name="load_fancybox" type="list" default="1" label="JIBLOGTOOLS_LOAD_FANCYBOX" description="JIBLOGTOOLS_LOAD_FANCYBOX_DESC">
+                    <option value="1">Yes</option>
+                    <option value="0">No</option>
+                </field>
+
+                <field type="spacer" name="imageoptions" label="JIBLOGTOOLS_IMAGE_OPTIONS"/>
+				<field name="images_types" type="text" default="gif,jpg,jpeg,png" label="JIBLOGTOOLS_IMAGES_TYPES" description="JIBLOGTOOLS_IMAGES_TYPES_DESC"/>
+                <field name="ignore_external" type="list" default="1" label="JIBLOGTOOLS_IGNORE_EXTERNAL" description="JIBLOGTOOLS_IGNORE_EXTERNAL_DESC">
+					<option value="1">JYES</option>
+					<option value="0">JNO</option>
+				</field>
+                <field name="external_cache" type="list" default="1" label="JIBLOGTOOLS_EXTERNAL_CACHE" description="JIBLOGTOOLS_EXTERNAL_CACHE_DESC">
+                    <option value="1">JYES</option>
+                    <option value="0">JNO</option>
+                </field>
+				<field name="ignore_size" type="list" default="1" label="JIBLOGTOOLS_IGNORE_SIZE" description="JIBLOGTOOLS_IGNORE_SIZE_DESC">
+					<option value="1">JYES</option>
+					<option value="0">JNO</option>
+				</field>
+				<field name="ignore_sizewidth" type="text" default="100" label="JIBLOGTOOLS_IGNORE_SIZEWIDTH" description="JIBLOGTOOLS_IGNORE_SIZEWIDTH_DESC"/>
+				<field name="ignore_sizeheight" type="text" default="100" label="JIBLOGTOOLS_IGNORE_SIZEHEIGHT" description="JIBLOGTOOLS_IGNORE_SIZEHEIGHT_DESC"/>
+				<field name="thumbs_cache" type="list" default="1" label="JIBLOGTOOLS_THUMBS_CACHE" description="JIBLOGTOOLS_THUMBS_CACHE_DESC">
+					<option value="1">JYES</option>
+					<option value="0">JNO</option>
+				</field>		
+				<field name="images_resize" type="list" default="0" label="JIBLOGTOOLS_ORIGINAL_RESIZE" description="JIBLOGTOOLS_ORIGINAL_RESIZE_DESC">
+					<option value="1">JYES</option>
+					<option value="0">JNO</option>
+				</field>
+				<field name="images_width" type="text" default="800" label="JIBLOGTOOLS_ORIGINAL_WIDTH" description="JIBLOGTOOLS_ORIGINAL_WIDTH_DESC" size="5"/>
+				<field name="images_height" type="text" default="500" label="JIBLOGTOOLS_ORIGINAL_HEIGHT" description="JIBLOGTOOLS_ORIGINAL_HEIGHT_DESC" size="5"/>
+				<field name="images_quality" type="text" default="75" label="JIBLOGTOOLS_ORIGINAL_QUALITY" description="JIBLOGTOOLS_ORIGINAL_QUALITY_DESC" size="5"/>
+				<field name="images_keepratio" type="list" default="1" label="JIBLOGTOOLS_ORIGINAL_KEEPRATIO" description="JIBLOGTOOLS_ORIGINAL_KEEPRATIO_DESC">
+					<option value="1">JYES</option>
+					<option value="0">JNO</option>
+				</field>
+				<field name="thumbs_memcheck" type="list" default="1" label="JIBLOGTOOLS_MEM_CHECK" description="JIBLOGTOOLS_MEM_CHECK_DESC">
+					<option value="1">JYES</option>
+					<option value="0">JNO</option>
+				</field>
+				<field name="thumbs_memincrease" type="list" default="false" label="JIBLOGTOOLS_MEM_INCREASE" description="JIBLOGTOOLS_MEM_INCREASE_DESC">
+					<option value="true">JYES</option>
+					<option value="false">JNO</option>
+				</field>
+                <field name="filesizecheck" type="list" default="1" label="JIBLOGTOOLS_FILESIZE_CHECK" description="JIBLOGTOOLS_FILESIZE_CHECK_DESC">
+                    <option value="1">JON</option>
+                    <option value="0">JOFF</option>
+                </field>
+                <field name="filesizechecklimit" type="text" default="3000000" label="JIBLOGTOOLS_FILESIZE_LIMIT" description="JIBLOGTOOLS_FILESIZE_LIMIT_DESC" size="10"/>
+                <field name="excludetags" type="text" default="article,nothumbs,mp3,total,youtube,video" label="JIBLOGTOOLS_EXCLUDE_TAGS" description="JIBLOGTOOLS_EXCLUDE_TAGS_DESC"/>
+                <field name="debug" type="list" default="0" label="JIBLOGTOOLS_DEBUG" description="JIBLOGTOOLS_DEBUG_DESC">
+                    <option value="1">JON</option>
+                    <option value="0">JOFF</option>
+                </field>
+			</fieldset>
+		</fields>
+	</config>
+</extension>

@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension type="component" version="3.0" method="upgrade">
+	<name>JiForms</name>
+	<creationDate>January 2015</creationDate>
+	<author>Jinfinity</author>
+	<authorEmail>support@jinfinity.com</authorEmail>
+	<authorUrl>http://www.jinfinity.com</authorUrl>
+	<copyright>Copyright (C) 2015 Jinfinity</copyright>
+	<license>GNU/GPLv3 http://www.gnu.org/licenses/gpl-3.0.html</license>
+	<version>0.9.3</version>
+	<description>COM_JIFORMS_COM_DESCRIPTION</description>
+	<languages folder="language">
+		<language tag="en-GB">en-GB/en-GB.com_jiforms.ini</language>
+		<language tag="en-GB">en-GB/en-GB.com_jiforms.sys.ini</language>
+	</languages>
+	<!-- install/uninstall -->
+	<scriptfile>script.jiforms.php</scriptfile>
+    <!-- Public front end files -->
+    <media folder="media">
+        <folder>jiforms</folder>
+    </media>
+    <files folder="site">
+        <folder>controllers</folder>
+        <folder>helpers</folder>
+        <folder>models</folder>
+        <folder>views</folder>
+        <filename>controller.php</filename>
+        <filename>index.html</filename>
+        <filename>jiforms.php</filename>
+        <filename>router.php</filename>
+    </files>
+	<!-- Administrator back-end section -->
+	<administration>
+		<!-- Administration menu -->
+		<menu img="components/com_jiforms/assets/images/icon-16-jiforms.png">COM_JIFORMS</menu>
+        <submenu>
+            <menu view="forms">COM_JIFORMS_FORMS</menu>
+            <menu view="actions">COM_JIFORMS_ACTIONS</menu>
+            <menu view="events">COM_JIFORMS_EVENTS</menu>
+            <menu view="emails">COM_JIFORMS_EMAILS</menu>
+        </submenu>
+		<!-- Back-end files -->	
+		<files folder="admin">
+            <folder>assets</folder>
+            <folder>controllers</folder>
+            <folder>helpers</folder>
+            <folder>models</folder>
+            <folder>tables</folder>
+            <folder>views</folder>
+            <filename>config.xml</filename>
+			<filename>controller.php</filename>
+			<filename>index.html</filename>
+            <filename>jiforms.php</filename>
+		</files>
+		<languages folder="admin/language">
+            <language tag="en-GB">en-GB/en-GB.com_jiforms.ini</language>
+			<language tag="en-GB">en-GB/en-GB.com_jiforms.sys.ini</language>
+        </languages>
+		<media folder="admin" destination="com_jiforms/images">
+	  		<filename>images/jiforms-16.png</filename>
+		</media>
+	</administration>
+    <modules>
+        <module module="mod_jiforms" client="site"/>
+    </modules>
+    <plugins>
+        <plugin plugin="jiforms" group="system"/>
+    </plugins>
+	<config>
+	</config>
+</extension>

@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8"?>
+<form>
+    <fieldset addfieldpath="/administrator/components/com_jigrid/models/fields">
+        <field name="id" type="text" class="readonly" labelclass="control-label" label="JGLOBAL_FIELD_ID_LABEL" description ="JGLOBAL_FIELD_ID_DESC" size="10" default="0" readonly="true"  />
+        <field name="mode" type="list" default="easy" label="COM_JIGRID_MODE_LABEL" description="COM_JIGRID_MODE_DESC" class="small" labelclass="control-label">
+            <option value="easy">COM_JIGRID_EASY</option>
+            <option value="advanced">COM_JIGRID_ADVANCED</option>
+        </field>
+        <field name="modechanger" type="typechanger" selector="jform_mode" types="easy,advanced" />
+        <field name="parent_id" type="griditem" default="" label="COM_JIGRID_PARENT_LABEL" description="COM_JIGRID_PARENT_DESC" class="small" labelclass="control-label" />
+        <field name="parent_row" type="typefield" controlclass="row-only easy-only" rtype="griditem" default="" itemtype="grid" label="COM_JIGRID_PARENT_LABEL" description="COM_JIGRID_PARENT_DESC" class="small" labelclass="control-label" />
+        <field name="parent_cell" type="typefield" controlclass="cell-only easy-only" rtype="griditem" default="" itemtype="row" label="COM_JIGRID_PARENT_LABEL" description="COM_JIGRID_PARENT_DESC" class="small" labelclass="control-label" />
+        <field name="parent_grid" type="typefield" controlclass="grid-only easy-only" rtype="griditem" default="" itemtype="cell" label="COM_JIGRID_PARENT_LABEL" description="COM_JIGRID_PARENT_DESC" class="small" labelclass="control-label" />
+        <field name="title" type="text" label="COM_JIGRID_TITLE_LABEL" description="COM_JIGRID_TITLE_DESC" class="input-xlarge" size="30" required="true" labelclass="control-label" />
+        <field name="alias" type="text" label="COM_JIGRID_ALIAS_LABEL" description="COM_JIGRID_ALIAS_DESC" class="input-xlarge" size="30" required="true" labelclass="control-label" />
+        <field name="typechanger" type="typechanger" selector="jform_type" types="grid,row,cell" />
+        <field name="type" type="list" label="COM_JIGRID_TYPE_LABEL" description="COM_JIGRID_TYPE_DESC" class="small" default="grid" labelclass="control-label">
+            <option value="grid">COM_JIGRID_TYPE_GRID</option>
+            <option value="row">COM_JIGRID_TYPE_ROW</option>
+            <option value="cell">COM_JIGRID_TYPE_CELL</option>
+        </field>
+        <field name="state" type="list" label="JSTATUS" description="JFIELD_PUBLISHED_DESC" class="span12 small" filter="intval" size="1" default="1">
+            <option value="1">JPUBLISHED</option>
+            <option value="0">JUNPUBLISHED</option>
+            <option value="2">JARCHIVED</option>
+            <option value="-2">JTRASHED</option>
+        </field>
+        <field
+                name="lft"
+                type="hidden"
+                filter="unset"/>
+
+        <field
+                name="rgt"
+                type="hidden"
+                filter="unset"/>
+
+        <field
+                name="level"
+                type="hidden"
+                filter="unset"/>
+
+        <field
+                name="path"
+                type="text"
+                label="CATEGORIES_PATH_LABEL"
+                description="CATEGORIES_PATH_DESC"
+                class="readonly"
+                size="40"
+                readonly="true"/>
+        <field name="ordering" type="text" label="JFIELD_ORDERING_LABEL"
+               description="JFIELD_ORDERING_DESC" class="inputbox" size="6"
+               default="0" labelclass="control-label" />
+    </fieldset>
+    <fields name="attribs">
+        <fieldset name="layout" label="COM_JIGRID_FIELDSET_LAYOUT">
+            <field name="class" type="text" label="COM_JIGRID_CLASS_LABEL" description="COM_JIGRID_CLASS_DESC" class="input-xlarge" labelclass="control-label" />
+            <field name="hide_tv" type="typefield" controlclass="advanced-only" rtype="list" label="COM_JIGRID_HIDETV_LABEL" description="COM_JIGRID_HIDETV_DESC" class="small" labelclass="control-label" filter="intval" size="1" default="0">
+                <option value="1">JYES</option>
+                <option value="0">JNO</option>
+            </field>
+            <field name="hide_desktop" type="typefield" controlclass="advanced-only" rtype="list" label="COM_JIGRID_HIDEDESKTOP_LABEL" description="COM_JIGRID_HIDEDESKTOP_DESC" class="small" labelclass="control-label" filter="intval" size="1" default="0">
+                <option value="1">JYES</option>
+                <option value="0">JNO</option>
+            </field>
+            <field name="hide_tablet" type="typefield" controlclass="advanced-only" rtype="list" label="COM_JIGRID_HIDETABLET_LABEL" description="COM_JIGRID_HIDETABLET_DESC" class="small" labelclass="control-label" filter="intval" size="1" default="0">
+                <option value="1">JYES</option>
+                <option value="0">JNO</option>
+            </field>
+            <field name="hide_phone" type="typefield" controlclass="advanced-only" rtype="list" label="COM_JIGRID_HIDEPHONE_LABEL" description="COM_JIGRID_HIDEPHONE_DESC" class="small" labelclass="control-label" filter="intval" size="1" default="0">
+                <option value="1">JYES</option>
+                <option value="0">JNO</option>
+            </field>
+            <field name="only_type" type="typefield" controlclass="advanced-only" rtype="list" label="COM_JIGRID_ONLYTYPE_LABEL" description="COM_JIGRID_ONLYTYPE_DESC" class="small" labelclass="control-label" default="">
+                <option value="">JNO</option>
+                <option value="tv">COM_JIGRID_ONLYTYPE_TV</option>
+                <option value="desktop">COM_JIGRID_ONLYTYPE_DESKTOP</option>
+                <option value="tablet">COM_JIGRID_ONLYTYPE_TABLET</option>
+                <option value="phone">COM_JIGRID_ONLYTYPE_PHONE</option>
+            </field>
+            <field name="cols-tv" type="typefield" controlclass="advanced-only row-only" rtype="text" label="COM_JIGRID_COLS_TV_LABEL" description="COM_JIGRID_COLS_TV_DESC" class="input-xlarge" labelclass="control-label" />
+            <field name="cols" type="typefield" controlclass="row-only" rtype="text" label="COM_JIGRID_COLS_DESKTOP_LABEL" description="COM_JIGRID_COLS_DESKTOP_DESC" class="input-xlarge" labelclass="control-label" />
+            <field name="cols-tablet" type="typefield" controlclass="advanced-only row-only" rtype="text" label="COM_JIGRID_COLS_TABLET_LABEL" description="COM_JIGRID_COLS_TABLET_DESC" class="input-xlarge" labelclass="control-label" />
+            <field name="cols-phone" type="typefield" controlclass="advanced-only row-only" rtype="text" label="COM_JIGRID_COLS_PHONE_LABEL" description="COM_JIGRID_COLS_PHONE_DESC" class="input-xlarge" labelclass="control-label" />
+            <field name="ypercent-tv" type="typefield" controlclass="advanced-only row-only" rtype="text" label="COM_JIGRID_YPERCENT_TV_LABEL" description="COM_JIGRID_YPERCENT_TV_DESC" class="input-xlarge" labelclass="control-label" />
+            <field name="ypercent" type="typefield" controlclass="row-only" rtype="text" label="COM_JIGRID_YPERCENT_DESKTOP_LABEL" description="COM_JIGRID_YPERCENT_DESKTOP_DESC" class="input-xlarge" labelclass="control-label" />
+            <field name="ypercent-tablet" type="typefield" controlclass="advanced-only row-only" rtype="text" label="COM_JIGRID_YPERCENT_TABLET_LABEL" description="COM_JIGRID_YPERCENT_TABLET_DESC" class="input-xlarge" labelclass="control-label" />
+            <field name="ypercent-phone" type="typefield" controlclass="advanced-only row-only" rtype="text" label="COM_JIGRID_YPERCENT_PHONE_LABEL" description="COM_JIGRID_YPERCENT_PHONE_DESC" class="input-xlarge" labelclass="control-label" />
+            <field name="span" type="typefield" controlclass="hide-row" rtype="text" label="COM_JIGRID_SPAN_LABEL" description="COM_JIGRID_SPAN_DESC" class="input-xlarge" labelclass="control-label" />
+            <field name="autospan" type="typefield" controlclass="hide-row" rtype="list" label="COM_JIGRID_AUTOSPAN_LABEL" description="COM_JIGRID_AUTOSPAN_DESC" class="small" labelclass="control-label" filter="intval" size="1" default="0">
+                <option value="1">JYES</option>
+                <option value="0">JNO</option>
+            </field>
+            <field name="minwidth" type="typefield" controlclass="advanced-only hide-row" rtype="text" label="COM_JIGRID_MINWIDTH_LABEL" description="COM_JIGRID_MINWIDTH_DESC" class="input-xlarge" labelclass="control-label" />
+            <field name="position" type="typefield" controlclass="hide-row hide-grid" rtype="text" label="COM_JIGRID_POSITION_LABEL" description="COM_JIGRID_POSITION_DESC" class="input-xlarge" labelclass="control-label" />
+            <field name="component" type="typefield" controlclass="hide-row hide-grid" rtype="list" label="COM_JIGRID_COMPONENT_LABEL" description="COM_JIGRID_COMPONENT_DESC" class="small" labelclass="control-label" filter="intval" size="1" default="0">
+                <option value="1">JYES</option>
+                <option value="0">JNO</option>
+            </field>
+            <field name="message" type="typefield" controlclass="hide-row hide-grid" rtype="list" label="COM_JIGRID_MESSAGE_LABEL" description="COM_JIGRID_MESSAGE_DESC" class="small" labelclass="control-label" filter="intval" size="1" default="0">
+                <option value="1">JYES</option>
+                <option value="0">JNO</option>
+            </field>
+        </fieldset>
+    </fields>
+</form>

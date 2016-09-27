@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<form>
+    <fieldset addfieldpath="/administrator/components/com_jicontentinjector/models/fields">
+        <field name="id"  type="text" class="readonly" labelclass="control-label" label="JGLOBAL_FIELD_ID_LABEL"
+               description ="JGLOBAL_FIELD_ID_DESC" size="10" default="0"
+               readonly="true"  />
+        <field name="title" type="text" label="COM_JICONTENTINJECTOR_TITLE_LABEL" description="COM_JICONTENTINJECTOR_TITLE_DESC" class="input-xlarge" size="30" required="true" labelclass="control-label" />
+
+
+
+        <field name="injection" type="textarea" class="inputbox" label="COM_JICONTENTINJECTOR_INJECTION_LABEL" description="COM_JICONTENTINJECTOR_INJECTION_DESC" filter="raw" buttons="true" />
+
+        <field name="state" type="list" label="JSTATUS" description="JFIELD_PUBLISHED_DESC" class="span12 small" filter="intval" size="1" default="1">
+            <option value="1">JPUBLISHED</option>
+            <option value="0">JUNPUBLISHED</option>
+            <option value="2">JARCHIVED</option>
+            <option value="-2">JTRASHED</option>
+        </field>
+
+        <field name="context" type="list" label="COM_JICONTENTINJECTOR_CONTEXT_LABEL" description="COM_JICONTENTINJECTOR_CONTEXT_DESC" class="small" labelclass="control-label" default="content">
+            <option value="content">COM_JICONTENTINJECTOR_CONTEXT_CONTENT</option>
+            <option value="body">COM_JICONTENTINJECTOR_CONTEXT_BODY</option>
+            <option value="everywhere">COM_JICONTENTINJECTOR_CONTEXT_EVERYWHERE</option>
+        </field>
+        <field name="selector" type="text" label="COM_JICONTENTINJECTOR_SELECTOR_LABEL" description="COM_JICONTENTINJECTOR_SELECTOR_DESC" class="input-xlarge" size="45" required="true" labelclass="control-label" />
+        <field name="selectfrom" type="text" label="COM_JICONTENTINJECTOR_SELECTFROM_LABEL" description="COM_JICONTENTINJECTOR_SELECTFROM_DESC" class="inputbox" size="5" labelclass="control-label" />
+        <field name="selectto" type="text" label="COM_JICONTENTINJECTOR_SELECTTO_LABEL" description="COM_JICONTENTINJECTOR_SELECTTO_DESC" class="inputbox" size="5" labelclass="control-label" />
+
+        <field name="publish_up" type="calendar"
+               label="COM_JICONTENTINJECTOR_PUBLISHUP_LABEL" description="COM_JICONTENTINJECTOR_PUBLISHUP_DESC"
+               class="inputbox" format="%Y-%m-%d %H:%M:%S" size="22"
+               filter="user_utc" labelclass="control-label" />
+        <field name="publish_down" type="calendar"
+               label="COM_JICONTENTINJECTOR_PUBLISHDOWN_LABEL" description="COM_JICONTENTINJECTOR_PUBLISHDOWN_DESC"
+               class="inputbox" format="%Y-%m-%d %H:%M:%S" size="22"
+               filter="user_utc" labelclass="control-label" />
+
+        <field name="ordering" type="text" label="JFIELD_ORDERING_LABEL"
+               description="JFIELD_ORDERING_DESC" class="inputbox" size="6"
+               default="0" labelclass="control-label" />
+    </fieldset>
+    <fields name="attribs">
+        <fieldset name="assignment" label="COM_JICONTENTINJECTOR_ASSIGNMENTTAB">
+            <field name="assignmethod" type="list" default="all" label="COM_JICONTENTINJECTOR_ASSIGN_METHOD_LABEL" description="COM_JICONTENTINJECTOR_ASSIGN_METHOD_DESC" labelclass="control-label">
+                <option value="all">COM_JICONTENTINJECTOR_ALL</option>
+                <option value="any">COM_JICONTENTINJECTOR_ANY</option>
+            </field>
+            <field name="artmode" type="list" label="COM_JICONTENTINJECTOR_ASSIGN_ARTMODE_LABEL" description="COM_JICONTENTINJECTOR_ASSIGN_ARTMODE_DESC" class="small" labelclass="control-label" default="all">
+                <option value="all">COM_JICONTENTINJECTOR_ALL</option>
+                <option value="include">COM_JICONTENTINJECTOR_INCLUDE</option>
+                <option value="exclude">COM_JICONTENTINJECTOR_EXCLUDE</option>
+                <option value="none">COM_JICONTENTINJECTOR_NONE</option>
+            </field>
+            <field name="arts" type="article" extension="com_content" multiple="true" size="5" default="" label="COM_JICONTENTINJECTOR_ASSIGN_ARTS_LABEL" description="COM_JICONTENTINJECTOR_ASSIGN_ARTS_DESC" class="inputbox" labelclass="control-label">
+                <option value="0">JOPTION_ALL_ARTICLES</option>
+            </field>
+            <field name="catmode" type="list" label="COM_JICONTENTINJECTOR_ASSIGN_CATMODE_LABEL" description="COM_JICONTENTINJECTOR_ASSIGN_CATMODE_DESC" class="small" labelclass="control-label" default="all">
+                <option value="all">COM_JICONTENTINJECTOR_ALL</option>
+                <option value="include">COM_JICONTENTINJECTOR_INCLUDE</option>
+                <option value="exclude">COM_JICONTENTINJECTOR_EXCLUDE</option>
+                <option value="none">COM_JICONTENTINJECTOR_NONE</option>
+            </field>
+            <field name="cats" type="category" extension="com_content" multiple="true" size="5" default="" label="COM_JICONTENTINJECTOR_ASSIGN_CATS_LABEL" description="COM_JICONTENTINJECTOR_ASSIGN_CATS_DESC" class="inputbox" labelclass="control-label">
+                <option value="0">JOPTION_ALL_CATEGORIES</option>
+            </field>
+            <field name="catchildren" type="list" default="1" label="COM_JICONTENTINJECTOR_ASSIGN_CATCHILDREN_LABEL" description="" labelclass="control-label">
+                <option value="1">Yes</option>
+                <option value="0">No</option>
+            </field>
+            <field name="catlevels" type="text" default="3" label="COM_JICONTENTINJECTOR_ASSIGN_CATDEPTH_LABEL" description="COM_JICONTENTINJECTOR_ASSIGN_CATDEPTH_DESC" labelclass="control-label" />
+        </fieldset>
+    </fields>
+</form>

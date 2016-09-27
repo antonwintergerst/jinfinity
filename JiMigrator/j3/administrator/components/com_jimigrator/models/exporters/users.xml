@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<exporter version="1.6">
+    <name>users</name>
+    <description>Export Users</description>
+    <group>joomlacore</group>
+    <tables>
+        <table name="users" />
+    </tables>
+    <files>
+        <filename>users.csv</filename>
+    </files>
+</exporter>

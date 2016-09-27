@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<importer version="1.6">
+    <name>RSMembershipToAkeebaSubs</name>
+    <description>Import RS Membership as AkeebaSubs</description>
+    <group>thirdparty</group>
+    <!-- >>> PRO >>> -->
+    <tables>
+        <table name="rsmembership_categories" pkey="id" />
+        <table name="rsmembership_configuration" pkey="name" />
+        <table name="rsmembership_countries" pkey="name" />
+        <table name="rsmembership_coupons" pkey="id"  />
+        <table name="rsmembership_coupon_items" pkey="id" />
+        <table name="rsmembership_extras" pkey="id" />
+        <table name="rsmembership_extra_values" pkey="id" />
+        <table name="rsmembership_extra_value_shared" pkey="id" />
+        <table name="rsmembership_logs" pkey="id" />
+        <table name="rsmembership_fields" pkey="id" />
+        <table name="rsmembership_files" pkey="id" />
+        <table name="rsmembership_memberships" pkey="id" />
+        <table name="rsmembership_membership_attachments" pkey="id" />
+        <table name="rsmembership_membership_extras" pkey="membership_id" />
+        <table name="rsmembership_membership_shared" pkey="id" />
+        <table name="rsmembership_membership_upgrades" pkey="id" />
+        <table name="rsmembership_membership_users" pkey="id" />
+        <table name="rsmembership_payments" pkey="id" />
+        <table name="rsmembership_terms" pkey="id" />
+        <table name="rsmembership_transactions" pkey="id" />
+        <table name="rsmembership_users" pkey="user_id" />
+    </tables>
+    <!-- <<< PRO <<< -->
+    <fields>
+        <!-- >>> PRO >>> -->
+        <field type="list" default="0" name="truncate" label="Clear DB Tables" description="Clear several K2 database tables before starting the import process">
+            <option value="1">Yes</option>
+            <option value="0">No</option>
+        </field>
+        <field type="list" default="0" name="overwrite" label="Overwrite Existing" description="Items in the database with the same ID will be replaced">
+            <option value="1">Yes</option>
+            <option value="0">No</option>
+        </field>
+        <field type="list" default="1" name="append" label="Append If Exists" description="If an item exists in the database with the same ID then the new item will be appended to the end">
+            <option value="1">Yes</option>
+            <option value="0">No</option>
+        </field>
+        <field type="textarea" default="" name="keymap" label="Variable Map" description="Use this map to modify data on import. Each line represents a new variable with a set of old and new values. E.g. title: Old Title=New Title,Another Title=Another New Title" />
+        <field type="separator" label="Debug" />
+        <field type="list" default="0" name="debug" label="Debug Run" description="No database changes will be made. Check the log for what changes would have occurred">
+            <option value="1">Yes</option>
+            <option value="0">No</option>
+        </field>
+        <field type="list" default="0" name="debuglevel" label="Debug Level" description="More log entries will be made for higher debug levels">
+            <option value="0">Standard</option>
+            <option value="1">Development</option>
+        </field>
+        <!-- <<< PRO <<< -->
+        <!-- >>> FREE >>> -->
+        <field type="separator" label="JI_ONLY_AVAILABLE_IN_PRO_TITLE" />
+        <!-- <<< FREE <<< -->
+    </fields>
+</importer>

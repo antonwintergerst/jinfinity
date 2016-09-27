@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<fieldtype version="2.5">
+	<name>Meta</name>
+	<label>JICUSTOMFIELDS_META</label>
+	<description>JICUSTOMFIELDS_META_DESC</description>
+</fieldtype>

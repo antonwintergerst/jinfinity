@@ -1,0 +1,90 @@
+/*
+ * @version     $Id: jiuploader.css 112 2014-10-24 17:48:00Z Anton Wintergerst $
+ * @package     JiUploader for jQuery
+ * @copyright   Copyright (C) 2014 Jinfinity. All rights reserved.
+ * @license     GNU/GPLv3 http://www.gnu.org/licenses/gpl-3.0.html
+ * @website     www.jinfinity.com
+ * @email       support@jinfinity.com
+*/
+.customfields .preview {
+    position: relative;
+}
+.customfields .preview img {
+    max-width: 375px;
+    height: auto;
+}
+.customfields .preview div.fill {
+    display: block;
+    position: absolute;
+    background: url('../images/transbg.png') repeat;
+    margin: 0;
+    padding: 0;
+}
+.customfields .preview span.point {
+    position: absolute;
+    display: block;
+    background: #FFF;
+    width: 5px;
+    height: 5px;
+    cursor: pointer;
+    margin: 0;
+    padding: 0;
+    z-index: 5;
+}
+.customfields .preview span.handle {
+    position: absolute;
+    display: block;
+    background: url('../images/clearbg.png') repeat;
+    cursor: move;
+    margin: 0;
+    padding: 0;
+}
+.customfields div.subactions {
+    overflow: hidden;
+    width: 100%;
+    display: block;
+    position: relative;
+    /*box-sizing: border-box;
+    -webkit-box-sizing:border-box;
+    -moz-box-sizing: border-box;
+    -ms-box-sizing: border-box;*/
+}
+.customfields div.subactions a {    
+    background-image: linear-gradient(top, #EEE 0%, #CCC 100%);
+    background-image: -o-linear-gradient(top, #EEE 0%, #CCC 100%);
+    background-image: -moz-linear-gradient(top, #EEE 0%, #CCC 100%);
+    background-image: -webkit-linear-gradient(top, #EEE 0%, #CCC 100%);
+    background-image: -ms-linear-gradient(top, #EEE 0%, #CCC 100%);
+    background-color: #EEE;
+    border-radius: 4px;
+    text-align: center;
+    cursor: pointer;
+    display: block;
+    float: left;
+    padding: 5px 25px;
+    border: 1px solid #AAA;
+    margin: 2px 5px 2px 2px;
+    color: #555;
+    text-shadow: 0 1px #EEE;
+    text-decoration: none;
+}
+.customfields div.subactions a:hover {
+    background-image: linear-gradient(top, #FFF 0%, #AAA 100%);
+    background-image: -o-linear-gradient(top, #FFF 0%, #AAA 100%);
+    background-image: -moz-linear-gradient(top, #FFF 0%, #AAA 100%);
+    background-image: -webkit-linear-gradient(top, #FFF 0%, #AAA 100%);
+    background-image: -ms-linear-gradient(top, #FFF 0%, #AAA 100%);
+    background-color: #AAA;
+    border: 1px solid #AAA;
+    color: #666;
+}
+.jiuploader .uploadlabel {
+    padding-right: 10px;
+}
+.jiuploader .uploadhint {
+    padding-left: 10px;
+}
+.jiuploader .subactions {
+    clear: both;
+    float: right;
+}

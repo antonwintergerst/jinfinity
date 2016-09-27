@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<exporter version="1.6">
+	<name>Content</name>
+	<description>Export Articles</description>
+	<group>joomlacore</group>
+    <tables>
+        <table name="content" pkey="id" />
+    </tables>
+	<files>
+		<filename>content.csv</filename>
+	</files>
+	<fields>
+        <field type="checkbox" default="0" name="selective" label="Only Export Selected Items" description="Only export the items specified in the list filter below. When this option is unchecked all items will be exported" />
+		<field type="contentfilter" default="0" name="filter" label="Content Filter" description="Selective export filter" class="jitogglertab jidjifields_contentselective" />
+	</fields>
+</exporter>

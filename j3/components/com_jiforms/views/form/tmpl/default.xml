@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<metadata>
+    <layout title="Default">
+        <message>Default</message>
+    </layout>
+    <fields name="request">
+        <fieldset name="request" addfieldpath="/administrator/components/com_jiforms/models/fields">
+            <field name="id" type="modal_form" label="COM_JIFORMS_SELECT_FORM_LABEL" required="true" description="COM_JIFORMS_SELECT_FORM_DESC" />
+        </fieldset>
+    </fields>
+</metadata>

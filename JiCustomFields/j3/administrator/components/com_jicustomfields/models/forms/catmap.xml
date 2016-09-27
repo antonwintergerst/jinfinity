@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<form>
+    <fieldset addfieldpath="/administrator/components/com_jicustomfields/models/fields">
+        <field name="id" type="text" class="readonly" labelclass="control-label" label="JGLOBAL_FIELD_ID_LABEL" description ="JGLOBAL_FIELD_ID_DESC" size="10" default="0" readonly="true" />
+        <field name="allcats" type="list" label="JICUSTOMFIELDS_ALL_CATEGORIES" description="JICUSTOMFIELDS_ALL_CATEGORIES_DESC">
+            <option value="0">JNO</option>
+            <option value="1">JYES</option>
+        </field>
+        <field name="catid" type="category" extension="com_content" default="" label="JICUSTOMFIELDS_SELECTED_CATEGORY" description="JICUSTOMFIELDS_SELECTED_CATEGORY_DESC" />
+        <field name="fid" type="fields" default="" label="JICUSTOMFIELDS_FIELD" description="JICUSTOMFIELDS_FIELD_DESC" />
+
+        <field name="ordering" type="text" label="JFIELD_ORDERING_LABEL" description="JFIELD_ORDERING_DESC" class="inputbox" size="6" default="0" labelclass="control-label" />
+    </fieldset>
+    <fields name="attribs">
+    </fields>
+</form>

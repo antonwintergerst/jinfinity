@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<fieldtype version="2.5">
+	<name>Maps</name>
+	<label>JICUSTOMFIELDS_MAPS</label>
+	<description>JICUSTOMFIELDS_MAPS_DESC</description>
+</fieldtype>

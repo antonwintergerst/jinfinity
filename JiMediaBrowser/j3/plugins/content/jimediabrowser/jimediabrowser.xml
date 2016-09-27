@@ -1,0 +1,200 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension version="1.7" type="plugin" group="content" method="upgrade" client="site">
+	<name>PLG_CONTENT_JIMEDIABROWSER</name>
+	<creationDate>November 2014</creationDate>
+	<author>Jinfinity</author>
+	<authorEmail>support@jinfinity.com</authorEmail>
+	<authorUrl>http://www.jinfinity.com</authorUrl>
+	<copyright>Copyright (C) 2014 Jinfinity</copyright>
+	<license>GNU/GPLv3 http://www.gnu.org/licenses/gpl-3.0.html</license>
+	<version>3.0.2</version>
+	<description>PLG_CONTENT_JIMEDIABROWSER_DESC</description>
+
+    <languages folder="language">
+        <language tag="en-GB">en-GB/en-GB.plg_content_jimediabrowser.ini</language>
+        <language tag="en-GB">en-GB/en-GB.plg_content_jimediabrowser.sys.ini</language>
+    </languages>
+    <media folder="media">
+        <folder>jimediabrowser</folder>
+    </media>
+	<files>
+		<folder plugin="jimediabrowser">fields</folder>
+        <folder plugin="jimediabrowser">tmpl</folder>
+		<filename plugin="jimediabrowser">helper.php</filename>
+		<filename plugin="jimediabrowser">index.html</filename>
+        <filename plugin="jimediabrowser">jimediabrowser.php</filename>
+	</files>
+
+	<config>
+        <fields name="params" addfieldpath="/plugins/system/jiframework/fields">
+            <fieldset name="description">
+                <field name="@header" type="header" label="JIMEDIABROWSER" description="JIMEDIABROWSER_DESC" xml="/plugins/content/jimediabrowser/jimediabrowser.xml"/>
+            </fieldset>
+			<fieldset name="basic" addfieldpath="/plugins/content/jimediabrowser/fields">
+				<field type="spacer" name="filetypes" label="&lt;strong&gt;File Types&lt;/strong&gt;"/>
+				<field name="include_exts" type="text" default="7z,avi,bmp,doc,docx,eps,fla,folder,gif,jpg,jpeg,midi,mkv,mov,mp4,mpeg,mpg,one,otf,pdf,png,ppt,pptx,psd,pub,rar,tiff,txt,xls,xlsx,wav,wma,wmv,xps,zip" label="Include Extensions" description="File extension whitelist. Any extensions not listed here will be excluded. Note folder is the filetype for directories (Separate extensions by commas)"/>
+				<field name="image_exts" type="text" default="gif,jpg,jpeg,png" label="Image Extensions" description="Images found with one of these file types will have thumbnails and previews generated as defined below (Separate extensions by commas)"/>
+                <field name="convert_exts" type="text" default="pdf" label="Convert Extensions" description="ImageMagick convert compatible file extensions. These extensions will always be processed by ImageMagick first and then have thumbnails and previews generated as defined below (Separate extensions by commas)"/>
+                <field name="exclude_dirs" type="text" default="jithumbs,jipreviews,thumbs" label="Exclude Directories" description="Folders listed here will be skipped  (Separate extensions by commas)"/>
+
+				<field type="spacer" name="sourceoptions" label="&lt;strong&gt;Source Options&lt;/strong&gt;"/>
+                <field name="sourcedirectory" type="imagefolderlist" directory="images" label="Source Directory" default="" hide_none="true" exclude="jithumbs|jipreviews"/>
+
+                <field name="orderby" type="list" default="name" label="Order By" description="Variable to order the files by">
+                    <option value="name">File Name</option>
+                    <option value="date">File Date</option>
+                    <option value="size">File Size</option>
+                </field>
+                <field name="orderdir" type="list" default="asc" label="Order Direction" description="Direction to order the files">
+                    <option value="asc">ASC</option>
+                    <option value="desc">Desc</option>
+                </field>
+                <field name="limit" type="text" default="20" label="Limit" description="Maximum number of files to show. For unlimited set this to 0"/>
+
+				<field type="spacer" name="imageoptions" label="&lt;strong&gt;Image Type Options&lt;/strong&gt;"/>
+                <field name="cachecleaner" type="cachecleaner"/>
+                <field name="pdf_thumbs" type="list" default="0" label="PDF previews as Icons" description="Show PDF previews as thumbnails (Requires server to have ImageMagick installed)">
+                    <option value="1">Yes</option>
+                    <option value="0">No</option>
+                </field>
+				<field name="images_thumbs" type="list" default="1" label="Images as Icons" description="Show images as thumbnails if extension matches one of the image types.">
+					<option value="1">Yes</option>
+					<option value="0">No</option>
+				</field>
+				<field name="images_preview" type="list" default="dynamic" label="Image Previews" description="Source for linked image previews.">
+					<option value="path">Fixed Path</option>
+					<option value="dynamic">Dynamic</option>
+				</field>
+
+				<field type="spacer" name="thumboptions" label="&lt;strong&gt;Thumbnail Options&lt;/strong&gt;"/>
+				<field name="ico_thumbs_width" type="text" default="200" label="Thumbnail Width" description="Width of thumbnail image in pixels (please do not include the 'px' suffix)" size="5"/>
+				<field name="ico_thumbs_height" type="text" default="200" label="Thumbnail Height" description="Height of thumbnail image in pixels (please do not include the 'px' suffix)" size="5"/>
+				<field name="ico_thumbs_quality" type="text" default="75" label="Thumbnail Quality" description="Quality of the thumbnail image where 100 is no compression and 0 is fully compressed" size="5"/>
+				<field name="ico_thumbs_keepratio" type="list" default="1" label="Thumbnails Keep Ratio" description="Keep the same ratio for the thumbnails as the original image">
+					<option value="1">Yes</option>
+					<option value="0">No</option>
+				</field>
+				<field name="ico_thumbs_cropcenter" type="list" default="0" label="Thumbnails Crop Center" description="Crop thumbnail centered to original image">
+					<option value="1">Yes</option>
+					<option value="0">No</option>
+				</field>
+				<field name="ico_thumbs_fill" type="list" default="0" label="Thumbnails Fill" description="Scale up the thumbnail to fill the defined thumbnail dimensions">
+					<option value="1">Yes</option>
+					<option value="0">No</option>
+				</field>
+				<field name="ico_thumbs_xcenter" type="list" default="1" label="Thumbnails Center X" description="If the thumbnail is smaller than the defined width, it will be centered horizontally">
+					<option value="1">Yes</option>
+					<option value="0">No</option>
+				</field>
+				<field name="ico_thumbs_ycenter" type="list" default="1" label="Thumbnails Center Y" description="If the thumbnail is smaller than the defined height, it will be centered vertically">
+					<option value="1">Yes</option>
+					<option value="0">No</option>
+				</field>
+				
+				<field type="spacer" name="thumboptions" label="&lt;strong&gt;Preview Options&lt;/strong&gt;"/>
+				<field name="pre_thumbs_width" type="text" default="800" label="Preview Width" description="Width of preview image in pixels (please do not include the 'px' suffix)" size="5"/>
+				<field name="pre_thumbs_height" type="text" default="500" label="Preview Height" description="Height of preview image in pixels (please do not include the 'px' suffix)" size="5"/>
+				<field name="pre_thumbs_quality" type="text" default="75" label="Preview Quality" description="Quality of the preview image where 100 is no compression and 0 is fully compressed" size="5"/>
+				<field name="pre_thumbs_keepratio" type="list" default="1" label="Previews Keep Ratio" description="Keep the same ratio for the previews as the original image">
+					<option value="1">Yes</option>
+					<option value="0">No</option>
+				</field>
+				<field name="pre_thumbs_cropcenter" type="list" default="0" label="Previews Crop Center" description="Crop preview centered to original image">
+					<option value="1">Yes</option>
+					<option value="0">No</option>
+				</field>
+				<field name="pre_thumbs_fill" type="list" default="0" label="Previews Fill" description="Scale up the preview to fill the defined preview dimensions">
+					<option value="1">Yes</option>
+					<option value="0">No</option>
+				</field>
+				<field name="pre_thumbs_xcenter" type="list" default="1" label="Previews Center X" description="If the preview is smaller than the defined width, it will be centered horizontally">
+					<option value="1">Yes</option>
+					<option value="0">No</option>
+				</field>
+				<field name="pre_thumbs_ycenter" type="list" default="1" label="Previews Center Y" description="If the preview is smaller than the defined height, it will be centered vertically">
+					<option value="1">Yes</option>
+					<option value="0">No</option>
+				</field>
+				<field name="pre_thumbs_link" type="list" default="1" label="Thumbnails as Links" description="Link thumbnail to preview image">
+					<option value="1">Yes</option>
+					<option value="0">No</option>
+				</field>
+                <field type="modalpicker" name="modaltype" attrinput="#jform_params_pre_thumbs_linkattr" label="Lightbox Type" default="slimbox2" description="Select the modal framework to use for lightboxes. Link attributes will automatically be set after changing the framework."/>
+                <field name="pre_thumbs_linkattr" size="50" type="text" filter="raw" default="" label="Thumbnail Link Attributes" description="Thumbnail link attributes (Useful for setting Modal properties)"/>
+                <field name="pre_thumbs_linkclass" type="text" filter="raw" default="" label="Thumbnail Link Class" description="Thumbnail link class (Useful for setting Modal properties)"/>
+				<field name="pre_thumbs_linkrel" type="text" filter="raw" default="" label="Thumbnail Link Rel" description="Thumbnail link rel tag (Useful for setting Modal properties). &lt;/br&gt;Use &lt;strong&gt;%f&lt;/strong&gt; for dynamic root folder. &lt;/br&gt;E.g. lightbox-[%f]"/>
+				<field name="pre_thumbs_linktarget" type="list" default="_blank" label="Thumbnails Link Target" description="Thumbnail link target frame">
+					<option value="_self">Current Window</option>
+					<option value="_blank">New Window</option>
+					<option value="_parent">Parent Frame</option>
+					<option value="_top">Top Frame</option>
+				</field>
+                <field name="default_layout" type="list" default="large grid" label="Default Layout" description="Default layout of media icons.">
+                    <option value="list">List</option>
+                    <option value="small grid">Small Grid</option>
+                    <option value="medium grid">Medium Grid</option>
+                    <option value="large grid">Large Grid</option>
+                </field>
+			</fieldset>
+			<fieldset name="advanced" addfieldpath="/plugins/content/jimediabrowser/fields">
+                <field name="advancedroot" type="list" default="0" label="Advanced Root" description="Specify exact root directory and path below (Overrides Source Directory).">
+                    <option value="1">Yes</option>
+                    <option value="0">No</option>
+                </field>
+                <field name="dir_root" type="text" default="JPATH_SITEDSimages" label="Source Root Directory" description="Source root directory for media sub-folders, e.g. /home/google/public_html/images &lt;br/&gt;      If left empty will default to images directory of the Joomla installation."/>
+                <field name="dir_downloads" type="text" default="JPATH_SITEDSimages" label="Downloads Root Directory" description="Downloads root directory for file download links, e.g. home/google/downloads/ (Make sure the download folder sub-structure is identical to the source directory sub-structure). If left empty will default to root directory of the Joomla installation."/>
+                <field name="path_root" type="text" default="JURI::root()/images" label="Image Preview Path" description="Preview path for image files, e.g. http://www.google.com/images &lt;br/&gt;      If left empty will default to root path of the Joomla installation."/>
+                <field name="curlyvar" type="text" default="mediabrowser" label="PLG_JIMEDIABROWSER_CURLYVAR_LABEL" description="PLG_JIMEDIABROWSER_CURLYVAR_DESC"/>
+                <field name="buffertime" type="text" default="200" label="PLG_JIMEDIABROWSER_BUFFERTIME_LABEL" description="PLG_JIMEDIABROWSER_BUFFERTIME_DESC"/>
+
+                <field name="denied_url" type="text" default="" label="Access Denied URL" description="URL for access denied message. If left blank the plugin will attempt to redirect the user back to the previous page."/>
+				<field name="user_access" type="useraccess" multiple="multiple" default="0" label="User Access" description="User groups who will have access to view the media browser"/>
+				<field name="dir_access" type="textarea" filter="raw" default="" label="Directory Access" description="Directory specific access restrictions. One line per directory in structured in the following syntax: &lt;br/&gt;&lt;strong&gt;root/folder/subfolder {2, 8}&lt;/strong&gt;"/>
+                <field name="load_jquery" type="list" default="1" label="Load jQuery" description="Load jQuery as required">
+                    <option value="1">Yes</option>
+                    <option value="0">No</option>
+                </field>
+                <field name="load_slimbox" type="list" default="1" label="Load Slimbox" description="Load and use Slimbox as the modal view for images">
+					<option value="1">Yes</option>
+					<option value="0">No</option>
+				</field>
+				<field name="images_cache" type="list" default="1" label="Cache Previews" description="Only create a new preview when image does not exist in cache (disabling this and refreshing your content is an easy way to clear the cache)">
+					<option value="1">Yes</option>
+					<option value="0">No</option>
+				</field>
+				<field name="thumbs_cache" type="list" default="1" label="Cache Thumbnails" description="Only create a new thumbnail when image does not exist in cache (disabling this and refreshing your content is an easy way to clear the cache)">
+					<option value="1">Yes</option>
+					<option value="0">No</option>
+				</field>		
+				<field name="images_resize" type="list" default="0" label="Resize Original Images" description="Rather than leave massive images on the server this allows a way to automatically reduce the original image size (WARNING: this cannot be undone)">
+					<option value="1">Yes</option>
+					<option value="0">No</option>
+				</field>
+				<field name="images_width" type="text" default="800" label="Max Original Width" description="Images with greater widths than this will be resized if Resize Original Images is enabled" size="5"/>
+				<field name="images_height" type="text" default="500" label="Max Original Height" description="Images with greater heights than this will be resized if Resize Original Images is enabled" size="5"/>
+				<field name="images_quality" type="text" default="75" label="Original Quality" description="Quality of the original image where 100 is no compression and 0 is fully compressed" size="5"/>
+				<field name="images_keepratio" type="list" default="1" label="Keep Original Ratio" description="Retain the original ratio for the new image">
+					<option value="1">Yes</option>
+					<option value="0">No</option>
+				</field>
+				<field name="memcheck" type="list" default="1" label="Memory Check" description="IMPORTANT! Unless you know what you are doing, leave this ON. Large images may require a lot of server memory to process. Running the memory check will stop the image processor when there is not enough memory">
+					<option value="1">ON</option>
+					<option value="0">OFF</option>
+				</field>
+				<field name="thumbs_memincrease" type="list" default="false" label="Increase Memory" description="This can be used to dynamically increase the server memory allowance as required">
+					<option value="true">Yes</option>
+					<option value="false">No</option>
+				</field>
+				<field name="filesizecheck" type="list" default="1" label="File Size Check" description="IMPORTANT! Unless you know what you are doing, leave this ON. Large images may require a lot of server memory to process. Running the file size check will stop the image processor when there is not enough memory">
+					<option value="1">ON</option>
+					<option value="0">OFF</option>
+				</field>
+				<field name="filesizechecklimit" type="text" default="5000000" label="Max File Size (bytes)" description="" size="5"/>
+				<field name="debug" type="list" default="0" label="Debug Mode" description="Turn this on to see any errors that may be occuring.">
+					<option value="1">On</option>
+					<option value="0">Off</option>
+				</field>
+			</fieldset>
+		</fields>
+	</config>
+</extension>

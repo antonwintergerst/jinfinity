@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<exporter version="1.5">
+    <name>MosetsTree</name>
+    <description>Export Mosets Tree</description>
+    <group>thirdparty</group>
+    <!-- >>> PRO >>> -->
+    <tables>
+        <table name="mt_archived_log" pkey="log_id" />
+        <table name="mt_archived_reviews" pkey="rev_id" />
+        <table name="mt_archived_users" pkey="id" />
+        <table name="mt_cats" pkey="cat_id" />
+        <table name="mt_cfvalues" pkey="id" />
+        <table name="mt_cfvalues_att" pkey="att_id" />
+        <table name="mt_cl" pkey="cl_id" />
+        <table name="mt_claims" pkey="claim_id" />
+        <table name="mt_clone_owners" pkey="user_id" />
+        <table name="mt_config" pkey="varname" />
+        <table name="mt_configgroup" pkey="groupname" />
+        <table name="mt_customfields" pkey="cf_id" />
+        <table name="mt_favourites" pkey="fav_id" />
+        <table name="mt_fields_map" />
+        <table name="mt_fieldtypes" pkey="ft_id" />
+        <table name="mt_images" pkey="img_id" />
+        <table name="mt_linkcheck" pkey="id" />
+        <table name="mt_links" pkey="link_id" />
+        <table name="mt_links_associations" />
+        <table name="mt_log" pkey="log_id" />
+        <table name="mt_relcats" />
+        <table name="mt_reports" pkey="report_id" />
+        <table name="mt_reviews" pkey="rev_id" />
+        <table name="mt_templates" pkey="tem_id" />
+    </tables>
+    <files>
+        <filename>mt_archived_log.csv</filename>
+        <filename>mt_archived_reviews.csv</filename>
+        <filename>mt_archived_users.csv</filename>
+        <filename>mt_cats.csv</filename>
+        <filename>mt_cfvalues.csv</filename>
+        <filename>mt_cfvalues_att.csv</filename>
+        <filename>mt_cl.csv</filename>
+        <filename>mt_claims.csv</filename>
+        <filename>mt_clone_owners.csv</filename>
+        <filename>mt_config.csv</filename>
+        <filename>mt_configgroup.csv</filename>
+        <filename>mt_customfields.csv</filename>
+        <filename>mt_favourites.csv</filename>
+        <filename>mt_fields_map.csv</filename>
+        <filename>mt_fieldtypes.csv</filename>
+        <filename>mt_images.csv</filename>
+        <filename>mt_linkcheck.csv</filename>
+        <filename>mt_links.csv</filename>
+        <filename>mt_links_associations.csv</filename>
+        <filename>mt_log.csv</filename>
+        <filename>mt_relcats.csv</filename>
+        <filename>mt_reports.csv</filename>
+        <filename>mt_reviews.csv</filename>
+        <filename>mt_templates.csv</filename>
+    </files>
+    <!-- <<< PRO <<< -->
+    <!-- >>> FREE >>> -->
+    <fields>
+        <field type="separator" label="JI_ONLY_AVAILABLE_IN_PRO_TITLE" />
+    </fields>
+    <!-- <<< FREE <<< -->
+</exporter>

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<config>
+    <fieldset name="options" label="JOPTIONS">
+        <field name="scandir" type="text" autocomplete="false" default="" label="COM_JIEXTENSIONSERVER_SCANDIR" description="COM_JIEXTENSIONSERVER_SCANDIR_DESC" />
+        <field name="premium_usergroups" type="usergroup" default="0" label="COM_JIEXTENSIONSERVER_PREMIUM_USERGROUPS_LABEL" description="COM_JIEXTENSIONSERVER_PREMIUM_USERGROUPS_DESC" size="10" multiple="multiple">
+            <option value="0">COM_JIEXTENSIONSERVER_USERGROUPS_ALL</option>
+        </field>
+        <field name="subpackage" type="list" default="akeebasubs" label="COM_JIEXTENSIONSERVER_SUBPACKAGE_LABEL" description="COM_JIEXTENSIONSERVER_SUBPACKAGE_DESC">
+            <option value="akeebasubs">COM_JIEXTENSIONSERVER_SUBPACKAGE_AKEEBASUBS</option>
+            <option value="rsmembership">COM_JIEXTENSIONSERVER_SUBPACKAGE_RSMEMBERSHIP</option>
+        </field>
+        <field name="redirecturl" type="text" autocomplete="false" default="" label="COM_JIEXTENSIONSERVER_REDIRECTURL_LABEL" description="COM_JIEXTENSIONSERVER_REDIRECTURL_DESC" />
+    </fieldset>
+</config>

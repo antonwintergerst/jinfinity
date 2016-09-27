@@ -1,0 +1,467 @@
+@font-face {
+    font-family: 'IcoMoon';
+    src: url('../../../media/jinfinity/fonts/IcoMoon.eot');
+    src: url('../../../media/jinfinity/fonts/IcoMoon.eot?#iefix') format('embedded-opentype'), url('../../../media/jinfinity/fonts/IcoMoon.svg#IcoMoon') format('svg'), url('../../../media/jinfinity/fonts/IcoMoon.woff') format('woff'), url('../../../media/jinfinity/fonts/IcoMoon.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+.jinfinity [data-icon]:before {
+    font-family: 'IcoMoon';
+    content: attr(data-icon);
+    speak: none;
+}
+.jinfinity [class^="icon-"],
+.jinfinity [class*=" icon-"] {
+    display: inline-block;
+    width: 14px;
+    height: 14px;
+    *margin-right: .3em;
+    line-height: 14px;
+}
+.jinfinity [class^="icon-"]:before,
+.jinfinity [class*=" icon-"]:before {
+    font-family: 'IcoMoon';
+    font-style: normal;
+    speak: none;
+}
+.jinfinity .icon-home:before {
+    content: "\21";
+}
+.jinfinity .icon-user:before {
+    content: "\22";
+}
+.jinfinity .icon-checkedout:before,
+.jinfinity .icon-lock:before,
+.jinfinity .icon-locked:before {
+    content: "\23";
+}
+.jinfinity .icon-comment:before,
+.jinfinity .icon-comments:before {
+    content: "\24";
+}
+.jinfinity .icon-comments-2:before {
+    content: "\25";
+}
+.jinfinity .icon-share-alt:before,
+.jinfinity .icon-out:before {
+    content: "\26";
+}
+.jinfinity .icon-share:before,
+.jinfinity .icon-redo:before {
+    content: "\27";
+}
+.jinfinity .icon-undo:before {
+    content: "\28";
+}
+.jinfinity .icon-file-add:before {
+    content: "\29";
+}
+.jinfinity .icon-new:before,
+.jinfinity .icon-plus:before {
+    content: "\2a";
+}
+.jinfinity .icon-apply:before,
+.jinfinity .icon-edit:before,
+.jinfinity .icon-pencil:before {
+    content: "\2b";
+}
+.jinfinity .icon-edit:before,
+.jinfinity .icon-pencil:before {
+    color: #2f96b4;
+}
+.jinfinity .icon-pencil-2:before {
+    content: "\2c";
+}
+.jinfinity .icon-folder-open:before,
+.jinfinity .icon-folder:before {
+    content: "\2d";
+}
+.jinfinity .icon-folder-close:before,
+.jinfinity .icon-folder-2:before {
+    content: "\2e";
+}
+.jinfinity .icon-picture:before {
+    content: "\2f";
+}
+.jinfinity .icon-pictures:before {
+    content: "\30";
+}
+.jinfinity .icon-list:before,
+.jinfinity .icon-list-view:before {
+    content: "\31";
+}
+.jinfinity .icon-power-cord:before {
+    content: "\32";
+}
+.jinfinity .icon-cube:before {
+    content: "\33";
+}
+.jinfinity .icon-puzzle:before {
+    content: "\34";
+}
+.jinfinity .icon-flag:before {
+    content: "\35";
+}
+.jinfinity .icon-tools:before {
+    content: "\36";
+}
+.jinfinity .icon-cogs:before {
+    content: "\37";
+}
+.jinfinity .icon-options:before,
+.jinfinity .icon-cog:before {
+    content: "\38";
+}
+.jinfinity .icon-equalizer:before {
+    content: "\39";
+}
+.jinfinity .icon-wrench:before {
+    content: "\3a";
+}
+.jinfinity .icon-brush:before {
+    content: "\3b";
+}
+.jinfinity .icon-eye-open:before,
+.jinfinity .icon-eye:before {
+    content: "\3c";
+}
+.jinfinity .icon-checkbox-unchecked:before {
+    content: "\3d";
+}
+.jinfinity .icon-checkin:before,
+.jinfinity .icon-checkbox:before {
+    content: "\3e";
+}
+.jinfinity .icon-checkbox-partial:before {
+    content: "\3f";
+}
+.jinfinity .icon-asterisk:before,
+.jinfinity .icon-star-empty:before {
+    content: "\40";
+}
+.jinfinity .icon-star-2:before {
+    content: "\41";
+}
+.jinfinity .icon-featured:before,
+.jinfinity .icon-star:before {
+    content: "\42";
+    color: #f89406;
+}
+.jinfinity .icon-calendar:before {
+    content: "\43";
+}
+.jinfinity .icon-calendar-2:before {
+    content: "\44";
+}
+.jinfinity .icon-question-sign:before,
+.jinfinity .icon-help:before {
+    content: "\45";
+}
+.jinfinity .icon-support:before {
+    content: "\46";
+}
+.jinfinity .icon-warning:before {
+    content: "\48";
+}
+.jinfinity .icon-publish:before,
+.jinfinity .icon-save:before,
+.jinfinity .icon-ok:before,
+.jinfinity .icon-checkmark:before {
+    content: "\47";
+    color: #51a351;
+}
+.jinfinity .icon-unpublish:before,
+.jinfinity .icon-cancel:before {
+    content: "\4a";
+    color: #bd362f;
+}
+.jinfinity .icon-eye-close:before,
+.jinfinity .icon-minus:before {
+    content: "\4b";
+}
+.jinfinity .icon-purge:before,
+.jinfinity .icon-trash:before {
+    content: "\4c";
+}
+.jinfinity .icon-envelope:before,
+.jinfinity .icon-mail:before {
+    content: "\4d";
+}
+.jinfinity .icon-mail-2:before {
+    content: "\4e";
+}
+.jinfinity .icon-unarchive:before,
+.jinfinity .icon-drawer:before {
+    content: "\4f";
+}
+.jinfinity .icon-archive:before,
+.jinfinity .icon-drawer-2:before {
+    content: "\50";
+}
+.jinfinity .icon-box-add:before {
+    content: "\51";
+}
+.jinfinity .icon-box-remove:before {
+    content: "\52";
+}
+.jinfinity .icon-search:before {
+    content: "\53";
+}
+.jinfinity .icon-filter:before {
+    content: "\54";
+}
+.jinfinity .icon-camera:before {
+    content: "\55";
+}
+.jinfinity .icon-play:before {
+    content: "\56";
+}
+.jinfinity .icon-music:before {
+    content: "\57";
+}
+.jinfinity .icon-grid-view:before {
+    content: "\58";
+}
+.jinfinity .icon-grid-view-2:before {
+    content: "\59";
+}
+.jinfinity .icon-menu:before {
+    content: "\5a";
+}
+.jinfinity .icon-thumbs-up:before {
+    content: "\5b";
+}
+.jinfinity .icon-thumbs-down:before {
+    content: "\5c";
+}
+.jinfinity .icon-delete:before,
+.jinfinity .icon-remove:before,
+.jinfinity .icon-cancel-2:before {
+    content: "\49";
+}
+.jinfinity .icon-save-new:before,
+.jinfinity .icon-plus-2:before {
+    content: "\5d";
+    color: #51a351;
+}
+.jinfinity .icon-ban-circle:before,
+.jinfinity .icon-minus-sign:before,
+.jinfinity .icon-minus-2:before {
+    content: "\5e";
+    color: #bd362f;
+}
+.jinfinity .icon-key:before {
+    content: "\5f";
+}
+.jinfinity .icon-quote:before {
+    content: "\60";
+}
+.jinfinity .icon-quote-2:before {
+    content: "\61";
+}
+.jinfinity .icon-database:before {
+    content: "\62";
+}
+.jinfinity .icon-location:before {
+    content: "\63";
+}
+.jinfinity .icon-zoom-in:before {
+    content: "\64";
+}
+.jinfinity .icon-zoom-out:before {
+    content: "\65";
+}
+.jinfinity .icon-expand:before {
+    content: "\66";
+}
+.jinfinity .icon-contract:before {
+    content: "\67";
+}
+.jinfinity .icon-expand-2:before {
+    content: "\68";
+}
+.jinfinity .icon-contract-2:before {
+    content: "\69";
+}
+.jinfinity .icon-health:before {
+    content: "\6a";
+}
+.jinfinity .icon-wand:before {
+    content: "\6b";
+}
+.jinfinity .icon-unblock:before,
+.jinfinity .icon-refresh:before {
+    content: "\6c";
+}
+.jinfinity .icon-vcard:before {
+    content: "\6d";
+}
+.jinfinity .icon-clock:before {
+    content: "\6e";
+}
+.jinfinity .icon-compass:before {
+    content: "\6f";
+}
+.jinfinity .icon-address:before {
+    content: "\70";
+}
+.jinfinity .icon-feed:before {
+    content: "\71";
+}
+.jinfinity .icon-flag-2:before {
+    content: "\72";
+}
+.jinfinity .icon-pin:before {
+    content: "\73";
+}
+.jinfinity .icon-lamp:before {
+    content: "\74";
+}
+.jinfinity .icon-chart:before {
+    content: "\75";
+}
+.jinfinity .icon-bars:before {
+    content: "\76";
+}
+.jinfinity .icon-pie:before {
+    content: "\77";
+}
+.jinfinity .icon-dashboard:before {
+    content: "\78";
+}
+.jinfinity .icon-lightning:before {
+    content: "\79";
+}
+.jinfinity .icon-move:before {
+    content: "\7a";
+}
+.jinfinity .icon-next:before {
+    content: "\7b";
+}
+.jinfinity .icon-previous:before {
+    content: "\7c";
+}
+.jinfinity .icon-first:before {
+    content: "\7d";
+}
+.jinfinity .icon-last:before {
+    content: "\e000";
+}
+.jinfinity .icon-loop:before {
+    content: "\e001";
+}
+.jinfinity .icon-shuffle:before {
+    content: "\e002";
+}
+.jinfinity .icon-arrow-first:before {
+    content: "\e003";
+}
+.jinfinity .icon-arrow-last:before {
+    content: "\e004";
+}
+.jinfinity .icon-chevron-up:before,
+.jinfinity .icon-uparrow:before,
+.jinfinity .icon-arrow-up:before {
+    content: "\e005";
+}
+.jinfinity .icon-chevron-right:before,
+.jinfinity .icon-arrow-right:before {
+    content: "\e006";
+}
+.jinfinity .icon-chevron-down:before,
+.jinfinity .icon-downarrow:before,
+.jinfinity .icon-arrow-down:before {
+    content: "\e007";
+}
+.jinfinity .icon-chevron-left:before,
+.jinfinity .icon-arrow-left:before {
+    content: "\e008";
+}
+.jinfinity .icon-arrow-up-2:before {
+    content: "\e009";
+}
+.jinfinity .icon-arrow-right-2:before {
+    content: "\e00a";
+}
+.jinfinity .icon-download:before,
+.jinfinity .icon-arrow-down-2:before {
+    content: "\e00b";
+}
+.jinfinity .icon-arrow-left-2:before {
+    content: "\e00c";
+}
+.jinfinity .icon-play-2:before {
+    content: "\e00d";
+}
+.jinfinity .icon-menu-2:before {
+    content: "\e00e";
+}
+.jinfinity .icon-arrow-up-3:before {
+    content: "\e00f";
+}
+.jinfinity .icon-arrow-right-3:before {
+    content: "\e010";
+}
+.jinfinity .icon-arrow-down-3:before {
+    content: "\e011";
+}
+.jinfinity .icon-arrow-left-3:before {
+    content: "\e012";
+}
+.jinfinity .icon-print:before,
+.jinfinity .icon-printer:before {
+    content: "\e013";
+}
+.jinfinity .icon-color-palette:before {
+    content: "\e014";
+}
+.jinfinity .icon-camera-2:before {
+    content: "\e015";
+}
+.jinfinity .icon-file:before {
+    content: "\e016";
+}
+.jinfinity .icon-file-remove:before {
+    content: "\e017";
+}
+.jinfinity .icon-save-copy:before,
+.jinfinity .icon-copy:before {
+    content: "\e018";
+    color: #51a351;
+}
+.jinfinity .icon-cart:before {
+    content: "\e019";
+}
+.jinfinity .icon-basket:before {
+    content: "\e01a";
+}
+.jinfinity .icon-broadcast:before {
+    content: "\e01b";
+}
+.jinfinity .icon-screen:before {
+    content: "\e01c";
+}
+.jinfinity .icon-tablet:before {
+    content: "\e01d";
+}
+.jinfinity .icon-mobile:before {
+    content: "\e01e";
+}
+.jinfinity .icon-users:before {
+    content: "\e01f";
+}
+.jinfinity .icon-briefcase:before {
+    content: "\e020";
+}
+.jinfinity .icon-download:before {
+    content: "\e021";
+}
+.jinfinity .icon-upload:before {
+    content: "\e022";
+}
+.jinfinity .icon-bookmark:before {
+    content: "\e023";
+}
+.jinfinity .icon-out-2:before {
+    content: "\e024";
+}

@@ -1,0 +1,264 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension version="1.7" type="plugin" group="content" method="upgrade" client="site">
+	<name>PLG_CONTENT_JICONTENTSLIDER</name>
+	<creationDate>December 2015</creationDate>
+	<author>Jinfinity</author>
+	<authorEmail>support@jinfinity.com</authorEmail>
+	<authorUrl>http://www.jinfinity.com</authorUrl>
+	<copyright>Copyright (C) 2015 Jinfinity</copyright>
+	<license>GNU/GPLv3 http://www.gnu.org/licenses/gpl-3.0.html</license>
+	<version>3.0.8</version>
+	<description>PLG_CONTENT_JICONTENTSLIDER_DESC</description>
+
+    <languages folder="language">
+        <language tag="en-GB">en-GB/en-GB.plg_content_jicontentslider.ini</language>
+        <language tag="en-GB">en-GB/en-GB.plg_content_jicontentslider.sys.ini</language>
+    </languages>
+    <media folder="media">
+        <folder>jicontentslider</folder>
+    </media>
+	<files>
+		<filename plugin="jicontentslider">jicontentslider.php</filename>
+		<filename plugin="jicontentslider">helper.php</filename>
+		<filename plugin="jicontentslider">index.html</filename>
+	</files>
+
+	<config>
+        <fields name="params" addfieldpath="/media/jicontentslider/fields">
+            <fieldset name="description" addfieldpath="/plugins/system/jiframework/fields">
+                <field name="@header" type="header" label="JICONTENTSLIDER" description="JICONTENTSLIDER_DESC" xml="/plugins/content/jicontentslider/jicontentslider.xml"/>
+            </fieldset>
+			<fieldset name="basic">
+				<!-- Preview -->	
+				<field name="preview" type="preview" default="" label="MOD_JICONTENTSLIDER_PREVIEW_LABEL" description="MOD_JICONTENTSLIDER_PREVIEW_DESC"/>
+				<!-- Source -->	
+				<field name="sourcetype" type="list" default="category" label="MOD_JICONTENTSLIDER_SOURCETYPE_LABEL" description="MOD_JICONTENTSLIDER_SOURCETYPE_DESC">
+					<option value="article">MOD_JICONTENTSLIDER_SOURCETYPE_ARTICLE</option>
+					<option value="category">MOD_JICONTENTSLIDER_SOURCETYPE_CATEGORY</option>
+					<option value="directory">MOD_JICONTENTSLIDER_SOURCETYPE_DIRECTORY</option>
+					<option value="xml">MOD_JICONTENTSLIDER_SOURCETYPE_XMLFILE</option>
+				</field>
+
+                <field name="" type="spacer" label="MOD_JICONTENTSLIDER_ARTICLE_HEADER" description=""/>
+                <field name="sourcearticle" type="articles" default="" label="MOD_JICONTENTSLIDER_SOURCE_ARTICLE_LABEL" description="MOD_JICONTENTSLIDER_SOURCE_ARTICLE_DESC"/>
+
+                <field name="" type="spacer" label="MOD_JICONTENTSLIDER_CATEGORY_HEADER" description=""/>
+				<field name="sourcecategory" type="category" default="" label="MOD_JICONTENTSLIDER_SOURCE_CATEGORY_LABEL" extension="com_content"/>
+				<field name="orderby_pri" type="list" default="" label="MOD_JICONTENTSLIDER_ARTICLE_ORDER_LABEL" description="MOD_JICONTENTSLIDER_ARTICLE_ORDER_DESC">
+					<option value="">Use Global</option>
+					<option value="front">Featured Articles Order</option>
+					<option value="rdate">Most recent first</option>
+					<option value="date">Oldest first</option>
+					<option value="alpha">Title Alphabetical</option>
+					<option value="ralpha">Title Reverse Alphabetical</option>
+					<option value="author">Author Alphabetical</option>
+					<option value="rauthor">Author Reverse Alphabetical</option>
+					<option value="hits">Most Hits</option>
+					<option value="rhits">Least Hits</option>
+					<option value="order">Article Manager Order</option>
+                    <option value="random">Random</option>
+				</field>
+				<field name="order_date" type="list" default="" label="MOD_JICONTENTSLIDER_ARTICLE_ORDER_DATE_LABEL" description="MOD_JICONTENTSLIDER_ARTICLE_ORDER_DATE_DESC">
+					<option value="">Use Global</option>
+					<option value="created">Created</option>
+					<option value="modified">Modified</option>
+					<option value="published">Published</option>
+				</field>
+
+                <field name="" type="spacer" label="MOD_JICONTENTSLIDER_DIRECTORY_HEADER" description=""/>
+				<field name="sourcedirectory" type="imagefolderlist" directory="images" label="Source Directory" default=""/>
+
+                <field name="" type="spacer" label="MOD_JICONTENTSLIDER_XMLFILE_HEADER" description=""/>
+                <field name="sourcexml" type="text" label="Source XML" default=""/>
+
+				<!-- Layout -->	
+				<field name="" type="spacer" label="MOD_JICONTENTSLIDER_LAYOUT_HEADER" description=""/>
+                <field name="skipempty" type="list" default="1" label="MOD_JICONTENTSLIDER_SKIP_EMPTY_LABEL" description="MOD_JICONTENTSLIDER_SKIP_EMPTY_DESC">
+                    <option value="1">JYES</option>
+                    <option value="0">JNO</option>
+                </field>
+                <field name="maxslides" type="text" default="5" label="Max Number of Slides" description="Total or maximum number of slides to show."/>
+				<field name="links" type="list" default="1" label="Enable Links" description="Enable links on image and caption.">
+					<option value="1">JYES</option>
+					<option value="0">JNO</option>
+				</field>
+				<field name="linksource" type="list" default="article" label="Link Source" description="Slideshow item link source">
+					<option value="imagelink">Surrounding Image Link (Requires Article or Category as Source Type)</option>
+					<option value="article">Article (Requires Article or Category as Source Type)</option>
+					<option value="xml">XML Link Property (Requires XML File as Source Type)</option>
+				</field>
+                <field name="link_preserveattribs" type="list" default="1" label="Preserve Link attributes" description="Preserve HTML attributes from the original A tag.">
+                    <option value="1">JYES</option>
+                    <option value="0">JNO</option>
+                </field>
+				
+				<field name="discs" type="list" default="0" label="Show Discs" description="Show disc navigation with slider.">
+					<option value="1">JSHOW</option>
+					<option value="0">JHIDE</option>
+				</field>
+				<field name="paddles" type="list" default="0" label="Show Paddles" description="Show prev/next navigation in the form of paddles that appear over the slider upon mouse over.">
+					<option value="1">JSHOW</option>
+					<option value="0">JHIDE</option>
+				</field>
+				<!-- Image Options -->
+				<field type="spacer" name="" label="&lt;strong&gt;Image Options&lt;/strong&gt;"/>
+                <field name="imagecount" type="text" default="1" label="Images per Article" description="Maximum number of images to show per article."/>
+                <field name="image_preserveattribs" type="list" default="0" label="Preserve IMG attributes" description="Preserve HTML attributes from the original IMG tag (excludes src, width and height).">
+                    <option value="1">JYES</option>
+                    <option value="0">JNO</option>
+                </field>
+
+				<field name="removeimages" type="list" default="1" label="Remove Other Images" description="JiSlider will automatically use the first image found within an article. This option will remove all the other images.">
+					<option value="1">JYES</option>
+					<option value="0">JNO</option>
+				</field>
+				<field name="width" type="text" default="100%" label="Slider Width" description="Width of the slider. Can be in the format of 100, 100px, or 100%"/>
+				<field name="height" type="text" default="300px" label="Slider Height" description="Height of the slider. Can be in the format of 100, 100px, or 100%"/>
+				<field name="padding" type="text" default="0" label="Padding" description="Padding applied to each slide item. Use the shorthand CSS padding format for this field. In the case of multiple slides per page the inner padding will be automatically reduced."/>
+				<field name="autosizing" type="list" default="aspectfill" label="Auto Sizing" description="Auto-sizing for images that do not exactly fill the slider container">
+					<option value="aspectfill">Aspect Fill</option>
+					<option value="aspectfit">Aspect Fit</option>
+                    <option value="none">None</option>
+				</field>
+				<field name="verticalAlign" type="list" default="middle" label="Vertical Alignment" description="Vertical alignment of slide when slide is smaller than the slider container">
+					<option value="top">Top</option>
+					<option value="middle">Middle</option>
+					<option value="bottom">Bottom</option>
+				</field>
+				<field name="horizontalAlign" type="list" default="none" label="Horizontal Alignment" description="Horizontal alignment of slide when slide is smaller than the slider container">
+					<option value="left">Left</option>
+					<option value="none">Center</option>
+					<option value="right">Right</option>
+				</field>
+				<!-- Image Resizing -->
+				<field type="spacer" name="" label="&lt;strong&gt;Image Resize Options&lt;/strong&gt;"/>
+                <field name="sli_thumbs_resize" type="list" default="0" label="Resize Images" description="Resize images using the following rules">
+                    <option value="1">JYES</option>
+                    <option value="0">JNO</option>
+                </field>
+				<field name="sli_thumbs_width" type="text" default="" label="Image Width" description="Width of thumbnail image in pixels (please do not include the 'px' suffix)" size="5"/>
+				<field name="sli_thumbs_height" type="text" default="" label="Image Height" description="Height of thumbnail image in pixels (please do not include the 'px' suffix)" size="5"/>
+				<field name="sli_thumbs_quality" type="text" default="75" label="Image Quality" description="Quality of the thumbnail image where 100 is no compression and 0 is fully compressed" size="5"/>
+				<field name="sli_thumbs_keepratio" type="list" default="1" label="Maintain Aspect Ratio" description="Keep the same ratio for the thumbnails as the original image">
+					<option value="1">JYES</option>
+					<option value="0">JNO</option>
+				</field>
+				<field name="sli_thumbs_cropcenter" type="list" default="0" label="Crop Center" description="Crop thumbnail centered to original image">
+					<option value="1">JYES</option>
+					<option value="0">JNO</option>
+				</field>
+				<field name="sli_thumbs_fill" type="list" default="1" label="Aspect Fill" description="Scale up the thumbnail to fill the defined thumbnail dimensions">
+					<option value="1">JYES</option>
+					<option value="0">JNO</option>
+				</field>
+				<field name="sli_thumbs_xcenter" type="list" default="0" label="Center X" description="If the thumbnail is smaller than the defined width, it will be centered horizontally">
+					<option value="1">JYES</option>
+					<option value="0">JNO</option>
+				</field>
+				<field name="sli_thumbs_ycenter" type="list" default="0" label="Center Y" description="If the thumbnail is smaller than the defined height, it will be centered vertically">
+					<option value="1">JYES</option>
+					<option value="0">JNO</option>
+				</field>
+				<!-- Title Options -->
+				<field type="spacer" name="" label="&lt;strong&gt;Title Options&lt;/strong&gt;"/>
+				<field name="titles" type="list" default="1" label="Show Titles" description="Show titles with slides.">
+					<option value="1">JSHOW</option>
+					<option value="0">JHIDE</option>
+				</field>
+				<field name="title_width" type="text" default="100px" label="Title Width" description="Width of the title element"/>
+				<field name="title_halign" type="list" default="left" label="Title Alignment" description="Horizontal alignment of title when smaller than the slider container">
+					<option value="left">Left</option>
+					<option value="none">Center</option>
+					<option value="right">Right</option>
+				</field>
+				<field name="title_tag" type="list" default="h2" label="Title Tag" description="Title Tag">
+					<option value="h1">H1</option>
+					<option value="h2">H2</option>
+					<option value="h3">H3</option>
+					<option value="h4">H4</option>
+					<option value="h5">H5</option>
+					<option value="h6">H6</option>
+				</field>
+				<!-- Caption Options -->
+				<field type="spacer" name="" label="&lt;strong&gt;Caption Options&lt;/strong&gt;"/>
+				<field name="captions" type="list" default="1" label="Show Captions" description="Show captions with slides.">
+					<option value="1">JSHOW</option>
+					<option value="0">JHIDE</option>
+				</field>
+				<field name="caption_style" type="list" default="flat" label="Caption Style" description="Caption style">
+					<option value="overlay">Overlay</option>
+					<option value="flat">Flat</option>
+                    <option value="custom">Custom</option>
+				</field>
+				<field name="caption_width" type="text" default="auto" label="Caption Width" description="Width of the title element"/>
+				<field name="caption_halign" type="list" default="none" label="Caption Alignment" description="Horizontal alignment of caption when smaller than the slider container">
+					<option value="left">Left</option>
+					<option value="none">Center</option>
+					<option value="right">Right</option>
+				</field>
+				<field name="caption_nocurly" type="list" default="1" label="Remove Plugin Code" description="Remove plugin code {curlycode}{/curlycode}">
+					<option value="1">JYES</option>
+					<option value="0">JNO</option>
+				</field>
+				<field name="caption_striptags" type="list" default="1" label="Strip HTML Tags" description="Remove HTML tags and only keep plain text">
+					<option value="1">JYES</option>
+					<option value="0">JNO</option>
+				</field>
+				<field name="caption_excludedtags" type="textarea" default="" label="Excluded Tags" description="Optionally exclude certain tags"/>
+				<field name="caption_truncate" type="list" default="1" label="Crop Caption Text" description="Crop the caption text to a set number of characters">
+					<option value="1">JYES</option>
+					<option value="0">JNO</option>
+				</field>
+				<field name="caption_length" type="text" default="220" label="Cropped Caption Length" description="Desired length for the caption (spaces are included as characters and HTML will be preserved)" size="5"/>
+				<!-- Readmore Options -->
+				<field type="spacer" name="" label="&lt;strong&gt;Readmore Options&lt;/strong&gt;"/>
+				<field name="readmores" type="list" default="0" label="Show Readmores" description="Show readmore links with slides.">
+					<option value="1">JSHOW</option>
+					<option value="0">JHIDE</option>
+				</field>
+				<field name="readmore_text" type="text" default="Read More..." label="Readmore Text" description="Readmore title text"/>
+				<!-- Slider Options -->	
+				<field name="" type="spacer" label="&lt;b&gt;Slider Options&lt;/b&gt;" description=""/>
+				<field name="uniqueclass" type="random" default="" label="Unique Class" description="Each slider needs to have a unique CSS class to ensure multiple sliders can exist on the same page"/>
+				<field name="numberslides" type="text" default="1" label="Number Slides Per Page" description="Set how many slides to be displayed per page."/>
+				<field name="transition" type="list" default="slideleft" label="Transition" description="Slider transition between slides.">
+					<option value="slideleft">Slide Left</option>
+					<option value="fade">Fade In/Out</option>
+				</field>
+				<field name="speed" type="text" default="250" label="Transition Speed" description="Milliseconds it takes to slide to next slide."/>
+				<field name="delay" type="text" default="5000" label="Slide Delay" description="Milliseconds to wait before showing next slide."/>
+				<field name="autoplay" type="list" default="1" label="Auto Play" description="Automatically start playing through slides as soon as the slider loads.">
+					<option value="1">JON</option>
+					<option value="0">JOFF</option>
+				</field>
+				<field name="responsive" type="list" default="1" label="Responsive" description="Slider responds to window size changes. TIP: Ensure the width has a percentage prefix (%) to get the most out of this feature.">
+					<option value="1">JON</option>
+					<option value="0">JOFF</option>
+				</field>
+			</fieldset>
+			<fieldset name="advanced">
+				<field name="curlyvar" type="text" default="mediabrowser" label="PLG_JICONTENTSLIDER_CURLYVAR_LABEL" description="PLG_JICONTENTSLIDER_CURLYVAR_DESC"/>
+				<field name="load_jquery" type="list" default="1" label="Load jQuery" description="Allow jQuery loading as required.">
+					<option value="1">JYES</option>
+					<option value="0">JNO</option>
+				</field>
+				<field name="thumbs_cache" type="list" default="1" label="Cache Thumbnails" description="Only create a new thumbnail when image does not exist in cache (disabling this and refreshing your content is an easy way to clear the cache)">
+					<option value="1">JYES</option>
+					<option value="0">JNO</option>
+				</field>
+                <field name="trigger_events" type="list" default="0" label="Trigger Events" description="Trigger content plugin events.">
+                    <option value="1">JYES</option>
+                    <option value="0">JNO</option>
+                </field>
+                <field name="layout" type="modulelayout" label="JFIELD_ALT_LAYOUT_LABEL" description="JFIELD_ALT_MODULE_LAYOUT_DESC"/>
+                <field name="moduleclass_sfx" type="textarea" rows="3" label="COM_MODULES_FIELD_MODULECLASS_SFX_LABEL" description="COM_MODULES_FIELD_MODULECLASS_SFX_DESC"/>
+                <field name="owncache" type="list" default="1" label="COM_MODULES_FIELD_CACHING_LABEL" description="COM_MODULES_FIELD_CACHING_DESC">
+                    <option value="1">JGLOBAL_USE_GLOBAL</option>
+                    <option value="0">COM_MODULES_FIELD_VALUE_NOCACHING
+                    </option>
+                </field>
+                <field name="cache_time" type="text" default="900" label="COM_MODULES_FIELD_CACHE_TIME_LABEL" description="COM_MODULES_FIELD_CACHE_TIME_DESC"/>
+			</fieldset>
+		</fields>
+	</config>
+</extension>

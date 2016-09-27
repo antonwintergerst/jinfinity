@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<exporter version="1.5">
+	<name>K2</name>
+	<description>Export K2</description>
+	<group>thirdparty</group>
+    <!-- >>> PRO >>> -->
+    <tables>
+        <table name="k2_attachments" pkey="id" />
+        <table name="k2_categories" pkey="id" />
+        <table name="k2_comments" pkey="id" />
+        <table name="k2_extra_fields" pkey="id" />
+        <table name="k2_extra_fields_groups" pkey="id" />
+        <table name="k2_items" pkey="id" />
+        <table name="k2_rating" pkey="itemID" />
+        <table name="k2_tags" pkey="id" />
+        <table name="k2_tags_xref" pkey="id" />
+        <table name="k2_users" pkey="id" />
+        <table name="k2_user_groups" pkey="id" />
+    </tables>
+	<files>
+		<filename>k2_attachments.csv</filename>
+		<filename>k2_categories.csv</filename>
+		<filename>k2_comments.csv</filename>
+		<filename>k2_extra_fields.csv</filename>
+		<filename>k2_extra_fields_groups.csv</filename>
+		<filename>k2_items.csv</filename>
+		<filename>k2_rating.csv</filename>
+		<filename>k2_tags.csv</filename>
+		<filename>k2_tags_xref.csv</filename>
+		<filename>k2_users.csv</filename>
+		<filename>k2_user_groups.csv</filename>
+	</files>
+    <!-- <<< PRO <<< -->
+    <!-- >>> FREE >>> -->
+    <fields>
+        <field type="separator" label="JI_ONLY_AVAILABLE_IN_PRO_TITLE" />
+    </fields>
+    <!-- <<< FREE <<< -->
+</exporter>

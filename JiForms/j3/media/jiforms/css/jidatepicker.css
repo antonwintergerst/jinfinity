@@ -1,0 +1,116 @@
+/*
+ * @version     $Id: jidatepicker.css 055 2013-11-12 16:47:00Z Anton Wintergerst $
+ * @package     JiDatePicker for jQuery
+ * @copyright   Copyright (C) 2013 Jinfinity. All rights reserved.
+ * @license     GNU/GPLv3 http://www.gnu.org/licenses/gpl-3.0.html
+ * @website     www.jinfinity.com
+ * @email       support@jinfinity.com
+ */
+.jidatepicker {
+    position: relative;
+    clear: both;
+    width: 100%;
+}
+.jidatepicker .pickerouter {
+    padding: 5px;
+    background: #FFF;
+    border: 1px solid #DDD;
+    border-radius: 4px;
+}
+.jidatepicker .pickertable {
+    border-collapse: collapse;
+    border-spacing: 0;
+    width: 100%;
+}
+.jidatepicker .pickertable td {
+    border-spacing: 0;
+    border-collapse: collapse;
+    margin: 0;
+    padding: 0;
+}
+.jidatepicker .navlink {
+    padding: 10px;
+    display: block;
+    text-decoration: none;
+    cursor: pointer;
+}
+.jidatepicker .weekday {
+    text-align: center;
+}
+.jidatepicker .day a {
+    display: block;
+    font-size: 18px;
+    line-height: 18px;
+    text-align: left;
+    cursor: pointer;
+    position: relative;
+    padding: 1px;
+    text-decoration: none;
+}
+.jidatepicker .day a .dayinner {
+    border: 1px solid #DDD;
+    border-top: none;
+    border-right: none;
+    border-radius: 4px;
+    padding: 10px 9px 9px 9px;
+    display: block;
+    height: 40px;
+}
+.jidatepicker .day.today .dayinner {
+    background: #cde4f3;
+}
+.jidatepicker .day.today a .dayinner:before {
+    content: " ";
+    position: absolute;
+    top: 2px;
+    right: 2px;
+    width: 0;
+    height: 0;
+    border-top: 0.5em solid #0059bc;
+    border-left: .5em solid transparent;
+}
+.jidatepicker .day.inactive a .dayinner {
+    background: #EFEFEF;
+    color: #DDD;
+}
+.jidatepicker .day a:hover .dayinner {
+    border: 1px solid #2C97DD;
+    padding: 9px 8px;
+}
+.jidatepicker .day.highlight a {
+    color: #FFF;
+}
+.jidatepicker .day.highlight a .dayinner {
+    background: #2C97DD;
+}
+.jidatepicker .day a .daylabel {
+    position: absolute;
+    bottom: 10px;
+    left: 10px;
+    font-size: 12px;
+}
+.jidatepicker .closelink {
+    text-transform: uppercase;
+    text-decoration: none;
+    padding: 4px 20px;
+    display: inline-block;
+    border-radius: 4px;
+    border: 1px solid #CCC;
+}
+
+.jidatepicker.popup {
+
+    width: auto;
+}
+.jidatepicker.popup .pickerouter {
+    position: absolute;
+    z-index: 10;
+    top: 0;
+    left: 0;
+}
+.jidatepicker.popup .day a {
+    text-align: center;
+}
+.jidatepicker.popup .day a .dayinner {
+    height: auto;
+}

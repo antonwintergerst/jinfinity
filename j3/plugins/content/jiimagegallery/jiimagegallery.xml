@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension version="1.7" type="plugin" group="content" method="upgrade" client="site">
+	<name>PLG_CONTENT_JIIMAGEGALLERY</name>
+	<creationDate>August 2013</creationDate>
+	<author>Jinfinity</author>
+	<authorEmail>support@jinfinity.com</authorEmail>
+	<authorUrl>http://www.jinfinity.com</authorUrl>
+	<copyright>Copyright (C) 2013 Jinfinity</copyright>
+	<license>GNU/GPLv3 http://www.gnu.org/licenses/gpl-3.0.html</license>
+	<version>3.0.2</version>
+	<description>PLG_CONTENT_JIIMAGEGALLERY_DESC</description>
+
+    <languages folder="language">
+        <language tag="en-GB">en-GB/en-GB.plg_content_jiimagegallery.ini</language>
+        <language tag="en-GB">en-GB/en-GB.plg_content_jiimagegallery.sys.ini</language>
+    </languages>
+    <media folder="media">
+        <folder>jiimagegallery</folder>
+    </media>
+	<files>
+		<filename plugin="jiimagegallery">jiimagegallery.php</filename>
+		<filename plugin="jiimagegallery">helper.php</filename>
+		<filename plugin="jiimagegallery">index.html</filename>
+	</files>
+
+	<config>
+        <fields name="params" addfieldpath="/plugins/system/jiframework/fields">
+            <fieldset name="description">
+                <field name="@header" type="header" label="JIIMAGEGALLERY" description="JIIMAGEGALLERY_DESC" xml="/plugins/content/jiimagegallery/jiimagegallery.xml"/>
+            </fieldset>
+			<fieldset name="basic">
+				<field type="spacer" name="filetypes" label="&lt;strong&gt;File Types&lt;/strong&gt;"/>
+				<field name="images_types" type="text" default="gif,jpg,jpeg,png" label="Image Types" description="Separate image file types by commas. Images found with one of these file types will show a thumbnail of the actual image."/>
+				
+				<field type="spacer" name="sourceoptions" label="&lt;strong&gt;Source Options&lt;/strong&gt;"/>
+                <field name="sourcedirectory" type="imagefolderlist" directory="images" label="Source Directory" default="" hide_none="true" exclude="jithumbs|jipreviews"/>
+				<field name="max" type="text" default="" label="Max Images" description="Maximum number of images to display"/>
+					
+				<field type="spacer" name="thumboptions" label="&lt;strong&gt;Thumbnail Options&lt;/strong&gt;"/>
+                <field name="cachecleaner" type="cachecleaner"/>
+				<field name="gal_thumbs_width" type="text" default="" label="Thumbnail Width" description="Width of thumbnail image in pixels (please do not include the 'px' suffix)" size="5"/>
+				<field name="gal_thumbs_height" type="text" default="" label="Thumbnail Height" description="Height of thumbnail image in pixels (please do not include the 'px' suffix)" size="5"/>
+				<field name="gal_thumbs_quality" type="text" default="75" label="Thumbnail Quality" description="Quality of the thumbnail image where 100 is no compression and 0 is fully compressed" size="5"/>
+				<field name="gal_thumbs_keepratio" type="list" default="1" label="Thumbnails Keep Ratio" description="Keep the same ratio for the thumbnails as the original image">
+					<option value="1">Yes</option>
+					<option value="0">No</option>
+				</field>
+				<field name="gal_thumbs_cropcenter" type="list" default="0" label="Thumbnails Crop Center" description="Crop thumbnail centered to original image">
+					<option value="1">Yes</option>
+					<option value="0">No</option>
+				</field>
+				<field name="gal_thumbs_fill" type="list" default="1" label="Thumbnails Fill" description="Scale up the thumbnail to fill the defined thumbnail dimensions">
+					<option value="1">Yes</option>
+					<option value="0">No</option>
+				</field>
+				<field name="gal_thumbs_xcenter" type="list" default="0" label="Thumbnails Center X" description="If the thumbnail is smaller than the defined width, it will be centered horizontally">
+					<option value="1">Yes</option>
+					<option value="0">No</option>
+				</field>
+				<field name="gal_thumbs_ycenter" type="list" default="0" label="Thumbnails Center Y" description="If the thumbnail is smaller than the defined height, it will be centered vertically">
+					<option value="1">Yes</option>
+					<option value="0">No</option>
+				</field>
+				
+				<field type="spacer" name="thumblinkoptions" label="&lt;strong&gt;Thumbnail Link Options&lt;/strong&gt;"/>
+				<field type="modalpicker" attrinput="#jform_params_gal_thumbs_linkattr" name="modaltype" label="Lightbox Type" default="slimbox2" description="Select the modal framework to use for lightboxes. Link attributes will automatically be set after changing the framework."/>
+				<field name="gal_thumbs_linkattr" size="50" type="textarea" filter="raw" default="" label="Thumbnail Link Attributes" description="Thumbnail link attributes (Useful for setting Modal properties)"/>
+				<field name="gal_thumbs_linktarget" type="list" default="_blank" label="Thumbnails Link Target" description="Thumbnail link target frame">
+					<option value="_self">Current Window</option>
+					<option value="_blank">New Window</option>
+					<option value="_parent">Parent Frame</option>
+					<option value="_top">Top Frame</option>
+				</field>
+				<field name="ordering" type="list" default="alpha" label="Thumbnail Ordering" description="Ordering of image files">
+					<option value="alpha">Filename Ascending</option>
+					<option value="ralpha">Filename Descending</option>
+				</field>
+			</fieldset>
+			<fieldset name="advanced">
+                <field name="advancedroot" type="list" default="0" label="Advanced Root" description="Specify exact root directory and path below (Overrides Source Directory).">
+                    <option value="1">Yes</option>
+                    <option value="0">No</option>
+                </field>
+                <field name="dir_root" type="text" default="JPATH_SITEDSimages" label="Source Root Directory" description="Source root directory for gallery sub-folders, e.g. /home/google/public_html/images &lt;br/&gt;      If left empty will default to images directory of the Joomla installation."/>
+                <field name="path_root" type="text" default="JURI::root()/images" label="Image Preview Path" description="Preview path for image files, e.g. http://www.google.com/images &lt;br/&gt;      If left empty will default to root path of the Joomla installation."/>
+
+				<field type="spacer" name="modalloaders" label="&lt;strong&gt;Script Loading&lt;/strong&gt;"/>
+				<field name="load_mootools" type="list" default="1" label="Load MooTools" description="Allow MooTools loading as required.">
+					<option value="1">Yes</option>
+					<option value="0">No</option>
+				</field>
+				<field name="load_jquery" type="list" default="1" label="Load jQuery" description="Allow jQuery loading as required.">
+					<option value="1">Yes</option>
+					<option value="0">No</option>
+				</field>
+				<field name="load_slimbox2" type="list" default="1" label="Load Slimbox 2" description="Allow Slimbox 2 loading as required.">
+					<option value="1">Yes</option>
+					<option value="0">No</option>
+				</field>
+				<field name="load_slimbox2" type="list" default="1" label="Load Slimbox 2" description="Allow Slimbox 2 loading as required.">
+					<option value="1">Yes</option>
+					<option value="0">No</option>
+				</field>
+				<field name="load_shadowbox" type="list" default="1" label="Load Shadowbox" description="Allow Shadowbox loading as required.">
+					<option value="1">Yes</option>
+					<option value="0">No</option>
+				</field>
+				<field name="load_squeezebox" type="list" default="1" label="Load SqueezeBox" description="Allow SqueezeBox loading as required. (Not available in Joomla 3.0+)">
+					<option value="1">Yes</option>
+					<option value="0">No</option>
+				</field>
+				<field name="load_fancybox" type="list" default="1" label="Load fancyBox" description="Allow fancyBox  loading as required.">
+					<option value="1">Yes</option>
+					<option value="0">No</option>
+				</field>
+				
+				<field type="spacer" name="imageoptions" label="&lt;strong&gt;Image Options&lt;/strong&gt;"/>
+				<field name="images_cache" type="list" default="1" label="Cache Previews" description="Only create a new preview when image does not exist in cache (disabling this and refreshing your content is an easy way to clear the cache)">
+					<option value="1">Yes</option>
+					<option value="0">No</option>
+				</field>
+				<field name="thumbs_cache" type="list" default="1" label="Cache Thumbnails" description="Only create a new thumbnail when image does not exist in cache (disabling this and refreshing your content is an easy way to clear the cache)">
+					<option value="1">Yes</option>
+					<option value="0">No</option>
+				</field>		
+				<field name="images_resize" type="list" default="0" label="Resize Original Images" description="Rather than leave massive images on the server this allows a way to automatically reduce the original image size (WARNING: this cannot be undone)">
+					<option value="1">Yes</option>
+					<option value="0">No</option>
+				</field>
+				<field name="images_width" type="text" default="800" label="Max Original Width" description="Images with greater widths than this will be resized if Resize Original Images is enabled" size="5"/>
+				<field name="images_height" type="text" default="500" label="Max Original Height" description="Images with greater heights than this will be resized if Resize Original Images is enabled" size="5"/>
+				<field name="images_quality" type="text" default="75" label="Original Quality" description="Quality of the original image where 100 is no compression and 0 is fully compressed" size="5"/>
+				<field name="images_keepratio" type="list" default="1" label="Keep Original Ratio" description="Retain the original ratio for the new image">
+					<option value="1">Yes</option>
+					<option value="0">No</option>
+				</field>
+				<field name="memcheck" type="list" default="1" label="Memory Check" description="IMPORTANT! Unless you know what you are doing, leave this ON. Large images may require a lot of server memory to process. Running the memory check will stop the image processor when there is not enough memory">
+					<option value="1">ON</option>
+					<option value="0">OFF</option>
+				</field>
+				<field name="thumbs_memincrease" type="list" default="false" label="Increase Memory" description="This can be used to dynamically increase the server memory allowance as required">
+					<option value="true">Yes</option>
+					<option value="false">No</option>
+				</field>
+                <field name="debug" type="list" default="0" label="Debug Mode" description="Turn this on to see any errors that may be occuring.">
+                    <option value="1">JON</option>
+                    <option value="0">JOFF</option>
+                </field>
+			</fieldset>
+		</fields>
+	</config>
+</extension>

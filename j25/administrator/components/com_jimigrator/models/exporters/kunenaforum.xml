@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<exporter version="1.5">
+    <name>KunenaForum</name>
+    <description>Export Kunena Forum</description>
+    <group>thirdparty</group>
+    <!-- >>> PRO >>> -->
+    <tables>
+        <table name="kunena_aliases" pkey="alias" />
+        <table name="kunena_announcement" pkey="id" />
+        <table name="kunena_attachments" pkey="id" />
+        <table name="kunena_categories" pkey="id"  />
+        <table name="kunena_config" pkey="id" />
+        <table name="kunena_config_backup" pkey="id" />
+        <table name="kunena_configuration" pkey="id" />
+        <table name="kunena_favorites" pkey="id" />
+        <table name="kunena_groups" pkey="id" />
+        <table name="kunena_keywords" pkey="id" />
+        <table name="kunena_keywords_map" />
+        <table name="kunena_messages" pkey="id" />
+        <table name="kunena_messages_text" pkey="mesid" />
+        <table name="kunena_messages_ranks" pkey="rank_id" />
+        <table name="kunena_moderation" pkey="id" />
+        <table name="kunena_polls" pkey="id" />
+        <table name="kunena_polls_options" pkey="id" />
+        <table name="kunena_polls_users" pkey="id" />
+        <table name="kunena_ranks" pkey="id" />
+        <table name="kunena_sessions" pkey="userid" />
+        <table name="kunena_smileys" pkey="id" />
+        <table name="kunena_subscriptions" pkey="id" />
+        <table name="kunena_subscriptions_categories" />
+        <table name="kunena_thankyou" pkey="id" />
+        <table name="kunena_topics" pkey="id" />
+        <table name="kunena_users" pkey="userid" />
+        <table name="kunena_users_banned" pkey="id" />
+        <table name="kunena_user_categories" />
+        <table name="kunena_user_read" />
+        <table name="kunena_user_topics" />
+        <table name="kunena_version" pkey="id" />
+        <table name="kunena_whoisonline" pkey="id" />
+    </tables>
+    <files>
+        <filename>kunena_aliases.csv</filename>
+        <filename>kunena_announcement.csv</filename>
+        <filename>kunena_attachments.csv</filename>
+        <filename>kunena_categories.csv</filename>
+        <filename>kunena_config.csv</filename>
+        <filename>kunena_config_backup.csv</filename>
+        <filename>kunena_configuration.csv</filename>
+        <filename>kunena_favorites.csv</filename>
+        <filename>kunena_groups.csv</filename>
+        <filename>kunena_keywords.csv</filename>
+        <filename>kunena_keywords_map.csv</filename>
+        <filename>kunena_messages.csv</filename>
+        <filename>kunena_messages_text.csv</filename>
+        <filename>kunena_messages_ranks.csv</filename>
+        <filename>kunena_moderation.csv</filename>
+        <filename>kunena_polls.csv</filename>
+        <filename>kunena_polls_options.csv</filename>
+        <filename>kunena_polls_users.csv</filename>
+        <filename>kunena_ranks.csv</filename>
+        <filename>kunena_sessions.csv</filename>
+        <filename>kunena_smileys.csv</filename>
+        <filename>kunena_subscriptions.csv</filename>
+        <filename>kunena_subscriptions_categories.csv</filename>
+        <filename>kunena_thankyou.csv</filename>
+        <filename>kunena_topics.csv</filename>
+        <filename>kunena_users.csv</filename>
+        <filename>kunena_users_banned.csv</filename>
+        <filename>kunena_user_read.csv</filename>
+        <filename>kunena_user_topics.csv</filename>
+        <filename>kunena_version.csv</filename>
+        <filename>kunena_whoisonline.csv</filename>
+    </files>
+    <!-- <<< PRO <<< -->
+    <!-- >>> FREE >>> -->
+    <fields>
+        <field type="separator" label="JI_ONLY_AVAILABLE_IN_PRO_TITLE" />
+    </fields>
+    <!-- <<< FREE <<< -->
+</exporter>

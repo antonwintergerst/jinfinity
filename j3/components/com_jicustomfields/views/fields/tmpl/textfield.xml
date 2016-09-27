@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<fieldtype version="2.5">
+	<name>TextField</name>
+	<label>JICUSTOMFIELDS_TEXTFIELD</label>
+	<description>JICUSTOMFIELDS_TEXTFIELD_DESC</description>
+</fieldtype>

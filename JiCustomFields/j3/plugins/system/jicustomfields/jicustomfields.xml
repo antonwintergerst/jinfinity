@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension version="3.0" type="plugin" group="system" method="upgrade" client="site">
+	<name>JiCustomFields</name>
+	<creationDate>January 2015</creationDate>
+	<author>Jinfinity</author>
+	<authorEmail>support@jinfinity.com</authorEmail>
+	<authorUrl>http://www.jinfinity.com</authorUrl>
+	<copyright>Copyright (C) 2015 Jinfinity</copyright>
+	<license>GNU/GPLv3 http://www.gnu.org/licenses/gpl-3.0.html</license>
+	<version>3.3.6</version>
+    <description>PLG_SYSTEM_JICUSTOMFIELDS_DESC</description>
+	<files>
+		<filename plugin="jicustomfields">jicustomfields.php</filename>
+		<filename>jicustomfields.xml</filename>
+		<filename>index.html</filename>
+	</files>
+    <languages folder="language">
+        <language tag="en-GB">en-GB/en-GB.plg_system_jicustomfields.ini</language>
+        <language tag="en-GB">en-GB/en-GB.plg_system_jicustomfields.sys.ini</language>
+    </languages>
+	<config>
+        <fields name="params" addfieldpath="/plugins/system/jiframework/fields">
+            <fieldset name="description">
+                <field name="@header" type="header" label="JICUSTOMFIELDS" description="JICUSTOMFIELDS_DESC" xml="/plugins/system/jicustomfields/jicustomfields.xml"/>
+            </fieldset>
+        </fields>
+	</config>
+</extension>

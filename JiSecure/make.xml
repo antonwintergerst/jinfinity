@@ -1,0 +1,14 @@
+<extension>
+    <manifest>plugins/system/jisecure/jisecure.xml</manifest>
+    <manifests>
+        <manifest>plugins/system/jisecure/jisecure.xml</manifest>
+    </manifests>
+    <hasfree>0</hasfree>
+    <haspro>1</haspro>
+    <files>
+        <file>administrator/language/en-GB/en-GB.plg_system_jisecure.ini</file>
+        <file>administrator/language/en-GB/en-GB.plg_system_jisecure.sys.ini</file>
+        <file>media/jisecure</file>
+        <file>plugins/system/jisecure</file>
+    </files>
+</extension>

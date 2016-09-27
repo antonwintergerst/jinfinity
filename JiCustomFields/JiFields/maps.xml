@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<fieldtype version="2.5">
+	<name>Maps</name>
+	<label>COM_JICUSTOMFIELDS_MAPSLABEL</label>
+	<description></description>
+</fieldtype>

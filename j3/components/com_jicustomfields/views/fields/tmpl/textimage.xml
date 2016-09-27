@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<fieldtype version="2.5">
+    <name>TextImage</name>
+    <label>JICUSTOMFIELDS_TEXTIMAGE</label>
+    <description>JICUSTOMFIELDS_TEXTIMAGE_DESC</description>
+</fieldtype>

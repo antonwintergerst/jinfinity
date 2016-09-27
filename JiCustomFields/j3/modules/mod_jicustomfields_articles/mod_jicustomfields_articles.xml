@@ -1,0 +1,243 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension type="module" version="1.7.0" client="site" method="upgrade">
+	<name>mod_jicustomfields_articles</name>
+	<creationDate>January 2015</creationDate>
+	<author>Jinfinity</author>
+	<authorEmail>support@jinfinity.com</authorEmail>
+	<authorUrl>http://www.jinfinity.com</authorUrl>
+	<copyright>Copyright (C) 2015 Jinfinity</copyright>
+	<license>GNU/GPLv3 http://www.gnu.org/licenses/gpl-3.0.html</license>
+	<version>3.3.6</version>
+	<description>MOD_JICUSTOMFIELDS_ARTICLES_DESC</description>
+
+    <!-- Public front end files -->
+    <languages folder="language">
+        <language tag="en-GB">en-GB/en-GB.mod_jicustomfields_articles.ini</language>
+        <language tag="en-GB">en-GB/en-GB.mod_jicustomfields_articles.sys.ini</language>
+    </languages>
+	<files>
+		<filename module="mod_jicustomfields_articles">mod_jicustomfields_articles.php</filename>
+		<folder>tmpl</folder>
+		<filename>mod_jicustomfields_articles.xml</filename>
+		<filename>helper.php</filename>
+		<filename>index.html</filename>
+	</files>
+
+	<config>
+		<fields name="params" addfieldpath="/administrator/components/com_jicustomfields/models/fields">
+			<fieldset name="basic">
+                <field name="com_content" type="language"/>
+				<field name="num_articles" type="text" size="3" default="5" label="Num Articles" description="Total number of articles to display"/>
+				<field name="source_itemid" type="text" default="" label="Menu ID" description="Menu ID for links to inherit (Itemid)"/>
+
+                <!-- Order options. -->
+                <field name="orderby_pri" type="list" description="JGLOBAL_CATEGORY_ORDER_DESC" label="JGLOBAL_CATEGORY_ORDER_LABEL">
+                    <option value="">JGLOBAL_USE_GLOBAL</option>
+                    <option value="none">JGLOBAL_NO_ORDER</option>
+                    <option value="alpha">JGLOBAL_TITLE_ALPHABETICAL</option>
+                    <option value="ralpha">JGLOBAL_TITLE_REVERSE_ALPHABETICAL</option>
+                    <option value="order">JGLOBAL_CATEGORY_MANAGER_ORDER</option>
+                </field>
+                <field name="orderby_sec" type="list" description="JGLOBAL_ARTICLE_ORDER_DESC" label="JGLOBAL_ARTICLE_ORDER_LABEL">
+                    <option value="">JGLOBAL_USE_GLOBAL</option>
+                    <option value="field">COM_JICUSTOMFIELDS_FIELD_ALPHABETICAL</option>
+                    <option value="rfield">COM_JICUSTOMFIELDS_FIELD_REVERSE_ALPHABETICAL</option>
+                    <option value="front">COM_CONTENT_FEATURED_ORDER</option>
+                    <option value="rdate">JGLOBAL_MOST_RECENT_FIRST</option>
+                    <option value="date">JGLOBAL_OLDEST_FIRST</option>
+                    <option value="alpha">JGLOBAL_TITLE_ALPHABETICAL</option>
+                    <option value="ralpha">JGLOBAL_TITLE_REVERSE_ALPHABETICAL</option>
+                    <option value="author">JGLOBAL_AUTHOR_ALPHABETICAL</option>
+                    <option value="rauthor">JGLOBAL_AUTHOR_REVERSE_ALPHABETICAL</option>
+                    <option value="hits">JGLOBAL_MOST_HITS</option>
+                    <option value="rhits">JGLOBAL_LEAST_HITS</option>
+                    <option value="order">JGLOBAL_ORDERING</option>
+                </field>
+                <field name="order_field" type="fields" description="COM_JICUSTOMFIELDS_ORDER_FIELD_DESC" label="COM_JICUSTOMFIELDS_ORDER_FIELD_LABEL"/>
+                <!-- Show more options. -->
+                <field name="show_more" type="list" label="MOD_JICUSTOMFIELDS_SHOW_MORE" description="MOD_JICUSTOMFIELDS_SHOW_MORE_DESC">
+                    <option value="0">JHIDE</option>
+                    <option value="1">JSHOW</option>
+                </field>
+                <field name="show_more_title" type="text" default="View more articles like this" label="MOD_JICUSTOMFIELDS_SHOW_MORE_TITLE" description="MOD_JICUSTOMFIELDS_SHOW_MORE_TITLE_DESC"/>
+                <field name="show_more_link" type="text" default="" label="MOD_JICUSTOMFIELDS_SHOW_MORE_LINK" description="MOD_JICUSTOMFIELDS_SHOW_MORE_LINK_DESC"/>
+
+			</fieldset>
+            <fieldset name="articlefilteroptions">
+                <field name="filter_category" type="category" extension="com_content" default="" multiple="multiple" label="MOD_JICUSTOMFIELDS_FILTER_CATEGORY" description="MOD_JICUSTOMFIELDS_FILTER_CATEGORY_DESC"/>
+                <!-- Field filters. -->
+                <field name="filter_searchword" type="list" label="MOD_JICUSTOMFIELDS_FILTER_SEARCHWORD" description="MOD_JICUSTOMFIELDS_FILTER_SEARCHWORD_DESC">
+                    <option value="0">JNO</option>
+                    <option value="1">JYES</option>
+                </field>
+                <field name="searchword" type="text" default="" label="MOD_JICUSTOMFIELDS_SEARCHWORD" description="MOD_JICUSTOMFIELDS_SEARCHWORD_DESC"/>
+                <field name="filter_fields" type="list" label="MOD_JICUSTOMFIELDS_FILTER_FIELDS" description="MOD_JICUSTOMFIELDS_FILTER_FIELDS_DESC">
+                    <option value="0">JNO</option>
+                    <option value="1">JYES</option>
+                </field>
+                <field name="field0" type="fields" default="" label="MOD_JICUSTOMFIELDS_FIELD0" description="MOD_JICUSTOMFIELDS_FIELD_DESC"/>
+                <field name="field0search" type="text" default="" label="MOD_JICUSTOMFIELDS_FIELD0_SEARCH" description="MOD_JICUSTOMFIELDS_FIELD_SEARCH_DESC"/>
+                <field name="field1" type="fields" default="" label="MOD_JICUSTOMFIELDS_FIELD1" description="MOD_JICUSTOMFIELDS_FIELD_DESC"/>
+                <field name="field1search" type="text" default="" label="MOD_JICUSTOMFIELDS_FIELD1_SEARCH" description="MOD_JICUSTOMFIELDS_FIELD_SEARCH_DESC"/>
+                <field name="field2" type="fields" default="" label="MOD_JICUSTOMFIELDS_FIELD2" description="MOD_JICUSTOMFIELDS_FIELD_DESC"/>
+                <field name="field2search" type="text" default="" label="MOD_JICUSTOMFIELDS_FIELD2_SEARCH" description="MOD_JICUSTOMFIELDS_FIELD_SEARCH_DESC"/>
+                <field name="field3" type="fields" default="" label="MOD_JICUSTOMFIELDS_FIELD3" description="MOD_JICUSTOMFIELDS_FIELD_DESC"/>
+                <field name="field3search" type="text" default="" label="MOD_JICUSTOMFIELDS_FIELD3_SEARCH" description="MOD_JICUSTOMFIELDS_FIELD_SEARCH_DESC"/>
+                <field name="field4" type="fields" default="" label="MOD_JICUSTOMFIELDS_FIELD4" description="MOD_JICUSTOMFIELDS_FIELD_DESC"/>
+                <field name="field4search" type="text" default="" label="MOD_JICUSTOMFIELDS_FIELD4_SEARCH" description="MOD_JICUSTOMFIELDS_FIELD_SEARCH_DESC"/>
+            </fieldset>
+			<fieldset name="articledisplayoptions">
+				<!-- Basic options. -->
+				<field name="show_title" type="list" label="JGLOBAL_SHOW_TITLE_LABEL" description="JGLOBAL_SHOW_TITLE_DESC">
+					<option value="">JGLOBAL_USE_GLOBAL</option>
+					<option value="0">JHIDE</option>
+					<option value="1">JSHOW</option>
+				</field>
+		
+				<field name="link_titles" type="list" label="JGLOBAL_LINKED_TITLES_LABEL" description="JGLOBAL_LINKED_TITLES_DESC">
+					<option value="">JGLOBAL_USE_GLOBAL</option>
+					<option value="0">JNO</option>
+					<option value="1">JYES</option>
+				</field>
+		
+				<field name="show_intro" type="list" description="JGLOBAL_SHOW_INTRO_DESC" label="JGLOBAL_SHOW_INTRO_LABEL">
+					<option value="">JGLOBAL_USE_GLOBAL</option>
+					<option value="0">JHIDE</option>
+					<option value="1">JSHOW</option>
+				</field>
+				
+				<!-- #Jinfinity Custom Fields -->
+				<field name="show_fields" type="list" default="1" label="MOD_JICUSTOMFIELDS_SHOWCUSTOMFIELDS" description="MOD_JICUSTOMFIELDS_SHOWCUSTOMFIELDS_DESC">
+					<option value="0">JHIDE</option>
+					<option value="1">JSHOW</option>
+				</field>
+		
+				<field name="info_block_position" type="list" default="0" label="COM_CONTENT_FIELD_INFOBLOCK_POSITION_LABEL" description="COM_CONTENT_FIELD_INFOBLOCK_POSITION_DESC">
+					<option value="">JGLOBAL_USE_GLOBAL</option>
+					<option value="use_article">COM_CONTENT_FIELD_VALUE_USE_ARTICLE_SETTINGS</option>
+					<option value="0">COM_CONTENT_FIELD_OPTION_ABOVE</option>
+					<option value="1">COM_CONTENT_FIELD_OPTION_BELOW</option>
+					<option value="2">COM_CONTENT_FIELD_OPTION_SPLIT</option>
+				</field>
+		
+		
+				<field name="show_category" type="list" label="JGLOBAL_SHOW_CATEGORY_LABEL" description="JGLOBAL_SHOW_CATEGORY_DESC">
+					<option value="">JGLOBAL_USE_GLOBAL</option>
+					<option value="0">JHIDE</option>
+					<option value="1">JSHOW</option>
+				</field>
+		
+				<field name="link_category" type="list" label="JGLOBAL_LINK_CATEGORY_LABEL" description="JGLOBAL_LINK_CATEGORY_DESC">
+					<option value="">JGLOBAL_USE_GLOBAL</option>
+					<option value="0">JNO</option>
+					<option value="1">JYES</option>
+				</field>
+		
+				<field name="show_parent_category" type="list" label="JGLOBAL_SHOW_PARENT_CATEGORY_LABEL" description="JGLOBAL_SHOW_PARENT_CATEGORY_DESC">
+					<option value="">JGLOBAL_USE_GLOBAL</option>
+					<option value="0">JHIDE</option>
+					<option value="1">JSHOW</option>
+				</field>
+		
+				<field name="link_parent_category" type="list" label="JGLOBAL_LINK_PARENT_CATEGORY_LABEL" description="JGLOBAL_LINK_PARENT_CATEGORY_DESC">
+					<option value="">JGLOBAL_USE_GLOBAL</option>
+					<option value="0">JNO</option>
+					<option value="1">JYES</option>
+				</field>
+		
+				<field name="show_author" type="list" label="JGLOBAL_SHOW_AUTHOR_LABEL" description="JGLOBAL_SHOW_AUTHOR_DESC">
+					<option value="">JGLOBAL_USE_GLOBAL</option>
+					<option value="0">JHIDE</option>
+					<option value="1">JSHOW</option>
+				</field>
+		
+				<field name="link_author" type="list" label="JGLOBAL_LINK_AUTHOR_LABEL" description="JGLOBAL_LINK_AUTHOR_DESC">
+					<option value="">JGLOBAL_USE_GLOBAL</option>
+					<option value="0">JNO</option>
+					<option value="1">JYES</option>
+				</field>
+		
+				<field name="show_create_date" type="list" label="JGLOBAL_SHOW_CREATE_DATE_LABEL" description="JGLOBAL_SHOW_CREATE_DATE_DESC">
+					<option value="">JGLOBAL_USE_GLOBAL</option>
+					<option value="0">JHIDE</option>
+					<option value="1">JSHOW</option>
+				</field>
+		
+				<field name="show_modify_date" type="list" label="JGLOBAL_SHOW_MODIFY_DATE_LABEL" description="JGLOBAL_SHOW_MODIFY_DATE_DESC">
+					<option value="">JGLOBAL_USE_GLOBAL</option>
+					<option value="0">JHIDE</option>
+					<option value="1">JSHOW</option>
+				</field>
+		
+				<field name="show_publish_date" type="list" label="JGLOBAL_SHOW_PUBLISH_DATE_LABEL" description="JGLOBAL_SHOW_PUBLISH_DATE_DESC">
+					<option value="">JGLOBAL_USE_GLOBAL</option>
+					<option value="0">JHIDE</option>
+					<option value="1">JSHOW</option>
+				</field>
+		
+				<field name="show_item_navigation" type="list" label="JGLOBAL_SHOW_NAVIGATION_LABEL" description="JGLOBAL_SHOW_NAVIGATION_DESC">
+					<option value="">JGLOBAL_USE_GLOBAL</option>
+					<option value="0">JHIDE</option>
+					<option value="1">JSHOW</option>
+				</field>
+		
+				<field name="show_vote" type="list" label="JGLOBAL_SHOW_VOTE_LABEL" description="JGLOBAL_SHOW_VOTE_DESC">
+					<option value="">JGLOBAL_USE_GLOBAL</option>
+					<option value="0">JHIDE</option>
+					<option value="1">JSHOW</option>
+				</field>
+		
+				<field name="show_icons" type="list" label="JGLOBAL_SHOW_ICONS_LABEL" description="JGLOBAL_SHOW_ICONS_DESC">
+					<option value="">JGLOBAL_USE_GLOBAL</option>
+					<option value="0">JHIDE</option>
+					<option value="1">JSHOW</option>
+				</field>
+		
+				<field name="show_print_icon" type="list" label="JGLOBAL_SHOW_PRINT_ICON_LABEL" description="JGLOBAL_SHOW_PRINT_ICON_DESC">
+					<option value="">JGLOBAL_USE_GLOBAL</option>
+					<option value="0">JHIDE</option>
+					<option value="1">JSHOW</option>
+				</field>
+		
+				<field name="show_email_icon" type="list" label="JGLOBAL_SHOW_EMAIL_ICON_LABEL" description="JGLOBAL_SHOW_EMAIL_ICON_DESC">
+					<option value="">JGLOBAL_USE_GLOBAL</option>
+					<option value="0">JHIDE</option>
+					<option value="1">JSHOW</option>
+				</field>
+		
+				<field name="show_hits" type="list" label="JGLOBAL_SHOW_HITS_LABEL" description="JGLOBAL_SHOW_HITS_DESC">
+					<option value="">JGLOBAL_USE_GLOBAL</option>
+					<option value="0">JHIDE</option>
+					<option value="1">JSHOW</option>
+				</field>
+		
+				<field name="show_noauth" type="list" label="JGLOBAL_SHOW_UNAUTH_LINKS_LABEL" description="JGLOBAL_SHOW_UNAUTH_LINKS_DESC">
+						<option value="">JGLOBAL_USE_GLOBAL</option>
+						<option value="0">JNO</option>
+						<option value="1">JYES</option>
+				</field>
+				<field name="urls_position" type="list" label="COM_CONTENT_FIELD_URLSPOSITION_LABEL" description="COM_CONTENT_FIELD_URLSPOSITION_DESC">
+					<option value="">JGLOBAL_USE_GLOBAL</option>
+					<option value="0">COM_CONTENT_FIELD_OPTION_ABOVE</option>
+					<option value="1">COM_CONTENT_FIELD_OPTION_BELOW</option>
+				</field>
+			</fieldset>
+            <fieldset name="advanced">
+                <field name="layout" type="modulelayout" label="JFIELD_ALT_LAYOUT_LABEL" description="JFIELD_ALT_MODULE_LAYOUT_DESC"/>
+
+                <field name="moduleclass_sfx" type="textarea" rows="3" label="COM_MODULES_FIELD_MODULECLASS_SFX_LABEL" description="COM_MODULES_FIELD_MODULECLASS_SFX_DESC"/>
+
+                <field name="cache" type="list" default="1" label="COM_MODULES_FIELD_CACHING_LABEL" description="COM_MODULES_FIELD_CACHING_DESC">
+                    <option value="1">JGLOBAL_USE_GLOBAL</option>
+                    <option value="0">COM_MODULES_FIELD_VALUE_NOCACHING</option>
+                </field>
+
+                <field name="cache_time" type="text" default="900" label="COM_MODULES_FIELD_CACHE_TIME_LABEL" description="COM_MODULES_FIELD_CACHE_TIME_DESC"/>
+
+                <field name="cachemode" type="hidden" default="static">
+                    <option value="static"/>
+                </field>
+            </fieldset>
+		</fields>
+	</config>
+</extension>

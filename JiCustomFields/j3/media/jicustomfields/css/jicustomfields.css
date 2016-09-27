@@ -1,0 +1,184 @@
+/*
+ * @version     $Id: jicustomfields.css 017 2014-12-19 10:10:00Z Anton Wintergerst $
+ * @package     JiCustomFields 2.1 Framework for Joomla
+ * @copyright   Copyright (C) 2014 Jinfinity. All rights reserved.
+ * @license     GNU/GPLv3 http://www.gnu.org/licenses/gpl-3.0.html
+ * @website     www.jinfinity.com
+ * @email       support@jinfinity.com
+*/
+#attrib-fieldsform div.controls {
+    margin: 0;
+}
+div.jinfinity div.footer {
+}
+div.jinfinity div.footer span {
+    text-align: center;
+    clear: both;
+    display: block;
+}
+div.jinfinity div.footer span.browsers {
+    margin-bottom: 15px;
+}
+
+/* JiTable */
+.jitable {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    color: #666;
+}
+.customfields .jitable .jitrow {
+    list-style: none;
+    margin: 0 0 9px;
+    /*padding: 0 0 10px;*/
+}
+.jitable .jitrow .jitd {
+    display: block;
+    vertical-align: top;
+}
+/* Bootstrap corrections */
+.jitable .row-fluid [class*="span"] {
+    margin-left: 2.12766%;
+}
+.jitable [class*="span"], .jitable .row-fluid [class*="span"] {
+    margin-left: 0;
+}
+.jitable>.jifieldgroup>.jitrow>.jitd {
+    display: block;
+}
+/* Field Params */
+.paramsbox {
+    margin-top: 5px;
+    background: #F4F4F4;
+    border: 1px solid #CCC;
+}
+.paramsbox .jitable .jitd {
+    padding: 2px 5px;
+}
+.paramsbox .jitable .jitrow:hover {
+    background: #E8F6FE;
+}
+/* Field Actions */
+.fieldactions .jitable .jitrow .jitd {
+    text-align: center;
+}
+/* Buttons & Icons */
+.jibtn {
+    display: inline-block;
+}
+.jibtn:active, .jibtn:selected, .jibtn:visited, .jibtn:hover {
+    /* Remove IE borders */
+    border: none;
+    outline: none;
+}
+.jiicon {
+    background: #CCC;
+    display: inline-block;
+    overflow: hidden;
+    position: relative;
+    text-indent: -9000px;
+}
+.jibtn.icon26 .jiicon {
+    background: url('../images/icons-26.png') no-repeat;
+    width: 26px;
+    height: 26px;
+}
+/* UI Buttons & Icons */
+.jibtn .jiicon.add {background-position: 0 0;}
+.jibtn:hover .jiicon.add {background-position: -26px 0;}
+.jibtn .jiicon.subtract {background-position: -52px 0;}
+.jibtn:hover .jiicon.subtract {background-position: -78px 0;}
+.jibtn .jiicon.params {background-position: 0 -52px;}
+.jibtn:hover .jiicon.params {background-position: -26px -52px;}
+.jibtn.changing .jiicon.params {background: url('../images/icon-26-params_reverse.gif') no-repeat;}
+.jibtn.active.changing .jiicon.params {background: url('../images/icon-26-params_spinning.gif') no-repeat;}
+.jibtn .jiicon.sort {background-position: -52px -26px;}
+.jibtn:hover .jiicon.sort {background-position: -78px -26px;}
+.jibtn .jiicon.trash {background-position: -52px -52px}
+.jibtn:hover .jiicon.trash {background-position: -78px -52px}
+/* Sortable */
+.jitable .jitrow.dropdest.dropbefore {
+    border-top: 5px solid #00bcec;
+}
+.jitable .jitrow.dropdest.dropafter {
+    border-bottom: 5px solid #00bcec;
+}
+.customfields .jitable .header {
+    background: #6285c7;
+    color: #FFF;
+    font-size: 120%;
+    padding: 10px;
+    line-height: normal;
+}
+.customfields .type-separator .fieldname label {
+    display: none;
+}
+.customfields .fieldactions>.jitable {
+    max-width: 100px;
+    float: right;
+}
+
+.customfields [class*="span"] {
+    display: block;
+    float: left;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.customfields .row-fluid:before, .customfields .row-fluid:after {
+    display: table;
+    content: "";
+    line-height: 0;
+}
+.customfields .span1 {
+    width: 8.33%;
+}
+.customfields .span2 {
+    width: 16.66%;
+}
+.customfields .span3 {
+    width: 24.99%;
+}
+.customfields .span4 {
+    width: 33.33%;
+}
+.customfields .span5 {
+    width: 41.66%;
+}
+.customfields .span6 {
+    width: 49.99%;
+}
+.customfields .span7 {
+    width: 58.33%;
+}
+.customfields .span8 {
+    width: 66.66%;
+}
+.customfields .span9 {
+    width: 74.99%;
+}
+.customfields .span10 {
+    width: 83.33%;
+}
+.customfields .span11 {
+    width: 91.66%;
+}
+.customfields .span12 {
+    width: 100%;
+}
+.jifield {
+    margin: 0 0 10px;
+}
+
+.customfields .input-append .chzn-container-single .chzn-single {
+    height: 26px;
+    border-radius: 3px 0 0 3px;
+}
+.customfields .input-append .chzn-container-single .chzn-single span {
+    line-height: 26px;
+}
+.customfields .input-append input {
+    vertical-align: top;
+    height: 18px;
+    border-radius: 0;
+}

@@ -1,0 +1,35 @@
+<extension>
+    <manifest>plugins/system/jiframework/jiframework.xml</manifest>
+    <manifests>
+        <manifest>plugins/system/jiframework/jiframework.xml</manifest>
+        <!-- Joomla 1.5 -->
+        <manifest>plugins/system/jiframework.xml</manifest>
+    </manifests>
+    <hasfree>1</hasfree>
+    <haspro>1</haspro>
+    <files>
+        <file>administrator/language/en-GB/en-GB.plg_system_jiframework.ini</file>
+        <file>administrator/language/en-GB/en-GB.plg_system_jiframework.sys.ini</file>
+        <file>media/jiframework</file>
+        <file>plugins/system/jiframework</file>
+        <!-- Joomla 1.5 -->
+        <file>plugins/system/jiframework.php</file>
+        <file>plugins/system/jiframework.xml</file>
+        <file>plugins/system/index.html</file>
+    </files>
+    <profiles>
+        <profile>plugins/system/jiframework/fields/rulesextended.php</profile>
+        <profile>plugins/system/jiframework/fields/modalpicker.php</profile>
+        <profile>plugins/system/jiframework/helpers/jiaccess.php</profile>
+    </profiles>
+    <excludes>
+        <file>media/jiframework/images/mimex16</file>
+        <file>media/jiframework/images/mimex48</file>
+        <file>media/jiframework/images/mimex128</file>
+        <file>media/jiframework/js/jquery.jicachecleaner.js</file>
+        <file>media/jiframework/js/jquery.jimodalpicker.js</file>
+        <file>media/jiframework/modals</file>
+        <file>plugins/system/jiframework/fields/cachecleaner.php</file>
+        <file>plugins/system/jiframework/fields/modalpicker.php</file>
+    </excludes>
+</extension>

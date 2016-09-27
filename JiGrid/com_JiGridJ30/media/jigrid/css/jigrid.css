@@ -1,0 +1,309 @@
+/**
+ * @version     $Id: jigrid.css 039 2014-03-17 13:09:00Z Anton Wintergerst $
+ * @package     JiGrid Template for Joomla 3.x
+ * @copyright   Copyright (C) 2014 Jinfinity. All rights reserved.
+ * @license     GNU/GPLv3 http://www.gnu.org/licenses/gpl-3.0.html
+ * @website     www.jinfinity.com
+ * @email       support@jinfinity.com
+ */
+/* JiGrid */
+.jirow {
+    clear: both;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    display: inline-block;
+}
+.jigrid .jirow [class*="span"] {
+    margin: 0;
+    padding: 0;
+}
+.jicell {
+    display: inline-block;
+    min-height: 20px;
+    min-width: 20px;
+    float: left;
+}
+.jicell.hasrainbow>.outer {
+    padding: 10px;
+}
+.jigrid.jicell>.outer {
+    padding: 0;
+}
+.jicell>.outer {
+    position: relative;
+    height: 100%;
+}
+.hidesmall {
+    display: none;
+}
+/* 1 Column */
+.jirow.cols-1>.outer>.jicell.span-1 {
+    width: 100%;
+}
+/* 2 Columns */
+.jirow.cols-2>.outer>.jicell.span-1 {
+    width: 50%;
+}
+.jirow.cols-2>.outer>.jicell.span-2 {
+    width: 100%;
+}
+/* 3 Columns */
+.jirow.cols-3>.outer>.jicell.span-1 {
+    width: 33.33%;
+}
+.jirow.cols-3>.outer>.jicell.span-2 {
+    width: 66.66%;
+}
+.jirow.cols-3>.outer>.jicell.span-3 {
+    width: 100%;
+}
+/* 4 Columns */
+.jirow.cols-4>.outer>.jicell.span-1 {
+    width: 25%;
+}
+.jirow.cols-4>.outer>.jicell.span-2 {
+    width: 50%;
+}
+.jirow.cols-4>.outer>.jicell.span-3 {
+    width: 75%;
+}
+.jirow.cols-4>.outer>.jicell.span-4 {
+    width: 100%;
+}
+/* 5 Columns */
+.jirow.cols-5>.outer>.jicell.span-1 {
+    width: 20%;
+}
+.jirow.cols-5>.outer>.jicell.span-2 {
+    width: 40%;
+}
+.jirow.cols-5>.outer>.jicell.span-3 {
+    width: 60%;
+}
+.jirow.cols-5>.outer>.jicell.span-4 {
+    width: 80%;
+}
+.jirow.cols-5>.outer>.jicell.span-5 {
+    width: 100%;
+}
+/* 6 Columns */
+.jirow.cols-6>.outer>.jicell.span-1 {
+    width: 16.66%;
+}
+.jirow.cols-6>.outer>.jicell.span-2 {
+    width: 33.33%;
+}
+.jirow.cols-6>.outer>.jicell.span-3 {
+    width: 50%;
+}
+.jirow.cols-6>.outer>.jicell.span-4 {
+    width: 66.66%;
+}
+.jirow.cols-6>.outer>.jicell.span-5 {
+    width: 83.33%;
+}
+.jirow.cols-6>.outer>.jicell.span-6 {
+    width: 100%;
+}
+/* 7 Columns */
+.jirow.cols-7>.outer>.jicell.span-1 {
+    width: 14.286%;
+}
+.jirow.cols-7>.outer>.jicell.span-2 {
+    width: 28.571%;
+}
+.jirow.cols-7>.outer>.jicell.span-3 {
+    width: 42.857%;
+}
+.jirow.cols-7>.outer>.jicell.span-4 {
+    width: 57.143%;
+}
+.jirow.cols-7>.outer>.jicell.span-5 {
+    width: 71.429%;
+}
+.jirow.cols-7>.outer>.jicell.span-6 {
+    width: 85.714%;
+}
+.jirow.cols-7>.outer>.jicell.span-7 {
+    width: 100%;
+}
+/* 8 Columns */
+.jirow.cols-8>.outer>.jicell.span-1 {
+    width: 12.5%;
+}
+.jirow.cols-8>.outer>.jicell.span-2 {
+    width: 25%;
+}
+.jirow.cols-8>.outer>.jicell.span-3 {
+    width: 37.5%;
+}
+.jirow.cols-8>.outer>.jicell.span-4 {
+    width: 50%;
+}
+.jirow.cols-8>.outer>.jicell.span-5 {
+    width: 62.5%;
+}
+.jirow.cols-8>.outer>.jicell.span-6 {
+    width: 75%;
+}
+.jirow.cols-8>.outer>.jicell.span-7 {
+    width: 87.5%;
+}
+.jirow.cols-8>.outer>.jicell.span-8 {
+    width: 100%;
+}
+/* 9 Columns */
+.jirow.cols-9>.outer>.jicell.span-1 {
+    width: 11.11%;
+}
+.jirow.cols-9>.outer>.jicell.span-2 {
+    width: 22.22%;
+}
+.jirow.cols-9>.outer>.jicell.span-3 {
+    width: 33.33%;
+}
+.jirow.cols-9>.outer>.jicell.span-4 {
+    width: 44.44%;
+}
+.jirow.cols-9>.outer>.jicell.span-5 {
+    width: 55.55%;
+}
+.jirow.cols-9>.outer>.jicell.span-6 {
+    width: 66.66%;
+}
+.jirow.cols-9>.outer>.jicell.span-7 {
+    width: 77.77%;
+}
+.jirow.cols-9>.outer>.jicell.span-8 {
+    width: 88.88%;
+}
+.jirow.cols-9>.outer>.jicell.span-9 {
+    width: 100%;
+}
+/* 10 Columns */
+.jirow.cols-10>.outer>.jicell.span-1 {
+    width: 10%;
+}
+.jirow.cols-10>.outer>.jicell.span-2 {
+    width: 20%;
+}
+.jirow.cols-10>.outer>.jicell.span-3 {
+    width: 30%;
+}
+.jirow.cols-10>.outer>.jicell.span-4 {
+    width: 40%;
+}
+.jirow.cols-10>.outer>.jicell.span-5 {
+    width: 50%;
+}
+.jirow.cols-10>.outer>.jicell.span-6 {
+    width: 60%;
+}
+.jirow.cols-10>.outer>.jicell.span-7 {
+    width: 70%;
+}
+.jirow.cols-10>.outer>.jicell.span-8 {
+    width: 80%;
+}
+.jirow.cols-10>.outer>.jicell.span-9 {
+    width: 90%;
+}
+.jirow.cols-10>.outer>.jicell.span-10 {
+    width: 100%;
+}
+/* 11 Columns */
+.jirow.cols-11>.outer>.jicell.span-1 {
+    width: 9.09%;
+}
+.jirow.cols-11>.outer>.jicell.span-2 {
+    width: 18.18%;
+}
+.jirow.cols-11>.outer>.jicell.span-3 {
+    width: 27.27%;
+}
+.jirow.cols-11>.outer>.jicell.span-4 {
+    width: 36.36%;
+}
+.jirow.cols-11>.outer>.jicell.span-5 {
+    width: 45.45%;
+}
+.jirow.cols-11>.outer>.jicell.span-6 {
+    width: 54.54%;
+}
+.jirow.cols-11>.outer>.jicell.span-7 {
+    width: 63.63%;
+}
+.jirow.cols-11>.outer>.jicell.span-8 {
+    width: 72.72%;
+}
+.jirow.cols-11>.outer>.jicell.span-9 {
+    width: 81.81%;
+}
+.jirow.cols-11>.outer>.jicell.span-10 {
+    width: 90.90%;
+}
+.jirow.cols-11>.outer>.jicell.span-11 {
+    width: 100%;
+}
+/* 12 Columns */
+.jirow.cols-12>.outer>.jicell.span-1 {
+    width: 8.33%;
+}
+.jirow.cols-12>.outer>.jicell.span-2 {
+    width: 16.66%;
+}
+.jirow.cols-12>.outer>.jicell.span-3 {
+    width: 24.99%;
+}
+.jirow.cols-12>.outer>.jicell.span-4 {
+    width: 33.33%;
+}
+.jirow.cols-12>.outer>.jicell.span-5 {
+    width: 41.66%;
+}
+.jirow.cols-12>.outer>.jicell.span-6 {
+    width: 49.99%;
+}
+.jirow.cols-12>.outer>.jicell.span-7 {
+    width: 58.33%;
+}
+.jirow.cols-12>.outer>.jicell.span-8 {
+    width: 66.66%;
+}
+.jirow.cols-12>.outer>.jicell.span-9 {
+    width: 74.99%;
+}
+.jirow.cols-12>.outer>.jicell.span-10 {
+    width: 83.33%;
+}
+.jirow.cols-12>.outer>.jicell.span-11 {
+    width: 91.66%;
+}
+.jirow.cols-12>.outer>.jicell.span-12 {
+    width: 100%;
+}
+.modulepositionlabel {
+    position: absolute;
+    right: 0;
+    top: 0;
+    display: block;
+    padding: 2px 4px;
+    background: #3a87ad;
+    color: #FFF;
+    border-radius: 3px;
+    z-index: 1000;
+}
+.jigrid .jigrid .jirow .outerwrap {
+    width: 100%;
+    display: inline-block;
+}
+.outerwrap {
+    width: 100%;
+}
+.jigrid .jirow .jicell.autospan.singlechild {
+    width: 100%;
+}
+/*.jirow.cols-12>.outer>.jicell.autospan {
+    width: 100%;
+}*/

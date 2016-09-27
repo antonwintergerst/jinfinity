@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<metadata>
+  <layout title="form" hidden="true">
+    <message>This is a hidden layout</message>
+  </layout>
+</metadata>

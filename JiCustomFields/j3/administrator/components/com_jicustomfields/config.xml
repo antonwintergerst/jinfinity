@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<config>
+    <fieldset name="description" label="JGLOBAL_DESCRIPTION" addfieldpath="/plugins/system/jiframework/fields">
+        <field name="@header" type="header" label="JICUSTOMFIELDS" description="JICUSTOMFIELDS_DESC" xml="/administrator/components/com_jicustomfields/jicustomfields.xml"/>
+    </fieldset>
+	<fieldset name="options" label="JOPTIONS" description="JICUSTOMFIELDS_CONFIG_OPTIONS_DESC">
+        <field name="above_prefix" type="text" filter="raw" default="&lt;div class=&quot;fields fieldsabove&quot;&gt;" label="JICUSTOMFIELDS_ABOVE_PREFIX" description="JICUSTOMFIELDS_ABOVE_PREFIX_DESC" />
+        <field name="above_suffix" type="text" filter="raw" default="&lt;&#47;div&gt;" label="JICUSTOMFIELDS_ABOVE_SUFFIX" description="JICUSTOMFIELDS_ABOVE_SUFFIX_DESC" />
+        <field name="below_prefix" type="text" filter="raw" default="&lt;div class=&quot;fields fieldsbelow&quot;&gt;" label="JICUSTOMFIELDS_BELOW_PREFIX" description="JICUSTOMFIELDS_BELOW_PREFIX_DESC" />
+        <field name="below_suffix" type="text" filter="raw" default="&lt;&#47;div&gt;" label="JICUSTOMFIELDS_BELOW_SUFFIX" description="JICUSTOMFIELDS_BELOW_SUFFIX_DESC" />
+        <field name="fields_site_manager" default="1" type="list" label="JICUSTOMFIELDS_SITE_MANAGEMENT" description="JICUSTOMFIELDS_SITE_MANAGEMENT_DESC">
+            <option value="1">JENABLED</option>
+            <option value="0">JDISABLED</option>
+		</field>
+        <field name="fields_admin_manager" default="1" type="list" label="JICUSTOMFIELDS_ADMIN_MANAGEMENT" description="JICUSTOMFIELDS_ADMIN_MANAGEMENT_DESC">
+            <option value="1">JENABLED</option>
+            <option value="0">JDISABLED</option>
+        </field>
+		<field name="@spacer" type="spacer" default="" label="" description="" />
+		<field name="debug" default="0" type="list" label="JICUSTOMFIELDS_DEBUG" description="JICUSTOMFIELDS_DEBUG_DESC">
+			<option value="1">JENABLED</option>
+			<option value="0">JDISABLED</option>
+		</field>
+	</fieldset>
+</config>

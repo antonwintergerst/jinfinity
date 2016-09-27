@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension version="2.5" type="plugin" group="system" method="upgrade" client="site">
+	<name>JiPageContext</name>
+	<creationDate>March 2014</creationDate>
+	<author>Jinfinity</author>
+	<authorEmail>support@jinfinity.com</authorEmail>
+	<authorUrl>http://www.jinfinity.com</authorUrl>
+	<copyright>Copyright (C) 2014 Jinfinity</copyright>
+	<license>GNU/GPLv3 http://www.gnu.org/licenses/gpl-3.0.html</license>
+	<version>1.2.1</version>
+    <description><![CDATA[PLG_JIPAGECONTEXT_XML_DESCRIPTION]]></description>
+    <!-- Public front end files -->
+    <media folder="media">
+        <folder>jinfinity</folder>
+    </media>
+	<files>
+        <folder plugin="jipagecontext">assets</folder>
+        <folder plugin="jipagecontext">language</folder>
+        <filename plugin="jipagecontext">index.html</filename>
+		<filename plugin="jipagecontext">jipagecontext.php</filename>
+	</files>
+    <languages folder="language">
+        <language tag="en-GB">en-GB/en-GB.plg_system_jipagecontext.ini</language>
+    </languages>
+	<config>
+        <fields name="params">
+            <fieldset name="article">
+                <field type="spacer" name="clientside" label="PLG_JIPAGECONTEXT_CLIENT_SIDE" />
+                <field name="artclientelement" type="text" label="PLG_JIPAGECONTEXT_CLIENT_ELEMENT_LABEL" description="PLG_JIPAGECONTEXT_CLIENT_ELEMENT_DESC" />
+                <field name="artclientclass" type="textarea" rows="3" label="PLG_JIPAGECONTEXT_CLIENT_CLASS_LABEL" description="PLG_JIPAGECONTEXT_CLIENT_CLASS_DESC" />
+            </fieldset>
+            <fieldset name="category">
+                <field type="spacer" name="clientside" label="PLG_JIPAGECONTEXT_CLIENT_SIDE" />
+                <field name="catclientelement" type="text" label="PLG_JIPAGECONTEXT_CLIENT_ELEMENT_LABEL" description="PLG_JIPAGECONTEXT_CLIENT_ELEMENT_DESC" />
+                <field name="catclientclass" type="textarea" rows="3" label="PLG_JIPAGECONTEXT_CLIENT_CLASS_LABEL" description="PLG_JIPAGECONTEXT_CLIENT_CLASS_DESC" />
+            </fieldset>
+            <fieldset name="menu">
+                <field type="spacer" name="clientside" label="PLG_JIPAGECONTEXT_CLIENT_SIDE" />
+                <field name="menclientelement" type="text" label="PLG_JIPAGECONTEXT_CLIENT_ELEMENT_LABEL" description="PLG_JIPAGECONTEXT_CLIENT_ELEMENT_DESC" />
+                <field name="menclientclass" type="textarea" rows="3" label="PLG_JIPAGECONTEXT_CLIENT_CLASS_LABEL" description="PLG_JIPAGECONTEXT_CLIENT_CLASS_DESC" />
+            </fieldset>
+            <fieldset name="parentmenu">
+                <field type="spacer" name="clientside" label="PLG_JIPAGECONTEXT_CLIENT_SIDE" />
+                <field name="parmenclientelement" type="text" label="PLG_JIPAGECONTEXT_CLIENT_ELEMENT_LABEL" description="PLG_JIPAGECONTEXT_CLIENT_ELEMENT_DESC" />
+                <field name="parmenclientclass" type="textarea" rows="3" label="PLG_JIPAGECONTEXT_CLIENT_CLASS_LABEL" description="PLG_JIPAGECONTEXT_CLIENT_CLASS_DESC" />
+            </fieldset>
+            <fieldset name="grandparentmenu">
+                <field type="spacer" name="clientside" label="PLG_JIPAGECONTEXT_CLIENT_SIDE" />
+                <field name="par2menclientelement" type="text" label="PLG_JIPAGECONTEXT_CLIENT_ELEMENT_LABEL" description="PLG_JIPAGECONTEXT_CLIENT_ELEMENT_DESC" />
+                <field name="par2menclientclass" type="textarea" rows="3" label="PLG_JIPAGECONTEXT_CLIENT_CLASS_LABEL" description="PLG_JIPAGECONTEXT_CLIENT_CLASS_DESC" />
+            </fieldset>
+        </fields>
+	</config>
+</extension>

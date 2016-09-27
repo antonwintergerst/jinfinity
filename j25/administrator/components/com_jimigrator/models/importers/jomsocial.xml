@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<importer version="1.6">
+    <name>JomSocial</name>
+    <description>Import JomSocial</description>
+    <!-- >>> PRO >>> -->
+    <tables>
+        <table name="community_actions" />
+        <table name="community_activities" />
+        <table name="community_activities_hide" />
+        <table name="community_apps" />
+        <table name="community_avatar" />
+        <table name="community_blocklist" />
+        <table name="community_config" />
+        <table name="community_connection" />
+        <table name="community_connect_users" />
+        <table name="community_events" />
+        <table name="community_events_category" />
+        <table name="community_events_members" />
+        <table name="community_featured" />
+        <table name="community_fields" />
+        <table name="community_fields_values" />
+        <table name="community_files" />
+        <table name="community_groups" />
+        <table name="community_groups_bulletins" />
+        <table name="community_groups_category" />
+        <table name="community_groups_discuss" />
+        <table name="community_groups_invite" />
+        <table name="community_groups_members" />
+        <table name="community_invitations" />
+        <table name="community_likes" />
+        <table name="community_location_cache" />
+        <table name="community_mailq" />
+        <table name="community_memberlist" />
+        <table name="community_memberlist_criteria" />
+        <table name="community_msg" />
+        <table name="community_msg_recepient" />
+        <table name="community_oauth" />
+        <table name="community_photos" />
+        <table name="community_photos_albums" />
+        <table name="community_photos_tag" />
+        <table name="community_photos_tokens" />
+        <table name="community_profiles" />
+        <table name="community_profiles_fields" />
+        <table name="community_register" />
+        <table name="community_register_auth_token" />
+        <table name="community_reports" />
+        <table name="community_reports_actions" />
+        <table name="community_reports_reporter" />
+        <table name="community_storage_s3" />
+        <table name="community_tags" />
+        <table name="community_tags_words" />
+        <table name="community_userpoints" />
+        <table name="community_users" />
+        <table name="community_user_status" />
+        <table name="community_videos" />
+        <table name="community_videos_category" />
+        <table name="community_videos_tag" />
+        <table name="community_wall" />
+    </tables>
+    <!-- <<< PRO <<< -->
+    <fields>
+        <!-- >>> PRO >>> -->
+        <field type="list" default="0" name="truncate" label="Clear DB Tables" description="Clear several JomSocial database tables before starting the import process">
+            <option value="1">Yes</option>
+            <option value="0">No</option>
+        </field>
+        <field type="list" default="0" name="overwrite" label="Overwrite Existing" description="Items in the database with the same ID will be replaced">
+            <option value="1">Yes</option>
+            <option value="0">No</option>
+        </field>
+        <field type="list" default="1" name="append" label="Append If Exists" description="If an item exists in the database with the same ID then the new item will be appended to the end">
+            <option value="1">Yes</option>
+            <option value="0">No</option>
+        </field>
+        <field type="separator" label="Debug" />
+        <field type="list" default="0" name="debug" label="Debug Run" description="No database changes will be made. Check the log for what changes would have occurred">
+            <option value="1">Yes</option>
+            <option value="0">No</option>
+        </field>
+        <field type="list" default="0" name="debuglevel" label="Debug Level" description="More log entries will be made for higher debug levels">
+            <option value="0">Standard</option>
+            <option value="1">Development</option>
+        </field>
+        <!-- <<< PRO <<< -->
+        <!-- >>> FREE >>> -->
+        <field type="separator" label="JI_ONLY_AVAILABLE_IN_PRO_TITLE" />
+        <!-- <<< FREE <<< -->
+    </fields>
+</importer>

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<exporter version="1.5">
+	<name>Modules</name>
+	<description>Export Modules</description>
+	<group>joomlacore</group>
+    <tables>
+        <table name="modules" />
+    </tables>
+	<files>
+		<filename>extensions.csv</filename>
+	</files>
+	<fields>
+		<field type="hidden" default="0" name="runorder" />
+		<field type="hidden" default="extensions" name="globalvalues" />
+	</fields>
+</exporter>

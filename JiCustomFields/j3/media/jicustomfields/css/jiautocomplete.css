@@ -1,0 +1,39 @@
+/*
+ * @version     $Id: jiautocomplete.js 105 2013-06-12 11:19:00Z Anton Wintergerst $
+ * @package     JiAutocomplete for jQuery
+ * @copyright   Copyright (C) 2013 Jinfinity. All rights reserved.
+ * @license     GNU/GPLv3 http://www.gnu.org/licenses/gpl-3.0.html
+ * @website     www.jinfinity.com
+ * @email       support@jinfinity.com
+*/
+ul.jiautocompletebox {
+    margin: 0;
+    padding: 0;
+    position: absolute;
+    border: 1px solid #888;
+    box-sizing: border-box;
+    max-height: 200px;
+    -webkit-box-sizing:border-box;
+    -moz-box-sizing: border-box;
+    -ms-box-sizing: border-box;
+}
+ul.jiautocompletebox li {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    border-bottom: 1px solid #CCC;
+}
+ul.jiautocompletebox li a {
+    background: #DDD;
+    cursor: pointer;
+    display: block;
+    padding: 5px;
+    width: 100%;
+    box-sizing: border-box;
+    -webkit-box-sizing:border-box;
+    -moz-box-sizing: border-box;
+    -ms-box-sizing: border-box;
+}
+ul.jiautocompletebox li.active a, ul.jiautocompletebox li a:hover {
+    background: #EEE;
+}

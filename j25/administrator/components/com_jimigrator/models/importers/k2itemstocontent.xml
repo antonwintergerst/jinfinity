@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<importer version="1.6">
+	<name>K2ItemsToContent</name>
+	<description>Import K2 Items as J! Content</description>
+	<group>thirdparty</group>
+    <!-- >>> PRO >>> -->
+	<files>
+		<filename>k2_items.csv</filename>
+	</files>
+    <tables>
+        <table source="k2_items" name="content" pkey="id" />
+    </tables>
+    <!-- <<< PRO <<< -->
+    <fields>
+        <!-- >>> PRO >>> -->
+		<field type="list" default="0" name="truncate" label="Clear DB Tables" description="Clear database table #__content before starting the import process">
+			<option value="1">Yes</option>
+			<option value="0">No</option>
+		</field>
+		<field type="list" default="0" name="overwrite" label="Overwrite Existing" description="Items in the database with the same ID will be replaced">
+			<option value="1">Yes</option>
+			<option value="0">No</option>
+		</field>
+		<field type="list" default="1" name="append" label="Append If Exists" description="If an item exists in the database with the same ID then the new item will be appended to the end">
+			<option value="1">Yes</option>
+			<option value="0">No</option>
+		</field>
+        <field type="list" default="1" name="resetalias" label="Reset Alias" description="Reset alias and title to ensure uniqueness">
+            <option value="1">Yes</option>
+            <option value="0">No</option>
+        </field>
+		<field type="list" default="1" name="rebuildparams" label="Rebuild Attribs" description="Rebuild attributes (params) if found to be in the Joomla 1.5 format">
+			<option value="1">Yes</option>
+			<option value="0">No</option>
+		</field>
+        <field type="list" default="1" name="clearparams" label="Clear Attribs" description="Clear attributes (params) if found to be in the Joomla 1.5 format (Recommended as newer versions of Joomla have incompatibilities with old article attributes)">
+            <option value="1">Yes</option>
+            <option value="0">No</option>
+        </field>
+		
+		<field type="separator" label="Overrides" />
+		<field type="list" default="1" name="checkin" label="Checkin Items" description="Checkin any items that may have been checked out during migration creation">
+			<option value="1">Yes</option>
+			<option value="0">No</option>
+		</field>
+		<field type="list" default="0" name="overridecategory" label="Override Category" description="Override all items to insert into the selected category">
+			<option value="1">Yes</option>
+			<option value="0">No</option>
+		</field>
+		<field type="category" default="0" name="category" label="Category" description="Category to override if 'Override Category' is set to Yes" />
+		<field type="list" default="0" name="overridecreated_by" label="Override Created By" description="Override all items to be created by the selected user">
+			<option value="1">Yes</option>
+			<option value="0">No</option>
+		</field>
+		<field type="user" default="0" name="created_by" label="Created By" description="User to override if 'Override Created' By is set to Yes" />
+		
+		<field type="separator" label="Debug" />
+		<field type="list" default="0" name="debug" label="Debug Run" description="No database changes will be made. Check the log for what changes would have occurred">
+			<option value="1">Yes</option>
+			<option value="0">No</option>
+		</field>
+		<field type="list" default="0" name="debuglevel" label="Debug Level" description="More log entries will be made for higher debug levels">
+			<option value="0">Standard</option>
+			<option value="1">Development</option>
+		</field>
+        <field type="hidden" name="globalvalues" default="catidmap" />
+        <field type="hidden" default="1" name="runorder" />
+        <!-- <<< PRO <<< -->
+        <!-- >>> FREE >>> -->
+        <field type="separator" label="JI_ONLY_AVAILABLE_IN_PRO_TITLE" />
+        <!-- <<< FREE <<< -->
+	</fields>
+</importer>

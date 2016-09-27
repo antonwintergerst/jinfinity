@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension type="module" version="1.7.0" client="site" method="upgrade">
+	<name>MOD_JIFORMS</name>
+	<creationDate>January 2015</creationDate>
+	<author>Jinfinity</author>
+	<authorEmail>support@jinfinity.com</authorEmail>
+	<authorUrl>http://www.jinfinity.com</authorUrl>
+	<copyright>Copyright (C) 2015 Jinfinity</copyright>
+	<license>GNU/GPLv3 http://www.gnu.org/licenses/gpl-3.0.html</license>
+	<version>0.8.8</version>
+	<description>MOD_JIFORMS_DESC</description>
+
+    <!-- Public front end files -->
+    <languages folder="language">
+        <language tag="en-GB">en-GB/en-GB.mod_jiforms.ini</language>
+        <language tag="en-GB">en-GB/en-GB.mod_jiforms.sys.ini</language>
+    </languages>
+    <media folder="media">
+        <folder>mod_jiforms</folder>
+    </media>
+	<files>
+		<filename module="mod_jiforms">mod_jiforms.php</filename>
+		<folder>tmpl</folder>
+		<filename>mod_jiforms.xml</filename>
+		<filename>helper.php</filename>
+		<filename>index.html</filename>
+	</files>
+
+	<config>
+		<fields name="params" addfieldpath="/administrator/components/com_jiforms/models/fields">
+			<fieldset name="basic">
+                <field name="formid" type="modal_form" label="JIFORMS_SELECT_FORM_LABEL" description="JIFORMS_SELECT_FORM_DESC"/>
+			</fieldset>
+		</fields>
+	</config>
+</extension>

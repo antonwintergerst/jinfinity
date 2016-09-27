@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE install SYSTEM "http://www.joomla.org/xml/dtd/1.5/component-install.dtd">
+<install version="1.5" type="component" method="upgrade">
+    <name>JiInstaller</name>
+    <creationDate>December 2014</creationDate>
+    <author>Jinfinity</author>
+    <authorEmail>support@jinfinity.com</authorEmail>
+    <authorUrl>http://www.jinfinity.com</authorUrl>
+    <copyright>Copyright (C) 2014 Jinfinity</copyright>
+    <license>GNU/GPLv3 http://www.gnu.org/licenses/gpl-3.0.html</license>
+    <version>3.0.0</version>
+    <description></description>
+
+    <installfile>script.install_j15.php</installfile>
+
+    <administration>
+        <files>
+            <filename>script.install.php</filename>
+            <filename>installer.xml</filename>
+            <filename>index.html</filename>
+            <folder>language</folder>
+            <folder>extensions</folder>
+        </files>
+    </administration>
+</install>

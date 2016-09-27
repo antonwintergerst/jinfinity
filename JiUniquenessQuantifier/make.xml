@@ -1,0 +1,14 @@
+<extension>
+    <manifest>plugins/content/jiuniquenessquantifier/jiuniquenessquantifier.xml</manifest>
+    <manifests>
+        <manifest>plugins/content/jiuniquenessquantifier/jiuniquenessquantifier.xml</manifest>
+    </manifests>
+    <hasfree>1</hasfree>
+    <haspro>1</haspro>
+    <files>
+        <file>administrator/language/en-GB/en-GB.plg_content_jiuniquenessquantifier.ini</file>
+        <file>administrator/language/en-GB/en-GB.plg_content_jiuniquenessquantifier.sys.ini</file>
+        <file>media/jiuniquenessquantifier</file>
+        <file>plugins/content/jiuniquenessquantifier</file>
+    </files>
+</extension>

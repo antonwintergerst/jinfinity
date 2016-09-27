@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<config>
+    <params>
+        <param name="list_limit" type="text" default="50" label="COM_JIMIGRATOR_LIST_LIMIT_LABEL" description="COM_JIMIGRATOR_LIST_LIMIT_DESC" />
+        <param name="process_limit" type="text" default="100" label="COM_JIMIGRATOR_PROCESS_LIMIT_LABEL" description="COM_JIMIGRATOR_PROCESS_LIMIT_DESC" />
+        <param name="maxcalls" type="text" default="60" label="COM_JIMIGRATOR_MAXCALLS_LABEL" description="COM_JIMIGRATOR_MAXCALLS_DESC" />
+        <field name="zipengine" type="list" default="native" label="COM_JIMIGRATOR_ZIP_ENGINE_LABEL" description="COM_JIMIGRATOR_ZIP_ENGINE_DESC">
+            <option value="native">COM_JIMIGRATOR_ZIP_ENGINE_NATIVE</option>
+            <option value="jiziparchive">COM_JIMIGRATOR_ZIP_ENGINE_JI</option>
+        </field>
+        <field name="filters_enabled" type="list" default="1" label="COM_JIMIGRATOR_FILTERS_ENABLED_LABEL" description="COM_JIMIGRATOR_FILTERS_ENABLED_DESC">
+            <option value="1">JYES</option>
+            <option value="0">JNO</option>
+        </field>
+    </params>
+</config>

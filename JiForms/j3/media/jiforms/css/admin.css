@@ -1,0 +1,16 @@
+/*
+ * @version     $Id: admin.css 022 2014-12-19 10:10:00Z Anton Wintergerst $
+ * @package     JiForms for Joomla 3.x
+ * @copyright   Copyright (C) 2014 Jinfinity. All rights reserved.
+ * @license     GNU/GPLv3 http://www.gnu.org/licenses/gpl-3.0.html
+ * @website     www.jinfinity.com
+ * @email       support@jinfinity.com
+ */
+/* Component Menu */
+.page-title .icon-jiforms {
+    background-image: url('../images/jiforms-icon.png');
+    background-size: 32px 32px;
+    height: 32px;
+    width: 32px;
+    vertical-align: middle;
+}

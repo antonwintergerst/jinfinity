@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<exporter version="1.5">
+    <name>JobFinderItems</name>
+    <description>Export JobFinder Items</description>
+    <group>thirdparty</group>
+    <tables>
+        <table name="jobfinder_jobs" pkey="id" />
+    </tables>
+    <files>
+        <filename>jobfinder_items.csv</filename>
+    </files>
+</exporter>

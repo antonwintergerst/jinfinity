@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<importer version="1.6">
+    <name>JiExtensionServer</name>
+    <description>Import Ji Extension Server</description>
+    <group>jinfinity</group>
+    <tables>
+        <table name="jiextensions" />
+        <table name="jiextensions_activity" />
+        <table name="jiextensions_branches" />
+        <table name="jiextensions_subversions" />
+    </tables>
+    <fields>
+        <field type="list" default="0" name="truncate" label="Clear DB Tables" description="Clear several Ji Extension Server database tables before starting the import process">
+            <option value="1">Yes</option>
+            <option value="0">No</option>
+        </field>
+        <field type="list" default="0" name="overwrite" label="Overwrite Existing" description="Items in the database with the same ID will be replaced">
+            <option value="1">Yes</option>
+            <option value="0">No</option>
+        </field>
+        <field type="list" default="1" name="append" label="Append If Exists" description="If an item exists in the database with the same ID then the new item will be appended to the end">
+            <option value="1">Yes</option>
+            <option value="0">No</option>
+        </field>
+        <field type="separator" label="Debug" />
+        <field type="list" default="0" name="debug" label="Debug Run" description="No database changes will be made. Check the log for what changes would have occurred">
+            <option value="1">Yes</option>
+            <option value="0">No</option>
+        </field>
+        <field type="list" default="0" name="debuglevel" label="Debug Level" description="More log entries will be made for higher debug levels">
+            <option value="0">Standard</option>
+            <option value="1">Development</option>
+        </field>
+    </fields>
+</importer>

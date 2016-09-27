@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<exporter version="1.5">
+	<name>Plugins</name>
+	<description>Export Plugins</description>
+	<group>joomlacore</group>
+    <!-- >>> PRO >>> -->
+    <tables>
+        <table name="plugins" />
+    </tables>
+	<files>
+		<filename>extensions.csv</filename>
+	</files>
+    <!-- <<< PRO <<< -->
+    <fields>
+        <!-- >>> PRO >>> -->
+		<field type="hidden" default="0" name="runorder" />
+		<field type="hidden" default="extensions" name="globalvalues" />
+        <!-- <<< PRO <<< -->
+        <!-- >>> FREE >>> -->
+        <field type="separator" label="JI_ONLY_AVAILABLE_IN_PRO_TITLE" />
+        <!-- <<< FREE <<< -->
+	</fields>
+</exporter>

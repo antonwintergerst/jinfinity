@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<exporter version="1.5">
+	<name>JEvents</name>
+	<description>Export JEvents</description>
+	<group>thirdparty</group>
+    <!-- >>> PRO >>> -->
+    <tables>
+        <table name="jevents_categories" />
+        <table name="jevents_exception" />
+        <table name="jevents_icsfile" />
+        <table name="jevents_repbyday" />
+        <table name="jevents_repetition" />
+        <table name="jevents_rrule" />
+        <table name="jevents_vevdetail" />
+        <table name="jevents_vevent" />
+        <table name="jev_defaults" />
+        <table name="jev_tageventsmap" />
+        <table name="jev_tags" />
+        <table name="jev_usereventsmap" />
+        <table name="jev_users" />
+    </tables>
+	<files>
+		<filename>jevents_categories.csv</filename>
+		<filename>jevents_exception.csv</filename>
+		<filename>jevents_icsfile.csv</filename>
+		<filename>jevents_repbyday.csv</filename>
+		<filename>jevents_repetition.csv</filename>
+		<filename>jevents_rrule.csv</filename>
+		<filename>jevents_vevdetail.csv</filename>
+		<filename>jevents_vevent.csv</filename>
+		<filename>jev_defaults.csv</filename>
+		<filename>jev_tageventsmap.csv</filename>
+		<filename>jev_tags.csv</filename>
+		<filename>jev_usereventsmap.csv</filename>
+		<filename>jev_users.csv</filename>
+	</files>
+    <!-- <<< PRO <<< -->
+    <!-- >>> FREE >>> -->
+    <fields>
+        <field type="separator" label="JI_ONLY_AVAILABLE_IN_PRO_TITLE" />
+    </fields>
+    <!-- <<< FREE <<< -->
+</exporter>

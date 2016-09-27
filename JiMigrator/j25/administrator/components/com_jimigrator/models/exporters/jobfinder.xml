@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<exporter version="1.5">
+    <name>JobFinder</name>
+    <description>Export JobFinder</description>
+    <group>thirdparty</group>
+    <!-- >>> PRO >>> -->
+    <tables>
+        <table name="jobfinder_agents" pkey="alias" />
+        <table name="jobfinder_applications" pkey="id" />
+        <table name="jobfinder_cities" pkey="id" />
+        <table name="jobfinder_companies" pkey="id"  />
+        <table name="jobfinder_emails" pkey="id" />
+        <table name="jobfinder_industries" pkey="id" />
+        <table name="jobfinder_jobs" pkey="id" />
+        <table name="jobfinder_qualifications" pkey="id" />
+        <table name="jobfinder_sectors" pkey="id" />
+        <table name="jobfinder_states" pkey="id" />
+        <table name="jobfinder_types" pkey="id" />
+    </tables>
+    <files>
+        <filename>jobfinder_agents.csv</filename>
+        <filename>jobfinder_applications.csv</filename>
+        <filename>jobfinder_cities.csv</filename>
+        <filename>jobfinder_companies.csv</filename>
+        <filename>jobfinder_emails.csv</filename>
+        <filename>jobfinder_industries.csv</filename>
+        <filename>jobfinder_jobs.csv</filename>
+        <filename>jobfinder_qualifications.csv</filename>
+        <filename>jobfinder_sectors.csv</filename>
+        <filename>jobfinder_states.csv</filename>
+        <filename>jobfinder_types.csv</filename>
+    </files>
+    <!-- <<< PRO <<< -->
+    <!-- >>> FREE >>> -->
+    <fields>
+        <field type="separator" label="JI_ONLY_AVAILABLE_IN_PRO_TITLE" />
+    </fields>
+    <!-- <<< FREE <<< -->
+</exporter>

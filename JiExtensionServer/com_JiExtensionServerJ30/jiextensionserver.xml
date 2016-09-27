@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension type="component" version="2.5" method="upgrade">
+	<name>JiExtensionServer</name>
+	<creationDate>December 2014</creationDate>
+	<author>Jinfinity</author>
+	<authorEmail>support@jinfinity.com</authorEmail>
+	<authorUrl>http://www.jinfinity.com</authorUrl>
+	<copyright>Copyright (C) 2014 Jinfinity</copyright>
+	<license>GNU/GPLv3 http://www.gnu.org/licenses/gpl-3.0.html</license>
+	<version>0.9.2</version>
+	<description>COM_JIEXTENSIONSERVER_COM_DESCRIPTION</description>
+	<languages folder="language">
+		<language tag="en-GB">en-GB/en-GB.com_jiextensionserver.ini</language>
+		<language tag="en-GB">en-GB/en-GB.com_jiextensionserver.sys.ini</language>
+	</languages>
+	<!-- install/uninstall -->
+	<scriptfile>script.jiextensionserver.php</scriptfile>
+    <!-- Public front end files -->
+    <media folder="media">
+        <folder>jinfinity</folder>
+    </media>
+    <files folder="site">
+        <folder>assets</folder>
+        <folder>controllers</folder>
+        <folder>helpers</folder>
+        <folder>models</folder>
+        <folder>views</folder>
+        <filename>controller.php</filename>
+        <filename>index.html</filename>
+        <filename>jiextensionserver.php</filename>
+        <filename>router.php</filename>
+    </files>
+	<!-- Administrator back-end section -->
+	<administration>
+		<!-- Administration menu -->
+		<menu img="components/com_jiextensionserver/assets/images/icon-16-jiextensionserver.png">COM_JIEXTENSIONSERVER</menu>
+        <submenu>
+            <menu view="extensions">COM_JIEXTENSIONSERVER_EXTENSIONS</menu>
+            <menu view="branches">COM_JIEXTENSIONSERVER_BRANCHES</menu>
+            <menu view="subversions">COM_JIEXTENSIONSERVER_SUBVERSIONS</menu>
+            <menu view="activities">COM_JIEXTENSIONSERVER_ACTIVITY</menu>
+            <menu view="users">COM_JIEXTENSIONSERVER_USERS</menu>
+            <menu view="token">COM_JIEXTENSIONSERVER_TOKEN</menu>
+        </submenu>
+		<!-- Back-end files -->	
+		<files folder="admin">
+            <folder>assets</folder>
+            <folder>controllers</folder>
+            <folder>helpers</folder>
+            <folder>migrate</folder>
+            <folder>models</folder>
+            <folder>tables</folder>
+            <folder>views</folder>
+            <filename>config.xml</filename>
+			<filename>controller.php</filename>
+			<filename>index.html</filename>
+            <filename>jiextensionserver.php</filename>
+		</files>
+		<languages folder="admin/language">
+            <language tag="en-GB">en-GB/en-GB.com_jiextensionserver.ini</language>
+			<language tag="en-GB">en-GB/en-GB.com_jiextensionserver.sys.ini</language>
+        </languages>
+		<media folder="admin" destination="com_jiextensionserver/images">
+	  		<filename>images/jiextensionserver-16.png</filename>
+		</media>
+	</administration>
+    <modules>
+        <module module="mod_jidownloadtoken" client="site" />
+    </modules>
+    <config>
+	</config>
+</extension>

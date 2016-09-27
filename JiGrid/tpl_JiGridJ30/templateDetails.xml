@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension type="template" version="2.5" method="upgrade" client="site">
+	<name>JiGrid</name>
+    <creationDate>November 2014</creationDate>
+    <author>Jinfinity</author>
+    <authorEmail>support@jinfinity.com</authorEmail>
+    <authorUrl>http://www.jinfinity.com</authorUrl>
+    <copyright>Copyright (C) 2014 Jinfinity</copyright>
+    <license>GNU/GPLv3 http://www.gnu.org/licenses/gpl-3.0.html</license>
+    <version>1.3.3</version>
+	<description>TPL_JIGRID_TPL_DESCRIPTION</description>
+    <languages folder="language">
+        <language tag="en-GB">en-GB/en-GB.tpl_jigrid.ini</language>
+        <language tag="en-GB">en-GB/en-GB.tpl_jigrid.sys.ini</language>
+    </languages>
+	<files>
+		<folder>assets</folder>
+		<folder>html</folder>
+        <folder>layout</folder>
+        <filename>favicon.ico</filename>
+        <filename>index.html</filename>
+		<filename>index.php</filename>
+		<filename>templateDetails.xml</filename>
+	</files>
+    <positions>
+        <position>top</position>
+        <position>top2</position>
+        <position>top3</position>
+        <position>top4</position>
+        <position>nav</position>
+        <position>navmobile</position>
+        <position>nav2mobile</position>
+        <position>left</position>
+        <position>right</position>
+        <position>above</position>
+        <position>section1</position>
+        <position>below</position>
+        <position>section2</position>
+        <position>section3</position>
+        <position>section4</position>
+        <position>section5</position>
+        <position>bottom</position>
+        <position>bottom2</position>
+        <position>bottom3</position>
+        <position>bottom4</position>
+        <position>footer</position>
+        <position>footerright</position>
+        <position>bodyclass</position>
+    </positions>
+    <config>
+        <fields name="params">
+            <fieldset name="basic">
+                <field name="bootstrap" type="list" default="1" label="TPL_JIGRID_BOOTSTRAP_LABEL" description="TPL_JIGRID_BOOTSTRAP_DESC">
+                    <option value="1">JYES</option>
+                    <option value="0">JNO</option>
+                </field>
+                <field name="analytics" type="textarea" rows="20" cols="200" filter="raw" default="" label="TPL_JIGRID_ANALYTICS_LABEL" description="TPL_JIGRID_ANALYTICS_DESC" />
+            </fieldset>
+        </fields>
+    </config>
+</extension>

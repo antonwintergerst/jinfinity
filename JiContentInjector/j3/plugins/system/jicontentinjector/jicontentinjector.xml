@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension version="1.7" type="plugin" group="system" method="upgrade" client="site">
+	<name>PLG_SYSTEM_JICONTENTINJECTOR</name>
+	<creationDate>January 2015</creationDate>
+	<author>Jinfinity</author>
+	<authorEmail>support@jinfinity.com</authorEmail>
+	<authorUrl>http://www.jinfinity.com</authorUrl>
+	<copyright>Copyright (C) 2015 Jinfinity</copyright>
+	<license>GNU/GPLv3 http://www.gnu.org/licenses/gpl-3.0.html</license>
+	<version>3.0.8</version>
+	<description>PLG_SYSTEM_JICONTENTINJECTOR_DESC</description>
+	<files>
+        <folder>language</folder>
+        <filename>helper.php</filename>
+		<filename>index.html</filename>
+		<filename plugin="jicontentinjector">jicontentinjector.php</filename>
+	</files>
+	<languages folder="language">
+    	<language tag="en-GB">en-GB/en-GB.plg_system_jicontentinjector.ini</language>
+    	<language tag="en-GB">en-GB/en-GB.plg_system_jicontentinjector.sys.ini</language>
+	</languages>
+	<config>
+        <fields name="params" addfieldpath="/plugins/system/jiframework/fields">
+            <fieldset name="description">
+                <field name="@header" type="header" label="JICONTENTINJECTOR" description="JICONTENTINJECTOR_DESC" xml="/plugins/system/jicontentinjector/jicontentinjector.xml"/>
+            </fieldset>
+			<fieldset name="advanced">
+				<field name="replacemethod" type="list" default="all" label="Replace Method" description="Set this to Simple if you plan on ensuring the curly bracket code is never inserted into an illegal HTML DOM structure. The Simple Replace Method may provide marginal performance increases on large sites.">
+					<option value="safe">DOM Safe</option>
+					<option value="simple">Simple</option>
+				</field>
+			</fieldset>
+		</fields>
+	</config>
+</extension>

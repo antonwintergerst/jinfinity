@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<exporter version="1.6">
+    <name>Components</name>
+    <description>Export Components</description>
+    <group>joomlacore</group>
+    <!-- >>> PRO >>> -->
+    <tables>
+        <table name="extensions" pkey="extension_id" />
+    </tables>
+    <files>
+        <filename>extensions.csv</filename>
+    </files>
+    <!-- <<< PRO <<< -->
+    <fields>
+        <!-- >>> PRO >>> -->
+        <field type="list" default="1" name="siteonly" label="Exclude Admin" description="Only export extensions belonging to the front end or site">
+            <option value="1">Yes</option>
+            <option value="0">No</option>
+        </field>
+        <field type="hidden" default="0" name="runorder" />
+        <field type="hidden" default="extensions" name="globalvalues" />
+        <!-- <<< PRO <<< -->
+        <!-- >>> FREE >>> -->
+        <field type="separator" label="JI_ONLY_AVAILABLE_IN_PRO_TITLE" />
+        <!-- <<< FREE <<< -->
+    </fields>
+</exporter>

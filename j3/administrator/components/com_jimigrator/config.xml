@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<config>
+    <fieldset name="description" label="JGLOBAL_DESCRIPTION" addfieldpath="/plugins/system/jiframework/fields">
+        <field name="@header" type="header" label="JIMIGRATOR" description="JIMIGRATOR_DESC" xml="/administrator/components/com_jimigrator/jimigrator.xml"/>
+    </fieldset>
+    <fieldset name="options" label="JOPTIONS" description="JIMIGRATOR_CONFIG_OPTIONS_DESC">
+        <field name="list_limit" type="text" default="50" label="COM_JIMIGRATOR_LIST_LIMIT_LABEL" description="COM_JIMIGRATOR_LIST_LIMIT_DESC" />
+        <field name="process_limit" type="text" default="100" label="COM_JIMIGRATOR_PROCESS_LIMIT_LABEL" description="COM_JIMIGRATOR_PROCESS_LIMIT_DESC" />
+        <field name="maxcalls" type="text" default="60" label="COM_JIMIGRATOR_MAXCALLS_LABEL" description="COM_JIMIGRATOR_MAXCALLS_DESC" />
+        <field name="zipengine" type="list" default="native" label="COM_JIMIGRATOR_ZIP_ENGINE_LABEL" description="COM_JIMIGRATOR_ZIP_ENGINE_DESC">
+            <option value="native">COM_JIMIGRATOR_ZIP_ENGINE_NATIVE</option>
+            <option value="jiziparchive">COM_JIMIGRATOR_ZIP_ENGINE_JI</option>
+        </field>
+        <field name="filters_enabled" type="list" default="1" label="COM_JIMIGRATOR_FILTERS_ENABLED_LABEL" description="COM_JIMIGRATOR_FILTERS_ENABLED_DESC">
+            <option value="1">JYES</option>
+            <option value="0">JNO</option>
+        </field>
+    </fieldset>
+</config>

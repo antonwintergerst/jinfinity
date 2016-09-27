@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<exporter version="1.5">
+    <name>RSMembership</name>
+    <description>Export RS Membership</description>
+    <group>thirdparty</group>
+    <!-- >>> PRO >>> -->
+    <tables>
+        <table name="rsmembership_categories" pkey="id" />
+        <table name="rsmembership_configuration" pkey="name" />
+        <table name="rsmembership_countries" pkey="name" />
+        <table name="rsmembership_coupons" pkey="id"  />
+        <table name="rsmembership_coupon_items" pkey="id" />
+        <table name="rsmembership_extras" pkey="id" />
+        <table name="rsmembership_extra_values" pkey="id" />
+        <table name="rsmembership_extra_value_shared" pkey="id" />
+        <table name="rsmembership_logs" pkey="id" />
+        <table name="rsmembership_files" pkey="id" />
+        <table name="rsmembership_fields" pkey="id" />
+        <table name="rsmembership_memberships" pkey="id" />
+        <table name="rsmembership_membership_attachments" pkey="id" />
+        <table name="rsmembership_membership_extras" pkey="membership_id" />
+        <table name="rsmembership_membership_shared" pkey="id" />
+        <table name="rsmembership_membership_upgrades" pkey="id" />
+        <table name="rsmembership_membership_users" pkey="id" />
+        <table name="rsmembership_payments" pkey="id" />
+        <table name="rsmembership_terms" pkey="id" />
+        <table name="rsmembership_transactions" pkey="id" />
+        <table name="rsmembership_users" pkey="user_id" />
+    </tables>
+    <files>
+        <filename>rsmembership_categories.csv</filename>
+        <filename>rsmembership_configuration.csv</filename>
+        <filename>rsmembership_countries.csv</filename>
+        <filename>rsmembership_coupons.csv</filename>
+        <filename>rsmembership_coupon_items.csv</filename>
+        <filename>rsmembership_extras.csv</filename>
+        <filename>rsmembership_extra_values.csv</filename>
+        <filename>rsmembership_extra_value_shared.csv</filename>
+        <filename>rsmembership_logs.csv</filename>
+        <filename>rsmembership_files.csv</filename>
+        <filename>rsmembership_memberships.csv</filename>
+        <filename>rsmembership_membership_attachments.csv</filename>
+        <filename>rsmembership_membership_extras.csv</filename>
+        <filename>rsmembership_membership_shared.csv</filename>
+        <filename>rsmembership_membership_users.csv</filename>
+        <filename>rsmembership_payments.csv</filename>
+        <filename>rsmembership_terms.csv</filename>
+        <filename>rsmembership_transactions.csv</filename>
+        <filename>rsmembership_users.csv</filename>
+    </files>
+    <!-- <<< PRO <<< -->
+    <!-- >>> FREE >>> -->
+    <fields>
+        <field type="separator" label="JI_ONLY_AVAILABLE_IN_PRO_TITLE" />
+    </fields>
+    <!-- <<< FREE <<< -->
+</exporter>

@@ -1,0 +1,26 @@
+/*
+ * @version     $Id: jiimagegallery.css 060 2014-12-18 17:53:00Z Anton Wintergerst $
+ * @package     JiImageGallery Content Plugin for Joomla 1.7+
+ * @copyright   Copyright (C) 2014 Jinfinity. All rights reserved.
+ * @license     GNU/GPLv3 http://www.gnu.org/licenses/gpl-3.0.html
+ * @website     www.jinfinity.com
+ * @email       support@jinfinity.com
+*/
+.jiimagegallery {
+    overflow: hidden;
+    margin: 0 -5px;
+    width: 100%;
+}
+.jiimagegallery .thumb {
+    float: left;
+    width: 25%;
+}
+.jiimagegallery .thumb>a, .jiimagegallery .thumb>span {
+    border: 1px solid #CCC;
+    display: block;
+    margin: 5px;
+    padding: 5px;
+}
+.jiimagegallery .thumb img {
+    width: 100%;
+}

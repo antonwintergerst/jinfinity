@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<config>
+    <fieldset name="description" label="JGLOBAL_DESCRIPTION" addfieldpath="/plugins/system/jiframework/fields">
+        <field name="@header" type="header" label="JIFORMS" description="JIFORMS_DESC" xml="/administrator/components/com_jiforms/jiforms.xml"/>
+    </fieldset>
+</config>

@@ -1,0 +1,14 @@
+<extension>
+    <manifest>plugins/system/jipagecontext/jipagecontext.xml</manifest>
+    <manifests>
+        <manifest>plugins/system/jipagecontext/jipagecontext.xml</manifest>
+    </manifests>
+    <hasfree>0</hasfree>
+    <haspro>1</haspro>
+    <files>
+        <file>administrator/language/en-GB/en-GB.plg_system_jipagecontext.ini</file>
+        <file>administrator/language/en-GB/en-GB.plg_system_jipagecontext.sys.ini</file>
+        <file>media/jipagecontext</file>
+        <file>plugins/system/jipagecontext</file>
+    </files>
+</extension>

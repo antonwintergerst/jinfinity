@@ -1,0 +1,22 @@
+<extension>
+    <manifest>plugins/content/jimediabrowser/jimediabrowser.xml</manifest>
+    <manifests>
+        <manifest>plugins/content/jimediabrowser/jimediabrowser.xml</manifest>
+    </manifests>
+    <files>
+        <file>administrator/language/en-GB/en-GB.plg_content_jimediabrowser.ini</file>
+        <file>administrator/language/en-GB/en-GB.plg_content_jimediabrowser.sys.ini</file>
+        <file>media/jimediabrowser</file>
+        <file>plugins/content/jimediabrowser</file>
+    </files>
+    <hasfree>0</hasfree>
+    <haspro>1</haspro>
+    <includes>
+        <file>media/jiframework/images/mimex16</file>
+        <file>media/jiframework/images/mimex48</file>
+        <file>media/jiframework/images/mimex128</file>
+        <file>media/jiframework/js/jquery.jimodalpicker.js</file>
+        <file>media/jiframework/modals</file>
+        <file>plugins/system/jiframework/fields/modalpicker.php</file>
+    </includes>
+</extension>

@@ -1,0 +1,14 @@
+<extension>
+    <manifest>plugins/content/jisocialwidgets/jisocialwidgets.xml</manifest>
+    <manifests>
+        <manifest>plugins/content/jisocialwidgets/jisocialwidgets.xml</manifest>
+    </manifests>
+    <hasfree>0</hasfree>
+    <haspro>1</haspro>
+    <files>
+        <file>administrator/language/en-GB/en-GB.plg_content_jisocialwidgets.ini</file>
+        <file>administrator/language/en-GB/en-GB.plg_content_jisocialwidgets.sys.ini</file>
+        <file>media/jisocialwidgets</file>
+        <file>plugins/content/jisocialwidgets</file>
+    </files>
+</extension>

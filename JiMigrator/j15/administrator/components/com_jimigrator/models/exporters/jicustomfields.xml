@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<exporter version="1.5">
+    <name>JiCustomFields</name>
+    <description>Export JiCustomFields</description>
+    <group>jinfinity</group>
+    <!-- >>> PRO >>> -->
+    <tables>
+        <table name="jinfinity_fields" />
+        <table name="jinfinity_fields_index" />
+        <table name="jinfinity_fields_values" />
+        <table name="jifields" />
+        <table name="jifields_index" />
+        <table name="jifields_values" />
+    </tables>
+    <!-- <<< PRO <<< -->
+    <!-- >>> FREE >>> -->
+    <fields>
+        <field type="separator" label="JI_ONLY_AVAILABLE_IN_PRO_TITLE" />
+    </fields>
+    <!-- <<< FREE <<< -->
+</exporter>

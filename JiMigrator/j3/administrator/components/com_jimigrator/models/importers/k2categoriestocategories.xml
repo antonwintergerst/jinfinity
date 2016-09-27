@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<importer version="1.6">
+	<name>K2CategoriesToCategories</name>
+	<description>Import K2 Categories as J! Categories</description>
+	<group>thirdparty</group>
+    <!-- >>> PRO >>> -->
+    <tables>
+        <table source="k2_categories" name="categories" pkey="id" />
+    </tables>
+    <!-- <<< PRO <<< -->
+    <fields>
+        <!-- >>> PRO >>> -->
+		<field type="list" default="0" name="truncate" label="Clear DB Tables" description="Clear database table #__categories and create the default uncategorised categories before starting the import process">
+			<option value="1">Yes</option>
+			<option value="0">No</option>
+		</field>
+		<field type="list" default="0" name="overwrite" label="Overwrite Existing" description="Items in the database with the same ID will be replaced">
+			<option value="1">Yes</option>
+			<option value="0">No</option>
+		</field>
+        <field type="list" default="1" name="resetalias" label="Reset Alias" description="Reset alias and title to ensure uniqueness">
+            <option value="1">Yes</option>
+            <option value="0">No</option>
+        </field>
+        <field type="list" default="1" name="rebuildparams" label="Rebuild Params" description="Rebuild params if found to be in the Joomla 1.5 format">
+            <option value="1">Yes</option>
+            <option value="0">No</option>
+        </field>
+        <field type="list" default="0" name="clearparams" label="Clear Params" description="Clear params if found to be in the Joomla 1.5 format">
+            <option value="1">Yes</option>
+            <option value="0">No</option>
+        </field>
+		
+		<field type="separator" label="Debug" />
+		<field type="list" default="0" name="debug" label="Debug Run" description="No database changes will be made. Check the log for what changes would have occurred">
+			<option value="1">Yes</option>
+			<option value="0">No</option>
+		</field>
+		<field type="list" default="0" name="debuglevel" label="Debug Level" description="More log entries will be made for higher debug levels">
+			<option value="0">Standard</option>
+			<option value="1">Development</option>
+		</field>
+        <field type="hidden" name="globalvalues" default="catidmap" />
+        <field type="hidden" default="0" name="runorder" />
+        <!-- <<< PRO <<< -->
+        <!-- >>> FREE >>> -->
+        <field type="separator" label="JI_ONLY_AVAILABLE_IN_PRO_TITLE" />
+        <!-- <<< FREE <<< -->
+	</fields>
+</importer>

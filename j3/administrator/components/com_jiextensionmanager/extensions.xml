@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extensions>
+    <extension title="JiBlogTools" type="plg_content" />
+    <extension title="JiContentInjector" element="jicontentinjector" type="com" />
+    <extension title="JiContentSlider" type="mod" />
+	<extension title="JiCustomFields" element="jicustomfields" type="com,mod,plg_system" />
+    <extension title="JiDisqusAPI" type="mod" />
+    <extension title="JiExtensionManager" element="jiextensionmanager" type="com" />
+    <extension title="JiForms" type="com" />
+    <extension title="JiFramework" type="plg_system" />
+    <extension title="JiGrid" type="com" />
+    <extension title="JiImageGallery" type="plg_content" />
+    <extension title="JiMediaBrowser" type="plg_content" />
+    <extension title="JiMigrator" element="jimigrator" type="com" />
+    <extension title="JiPageContext" type="plg_system" />
+    <extension title="JiSecure" type="plg_system" />
+    <extension title="JiSocialWidgets" type="plg_content" />
+    <extension title="JiUniquenessQuantifier" type="plg_system" />
+</extensions>

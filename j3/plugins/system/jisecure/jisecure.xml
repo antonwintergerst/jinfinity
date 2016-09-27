@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension version="3.0" type="plugin" group="system" method="upgrade" client="site">
+	<name>PLG_SYSTEM_JISECURE</name>
+	<creationDate>December 2014</creationDate>
+	<author>Jinfinity</author>
+	<authorEmail>support@jinfinity.com</authorEmail>
+	<authorUrl>http://www.jinfinity.com</authorUrl>
+	<copyright>Copyright (C) 2014 Jinfinity</copyright>
+	<license>GNU/GPLv3 http://www.gnu.org/licenses/gpl-3.0.html</license>
+	<version>3.0.2</version>
+    <description>PLG_SYSTEM_JISECURE_DESC</description>
+
+    <languages folder="language">
+        <language tag="en-GB">en-GB/en-GB.plg_system_jisecure.ini</language>
+        <language tag="en-GB">en-GB/en-GB.plg_system_jisecure.sys.ini</language>
+    </languages>
+    <media folder="media">
+        <folder>jisecure</folder>
+    </media>
+	<files>
+		<filename plugin="jisecure">jisecure.php</filename>
+		<filename>jisecure.xml</filename>
+		<filename>index.html</filename>
+	</files>
+
+	<config>
+        <fields name="params" addfieldpath="/plugins/system/jiframework/fields">
+            <fieldset name="description">
+                <field name="@header" type="header" label="JISECURE" description="JISECURE_DESC" xml="/plugins/system/jisecure/jisecure.xml"/>
+            </fieldset>
+            <fieldset name="basic">
+                <field name="adminkey" type="text" default="secret" label="PLG_JISECURE_ADMIN_KEY_LABEL" description="PLG_JISECURE_ADMIN_KEY_DESC"/>
+                <field name="redirecturl" type="text" default="" label="PLG_JISECURE_REDIRECT_URL_LABEL" description="PLG_JISECURE_REDIRECT_URL_DESC"/>
+            </fieldset>
+        </fields>
+	</config>
+</extension>

@@ -1,0 +1,94 @@
+/**
+ * @version     $Id: jidropdownmenu.css 039 2013-11-05 14:32:00Z Anton Wintergerst $
+ * @package     JiDropDownMenu
+ * @copyright   Copyright (C) 2013 Jinfinity. All rights reserved.
+ * @license     GNU/GPLv3 http://www.gnu.org/licenses/gpl-3.0.html
+ * @website     www.jinfinity.com
+ * @email       support@jinfinity.com
+ */
+.jidropdownmenu, .jidropdownmenu ul, .jidropdownmenu li {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    font-size: 13px;
+}
+.jidropdownmenu {
+    background: #3c3c3c; /* Old browsers */
+    background: -moz-linear-gradient(top,  #3c3c3c 1%, #343434 50%, #262626 99%, #1d1d1d 100%); /* FF3.6+ */
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(1%,#3c3c3c), color-stop(50%,#343434), color-stop(99%,#262626), color-stop(100%,#1d1d1d)); /* Chrome,Safari4+ */
+    background: -webkit-linear-gradient(top,  #3c3c3c 1%,#343434 50%,#262626 99%,#1d1d1d 100%); /* Chrome10+,Safari5.1+ */
+    background: -o-linear-gradient(top,  #3c3c3c 1%,#343434 50%,#262626 99%,#1d1d1d 100%); /* Opera 11.10+ */
+    background: -ms-linear-gradient(top,  #3c3c3c 1%,#343434 50%,#262626 99%,#1d1d1d 100%); /* IE10+ */
+    background: linear-gradient(to bottom,  #3c3c3c 1%,#343434 50%,#262626 99%,#1d1d1d 100%); /* W3C */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#3c3c3c', endColorstr='#1d1d1d',GradientType=0 ); /* IE6-9 */
+}
+.jidropdownmenu li {
+    display: inline-block;
+    position: relative;
+}
+.jidropdownmenu a {
+    display: block;
+    height: 40px;
+    border-right: 1px solid #111;
+    line-height: 40px;
+    text-decoration: none;
+    text-transform: uppercase;
+    border-left: 1px solid #333;
+    color: #FFF;
+    padding: 0 15px;
+}
+.jidropdownmenu a i {
+    margin-left: 5px;
+}
+.jidropdownmenu>li>a {
+    text-shadow: 1px 1px 0 rgba(0,0,0,0.4);
+}
+.jidropdownmenu>li>a:hover, .jidropdownmenu>li.open>a {
+    background: #000;
+    color: #FFF;
+}
+.jidropdownmenu .nav-childouter {
+    display: none;
+    position: absolute;
+    z-index: 1000;
+    top: 40px;
+    width: 200px;
+    left: 0;
+    background: #000;
+}
+.jidropdownmenu .nav-childinner {
+    margin: 20px;
+}
+.jidropdownmenu .nav-child li {
+    border: 1px solid #1a1a1a;
+    margin: 0 0 8px;
+    display: block;
+    background: #101010;
+}
+.jidropdownmenu .nav-child li a {
+    padding: 8px 5px;
+    line-height: normal;
+    border: none;
+    height: auto;
+    display: block;
+    color: #999;
+    text-transform: none;
+}
+.jidropdownmenu .nav-child li.current a {
+    color: #000;
+}
+.jidropdownmenu>li.current>a, .jidropdownmenu .nav-child li.current, .jidropdownmenu .nav-child li:hover {
+    border-color: #5fbfcb;
+    background: -webkit-gradient(linear,0% 0%,0% 100%,from(#85cfd8),to(#55b5c2));
+    background: -webkit-linear-gradient(top,#85cfd8,#55b5c2);
+    background: -moz-linear-gradient(top,#85cfd8,#55b5c2);
+    background: -ms-linear-gradient(top,#85cfd8,#55b5c2);
+    background: -o-linear-gradient(top,#85cfd8,#55b5c2);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#85cfd8,endColorstr=#55b5c2);
+    -ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr=#85cfd8,endColorstr=#55b5c2)";
+    background-color: #6ec2cc;
+    color: #FFF;
+}
+.jidropdownmenu .nav-child li a:hover {
+    color: #FFF;
+}

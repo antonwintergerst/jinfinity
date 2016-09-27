@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension type="component" version="3.0" method="upgrade">
+	<name>JiCustomFields</name>
+	<creationDate>January 2015</creationDate>
+	<author>Jinfinity</author>
+	<authorEmail>support@jinfinity.com</authorEmail>
+	<authorUrl>http://www.jinfinity.com</authorUrl>
+	<copyright>Copyright (C) 2015 Jinfinity</copyright>
+	<license>GNU/GPLv3 http://www.gnu.org/licenses/gpl-3.0.html</license>
+	<version>3.3.6</version>
+	<description>COM_JICUSTOMFIELDS_DESC</description>
+	<languages folder="language">
+		<language tag="en-GB">en-GB/en-GB.com_jicustomfields.ini</language>
+	</languages>
+	<!-- install/uninstall -->
+	<scriptfile>script.jicustomfields.php</scriptfile>
+	<!-- Public front end files -->
+    <media folder="media">
+        <folder>jicustomfields</folder>
+    </media>
+	<files folder="site">
+        <folder>controllers</folder>
+        <folder>helpers</folder>
+        <folder>models</folder>
+        <folder>views</folder>
+		<filename>controller.php</filename>
+		<filename>index.html</filename>
+		<filename>jicustomfields.php</filename>
+		<filename>router.php</filename>
+	</files>
+	<!-- Administrator back-end section -->
+	<administration>
+		<!-- Administration menu -->
+		<menu img="../media/jicustomfields/images/icon-16-jicustomfields.png">JICUSTOMFIELDS</menu>
+        <submenu>
+            <menu view="fields">JICUSTOMFIELDS_FIELDS</menu>
+            <menu view="catmaps">JICUSTOMFIELDS_CATMAPS</menu>
+        </submenu>
+		<!-- Back-end files -->	
+		<files folder="admin">
+            <folder>controllers</folder>
+            <folder>helpers</folder>
+            <folder>models</folder>
+            <folder>tables</folder>
+            <folder>views</folder>
+            <filename>config.xml</filename>
+			<filename>controller.php</filename>
+			<filename>index.html</filename>
+            <filename>jicustomfields.php</filename>
+		</files>
+		<languages folder="admin/language">
+            <language tag="en-GB">en-GB/en-GB.com_jicustomfields.ini</language>
+			<language tag="en-GB">en-GB/en-GB.com_jicustomfields.sys.ini</language>
+        </languages>
+	</administration>
+	<modules>
+		<module module="mod_jicustomfields" client="site"/>
+        <module module="mod_jicustomfields_articles" client="site"/>
+        <module module="mod_jicustomfields_search" client="site"/>
+	</modules>
+	<plugins>
+		<plugin plugin="jicustomfields" group="system"/>
+	</plugins>
+    <config>
+        <fieldset name="options" label="JOPTIONS" description="JICUSTOMFIELDS_CONFIG_OPTIONS_DESC">
+            <field name="above_prefix" type="text" filter="raw" default="&lt;div class=&quot;fields fieldsabove&quot;&gt;" label="JICUSTOMFIELDS_ABOVE_PREFIX" description="JICUSTOMFIELDS_ABOVE_PREFIX_DESC"/>
+            <field name="above_suffix" type="text" filter="raw" default="&lt;/div&gt;" label="JICUSTOMFIELDS_ABOVE_SUFFIX" description="JICUSTOMFIELDS_ABOVE_SUFFIX_DESC"/>
+            <field name="below_prefix" type="text" filter="raw" default="&lt;div class=&quot;fields fieldsbelow&quot;&gt;" label="JICUSTOMFIELDS_BELOW_PREFIX" description="JICUSTOMFIELDS_BELOW_PREFIX_DESC"/>
+            <field name="below_suffix" type="text" filter="raw" default="&lt;/div&gt;" label="JICUSTOMFIELDS_BELOW_SUFFIX" description="JICUSTOMFIELDS_BELOW_SUFFIX_DESC"/>
+            <field name="fields_site_manager" default="1" type="list" label="JICUSTOMFIELDS_SITE_MANAGEMENT" description="JICUSTOMFIELDS_SITE_MANAGEMENT_DESC">
+                <option value="1">JENABLED</option>
+                <option value="0">JDISABLED</option>
+            </field>
+            <field name="fields_admin_manager" default="1" type="list" label="JICUSTOMFIELDS_ADMIN_MANAGEMENT" description="JICUSTOMFIELDS_ADMIN_MANAGEMENT_DESC">
+                <option value="1">JENABLED</option>
+                <option value="0">JDISABLED</option>
+            </field>
+            <field name="@spacer" type="spacer" default="" label="" description=""/>
+            <field name="debug" default="0" type="list" label="JICUSTOMFIELDS_DEBUG" description="JICUSTOMFIELDS_DEBUG_DESC">
+                <option value="1">JENABLED</option>
+                <option value="0">JDISABLED</option>
+            </field>
+        </fieldset>
+    </config>
+</extension>

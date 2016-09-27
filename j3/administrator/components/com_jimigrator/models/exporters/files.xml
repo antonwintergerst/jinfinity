@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<exporter version="1.5">
+	<name>Files</name>
+	<description>Export Files</description>
+	<group>joomlacore</group>
+    <!-- >>> PRO >>> -->
+	<files>
+		<folder>sitefiles</folder>
+	</files>
+    <!-- <<< PRO <<< -->
+    <fields>
+        <!-- >>> PRO >>> -->
+		<field type="checkbox" default="1" name="selective" label="Only Export Selected Items" description="Only export the items specified in the list filter below. When this option is unchecked all items will be exported" />
+		<field type="filefilter" default="0" name="filter" label="File Filter" description="Selective export filter for files" class="jitogglertab jidjifields_filesselective" />
+        <!-- <<< PRO <<< -->
+        <!-- >>> FREE >>> -->
+        <field type="separator" label="JI_ONLY_AVAILABLE_IN_PRO_TITLE" />
+        <!-- <<< FREE <<< -->
+    </fields>
+</exporter>
